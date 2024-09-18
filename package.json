@@ -1,0 +1,24 @@
+{
+  "name": "antora-component-template",
+  "version": "1.0.0",
+  "description": "Provides a template Antora component file and directory structure, along with some other helpful command-line tools. Its aim is to make it as quick and painless as possible to get up and running with new Antora projects and to extend existing ones.",
+  "dependencies": {},
+  "devDependencies": {
+    "yaml-lint": "^1.2.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "yamllint antora.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThreatX/threatx-docs-antora-component-template.git"
+  },
+  "keywords": [
+    "Antora",
+    "AsciiDoc",
+    "tooling"
+  ],
+  "author": "Nick Ferguson <nick.ferguson@threatx.com>",
+  "homepage": "https://gitub.com/ThreatX/threatx-docs-antora-component-template#readme"
+}
