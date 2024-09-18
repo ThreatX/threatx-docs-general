@@ -1,5 +1,6 @@
-name: my_antora_component 
-title: My Antora Component 
-version: '1.0' 
-nav: 
+# Descriptor of the Antora site.
+name: txgeneral
+title: ThreatX User Documentation
+version: '1.0'
+nav:
 - modules/ROOT/nav.adoc
