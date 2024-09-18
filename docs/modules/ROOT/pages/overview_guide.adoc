@@ -14,9 +14,6 @@
 :imagesdir: ../images
 
 
-image:https://www.threatx.com/wp-content/uploads/2022/02/getting-started.svg[Using ThreatX]
-
-image:files/getting-started.svg[Using ThreatX]
 
 The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
@@ -45,7 +42,7 @@ The ThreatX platform uses the following active and passive techniques to evaluat
 You can use the data the platform gathers to better understand your sites, traffic usage, and behavior, and uncover potential issues such as exposure of sensitive data and vulnerabilities.
 
 [[h-key-differentiators]]
-==== Key Differentiators
+=== Key Differentiators
 
 The ThreatX platform is a set of complementary technologies that work together in ways that various tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks using multiple IP addresses to evade detection. By bringing multiple perspectives together in a single context, the ThreatX platform gives security teams a highly accurate, reliable, and complete view of threat activities.
 
@@ -391,54 +388,3 @@ Before onboarding the ThreatX platform, review the following site onboarding che
 |===
 
 image:data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=]
-
-Last Updated 2024-02-13
-
-======= On this page
-
-* link:#overview[Overview]
-* link:#architecture[Architecture]
-* link:#administration[Administration]
-* link:#analysis[Analysis]
-* link:#additional-features[Additional Features]
-* link:#privacy[Privacy]
-* link:#deployment[Deployment]
-* link:#onboarding-checklist[Onboarding Checklist]
-
-[[gform_wrapper_1]]
-[[gform_fields_1]]
-Was this guide helpful?
-
-[[input_1_3]]
-Yes
-
-No
-
-Comment Only
-
-[[field_1_2]]
-Tell us what worked and what we could do better
-
-Submit
-
-===== Additional Resources
-
-'''''
-
-====== Getting Started 
-
-After connecting hostnames to ThreatX, real-time attack information will be displayed via the Attack Dashboard and API Defender in the ThreatX platform. Use the latest available sensor version to see all information populated on the ThreatX platform.  ThreatX Attack Dashboard  Introduction  ThreatX’s Attack Dashboard provides complete visibility into how the solution protects APIs and web […]
-
-https://www.threatx.com/documentation/using-threatx/getting-started/[READ MORE]
-
-====== ThreatX Administrator Guide
-
-The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks. This guide focuses on the administrator tasks. For an overview of the ThreatX platform, […]
-
-https://www.threatx.com/documentation/using-threatx/threatx-administrator-guide/[READ MORE]
-
-====== ThreatX Analyst Guide
-
-The ThreatX Analyst guide focuses on those areas of the ThreatX™ platform that provide analytical data.
-
-https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[READ MORE]

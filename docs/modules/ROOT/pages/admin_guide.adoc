@@ -17,16 +17,14 @@ The ThreatX™ Managed API and Application Protection platform is a Protection a
 
 This guide focuses on the administrator tasks.
 
-For an overview of the ThreatX platform, see the https://www.threatx.com/documentation/using-threatx/overview-guide/[ThreatX Managed API and Application Protection Platform Overview Guide].
 
-For security analysts using the ThreatX platform for threat analysis, see the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[ThreatX Managed API and Application Protection Platform Analyst Guide].
 
-=== Administrator overview
+== Administrator overview
 
 The ThreatX platform has configuration, user, firewall, and other settings that can be managed by the ThreatX SOC, your local administrator, or a combination of both. Your ThreatX account must have write access to perform these tasks.
 
 [[h-interfaces]]
-==== Interfaces
+=== Interfaces
 
 The administrative settings can be accessed from the ThreatX user interface or API command line interface.
 
@@ -1322,26 +1320,4 @@ apt-get install tcpdump*
 
 image:data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=]
 
-Last Updated 2024-01-19
-
-======= On this page
-
-* link:#administrator-overview[Administrator overview]
-* link:#managing-listed-ips[Managing listed IPs]
-* link:#managing-risk-based-blocking[Managing Risk-Based Blocking]
-* link:#managing-sites-and-site-groups[Managing sites and site groups]
-* link:#managing-sensors[Managing sensors]
-* link:#configuring-notifications[Configuring notifications]
-* link:#receiving-event-logs[Receiving event logs]
-* link:#accessing-the-audit-log[Accessing the audit log]
-* link:#managing-user-accounts[Managing user accounts]
-* link:#generating-and-revoking-api-keys[Generating and revoking API keys]
-* link:#generating-and-revoking-sensor-api-keys[Generating and revoking sensor API keys]
-* link:#managing-caching[Managing caching]
-* link:#managing-rate-limiting[Managing rate limiting]
-* link:#managing-rules[Managing rules]
-* link:#configuring-single-sign-on-sso[Configuring Single Sign On (SSO)]
-* link:#configuring-mutual-tls-mtls-configuration[Configuring Mutual TLS (mTLS) configuration]
-* link:#testing-for-vulnerabilities[Testing for Vulnerabilities]
-* link:#troubleshooting-sensor-issues[Troubleshooting sensor issues]
 
