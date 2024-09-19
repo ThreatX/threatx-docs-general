@@ -1,6 +1,6 @@
-* xref:index.adoc[]
-* xref:overview_guide.adoc[TX Protect Overview]  
-
 .Guides
+* xref:intro.adoc[Introduction to ThreatX]
+* xref:overview_guide.adoc[Platform Overview] 
+* xref:getting_started.adoc[Getting Started Guide]
 * xref:analyst_guide.adoc[Analyst Guide]
 * xref:admin_guide.adoc[Administrator Guide]

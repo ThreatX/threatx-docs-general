@@ -1,4 +1,9 @@
-= ThreatX Protect Documentation 
-:description: Find the right installation guide for your environment and get started with ThreatX Prevent.
-:icons: font
+= General Documentation
+:description: General purpose guides to help you use the ThreatX platform
 
+== 🧭 Guides
+* link:intro.adoc[Introduction to ThreatX]
+* link:overview_guide.adoc[Platform Overview]
+* link:getting_started.adoc[Getting Started Guide]
+* link:analyst_guide.html[Analyst Guide]
+* link:admin_guide.html[Administrator Guide]

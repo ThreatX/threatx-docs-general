@@ -4,7 +4,6 @@
 :product-name: ThreatX
 :page-product-name:  {product-name}
 :page-origin-type: git
-:toclevels: 3
 :sectlinks:
 :sectanchors:
 :sectids:
@@ -37,7 +36,7 @@ _API traffic_ is traffic that includes HTTP messages containing programmatic con
 
 The ThreatX platform provides metrics and analytical data of API traffic and actions taken to the dashboards and reporting pages, which is shown in the following diagram as the ThreatX user interface section.
 
-image:Admin-Guide-Architecture-high-level-1024x543.pngAdmin-Guide-Architecture-high-level-1024x543,width=1024,height=543]
+image:Admin-Guide-Architecture-high-level-1024x543.png[Admin-Guide-Architecture-high-level-1024x543,width=1024,height=543]
 
 [[h-attacker-centric-behavioral-analytics]]
 ==== Attacker-Centric Behavioral Analytics
@@ -81,18 +80,18 @@ Where it is common for attackers to use multiple IPs in a single attack, the Thr
 
 The tables in the ThreatX dashboard provide analytical data about the threat. The following metrics are common to a number of tables.
 
-* *Status*. Current response to the threat. Status includes Watched, Blocked, Allow Listed, or Deny Listed.
-* *IP Address*. Origin of the threat.
-* *Last Seen*. Time of the last request.
-* *Location*. Country where the attack originated.
-* *Attack Class*. Category of the threat, such as XSS, password guessing, and Trojan activity.
+*Status*:: Current response to the threat. Status includes Watched, Blocked, Allow Listed, or Deny Listed.
+*IP Address*:: Origin of the threat.
+*Last Seen*:: Time of the last request.
+*Location*:: Country where the attack originated.
+*Attack Class*:: Category of the threat, such as XSS, password guessing, and Trojan activity.
 
 ==== Risk Score and Risk Level
 
 There are two risk attributes:
 
-* Risk Score is associated with a single activity of a threat, and is signature specific. The ThreatX platform displays Risk Score as a number between 0 and 100. The higher the score, the greater the risk.
-* Risk Level is associated with all activities of a threat. The level is calculated from many inputs including Risk Score. One input is the kill chain model that classifies the attacker behavior and methods used to attempt to gain unauthorized access or control. The higher on the kill chain, the greater the severity of the threat. The ThreatX platform displays Risk Level severity as a bar. The longer the bar, the greater the risk.
+* *Risk Score* is associated with a single activity of a threat, and is signature specific. The ThreatX platform displays Risk Score as a number between 0 and 100. The higher the score, the greater the risk.
+* *Risk Level* is associated with all activities of a threat. The level is calculated from many inputs including Risk Score. One input is the kill chain model that classifies the attacker behavior and methods used to attempt to gain unauthorized access or control. The higher on the kill chain, the greater the severity of the threat. The ThreatX platform displays Risk Level severity as a bar. The longer the bar, the greater the risk.
 
 Many of the tables in the ThreatX platform show Max level, which is the maximum Risk Level in the specified time range.
 
