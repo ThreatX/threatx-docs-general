@@ -135,7 +135,7 @@ ThreatX evaluates each request to identify the nature of the request and determi
 [[attack-dashboard-threat-entities]]
 === Attack Dashboard
 
-[[attack-dashboard-threat-entities]]
+
 ==== Threat Entities: 
 
 The ThreatX Attack Dashboard visualizes both malicious and benign traffic over time and allows ThreatX users to drill down and investigate attacking entities, and the responsive actions the ThreatX Platform took to protect their APIs and web applications. The Attack Dashboard is comprised of three main views: Threat Entities, Top Targets, and Threat Map. Each view provides a different perspective on an organization’s attack surface.
