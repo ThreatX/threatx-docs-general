@@ -1,0 +1,62 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Check Documentation
+
+on:
+  workflow_dispatch:
+    alertLevel:
+      description: 'Alert level'
+      required: true
+      default: 'suggestion'
+      type: choice
+      options:
+        - suggestion
+        - warning
+        - error
+    pattern:
+      description: "Glob pattern"
+      required: true
+      default: '!*-instructions.adoc'
+      type: string
+  push:
+    paths:
+      - 'docs/**'
+  pull_request:
+    paths:
+      - 'docs/**'
+
+jobs:
+
+  check:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.8.0]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Checkout Repository 
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y asciidoctor
+        sudo snap install vale
+
+    - name: Vale Linter
+      uses: errata-ai/vale-action@v2.1.0
+      with:
+        files: docs/
+        fail_on_error: false
+        level: ${{ github.event.inputs.alertLevel }}
+          

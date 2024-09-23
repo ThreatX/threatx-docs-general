@@ -1,0 +1,32 @@
+{
+ // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Check AsciiDoc Style (Current File)",
+      "type": "shell",
+      "command": "./node_modules/@vvago/vale/bin/vale ${file}",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Check AsciiDoc Style",
+      "type": "shell",
+      "command": "./node_modules/@vvago/vale/bin/vale docs",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+        "label": "Remove template component",
+        "type": "shell",
+        "command": "rm -rf docs/modules/templates && git add docs/modules/templates && git commit -m 'Remove template component' && git push",
+    }
+  ]   
+}
