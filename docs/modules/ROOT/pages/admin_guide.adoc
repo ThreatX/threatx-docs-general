@@ -225,7 +225,6 @@ There are two types of notifications:
 
 * Analytical events
 * ThreatX platform maintenance and system status
-
 For information about receiving logs, see link:#receiving-event-logs[Receiving event logs].
 
 [[h-analytical-events]]
@@ -475,14 +474,14 @@ Your log receiver must be able to receive TCP data at the hostname provided to t
 [[h-verify-incoming-tcp-data]]
 ===== *Verify incoming TCP data*
 
-Use tcpdump to verify that the log receiver is receiving TCP traffic on the correct port.
+Use `tcpdump` to verify that the log receiver is receiving TCP traffic on the correct port.
 
 [source,wp-block-code]
 ----
-$ tcpdump port 12345
+$ `tcpdump` port 12345
 ----
 
-Even if you see traffic via tcpdump, you still need to ensure that any host-based firewall, such as iptables, is configured to allow the incoming traffic.
+Even if you see traffic via `tcpdump`, you still need to ensure that any host-based firewall, such as iptables, is configured to allow the incoming traffic.
 
 [[h-dump-incoming-logs-to-a-file-logstash]]
 ===== *Dump incoming logs to a file (Logstash)***
@@ -1263,10 +1262,10 @@ Generating a HAR file in Chrome:
 . Once you have reproduced the issue, right-click anywhere on the grid of network requests and select *Save as HAR with Content.*
 . Upload the HAR file as an attachment to your ThreatX support ticket for further.
 
-Generating a HAR file in Firefox:
+Generating a HAR file in Mozilla Firefox:
 
-. Open Firefox and navigate to the page where the issue is occurring.
-. Select the Firefox menu (three horizontal parallel lines) at the top-right of your browser window, then select *Web Developer* > *Network*.
+. Open Mozilla Firefox and navigate to the page where the issue is occurring.
+. Select the Mozilla Firefox menu (three horizontal parallel lines) at the top-right of your browser window, then select *Web Developer* > *Network*.
 . From the panel, click the *Network* tab.
 . The recording automatically starts when you begin performing actions in the browser.
 . Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), right-click anywhere under the *File* column, and click on *Save all as Har*.
@@ -1308,11 +1307,11 @@ To generate a PCAP file that the ThreatX SOC can analyze for troubleshooting con
 *docker ps*
 . Use the following command to obtain a shell within the WAF container, with the newly obtained container name: +
 *docker exec -it <container ID> /bin/bash*
-. Run the following commands to update the repository package lists as well as install TCPDump within the container: +
+. Run the following commands to update the repository package lists as well as install `tcpdump` within the container: +
 *apt-get update +
-apt-get install tcpdump*
-. With TCPDump installed within the container, capture the network traffic with the following command: +
-*tcpdump -i eth0 -s 0 port not 22 -w /tmp/upload_to_threatx.pcap*
+apt-get install `tcpdump`*
+. With `tcpdump` installed within the container, capture the network traffic with the following command: +
+*`tcpdump` -i eth0 -s 0 port not 22 -w /tmp/upload_to_threatx.pcap*
 . Exit the Docker container and use the following command to copy the PCAP to the host system: +
 *docker cp <container ID>:/tmp/upload_to_threatx.pcap* *upload_to_threatx.pcap*
 . Upload the PCAP file to a ThreatX support ticket for further analysis. +

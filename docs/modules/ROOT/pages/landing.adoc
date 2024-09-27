@@ -1,4 +1,7 @@
-= ThreatX Product Documentation
+= ThreatX Documentation
 :description:   This project contains the source files for the ThreatX product documentation. 
 
-🧭 Guides
+== 🗃️Directory
+* xref:index.adoc[🧭 General Documentation]
+* xref:1.0@txprevent:ROOT:index.adoc[📚 TX Prevent Documentation]
+* xref:3.20@txprotect:ROOT:index.adoc[📚 TX Protect Documentation]
