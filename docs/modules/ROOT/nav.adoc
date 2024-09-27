@@ -1,5 +1,14 @@
+.ℹ️ About ThreatX
 * xref:intro.adoc[Introduction to ThreatX]
 * xref:overview_guide.adoc[Platform Overview] 
+
+.🎛️User Guides
 * xref:getting_started.adoc[Getting Started]
 * xref:analyst_guide.adoc[Analyst Guide]
 * xref:admin_guide.adoc[Administrator Guide]
+
+.🚀 Deployment Guides
+* xref:1.0@txprevent:ROOT:kubernetes.adoc[☸️ Install TX Prevent with Helm (Kubernetes)]
+* xref:1.0@txprevent:ROOT:cloudformation.adoc[☁️ Install TX Prevent with CloudFormation (AWS EC2)]
+* xref:3.20@txprotect:ROOT:ami_deploy.adoc[🛡️ Install TX Protect from the AWS Marketplace]
+
