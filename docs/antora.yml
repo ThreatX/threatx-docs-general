@@ -1,6 +1,6 @@
 # Descriptor of the Antora site.
 name: txgeneral
-title: General Documentation
+title: Managed Protection 
 version: ~
 nav:
 - modules/ROOT/nav.adoc

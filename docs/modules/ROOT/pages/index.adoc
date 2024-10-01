@@ -1,9 +1,8 @@
-= General Documentation
-:description: General purpose guides to help you use the ThreatX platform
+= Documentation Home
 
-==🧭 Guides
-* link:intro.adoc[Introduction to ThreatX]
-* link:overview_guide.adoc[Platform Overview]
-* link:getting_started.adoc[Getting Started Guide]
-* link:analyst_guide.html[Analyst Guide]
-* link:admin_guide.html[Administrator Guide]
+== 🗞️ News
+
+
+
+
+Last updated {build-date}
