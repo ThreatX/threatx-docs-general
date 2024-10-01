@@ -1,18 +1,19 @@
-= ThreatX Administrator Guide
+= Administrator Guide
+:organization: ThreatX
 :page-category: Guide
 :page-edition: Enterprise
-:product-name: ThreatX
+:product-name: {organization} Managed API and Application Protection 
 :page-product-name:  {product-name}
 :page-origin-type: git
 :sectlinks:
 :sectanchors:
 :sectids:
-:copyright: 2024 ThreatX, Inc.
+:copyright: 2024 {organization}, Inc.
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images 
 
-The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
+The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
 This guide focuses on the administrator tasks.
 
@@ -20,85 +21,85 @@ This guide focuses on the administrator tasks.
 
 == Administrator overview
 
-The ThreatX platform has configuration, user, firewall, and other settings that can be managed by the ThreatX SOC, your local administrator, or a combination of both. Your ThreatX account must have write access to perform these tasks.
+The {organization} platform has configuration, user, firewall, and other settings that can be managed by the {organization} SOC, your local administrator, or a combination of both. Your {organization} account must have write access to perform these tasks.
 
 [[h-interfaces]]
 === Interfaces
 
-The administrative settings can be accessed from the ThreatX user interface or API command line interface.
+The administrative settings can be accessed from the {organization} user interface or API command line interface.
 
-The ThreatX user interface presents the data the platform collects into various pages and tables. The ThreatX navigation bar has a *Settings* menu, under which you can access the pages discussed in this guide. You can log in to the ThreatX user interface at https://x.threatx.io/.
+The {organization} user interface presents the data the platform collects into various pages and tables. The {organization} navigation bar has a *Settings* menu, under which you can access the pages discussed in this guide. You can log in to the {organization} user interface at https://x.threatx.io/.
 
 image:Dashboard-no-bot-1024x666.jpg[Dashboard-no-bot-1024x666,width=1024,height=666]
 
-The ThreatX platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation toolsets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the ThreatX API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the ThreatX API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a ThreatX account to access).
+The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation toolsets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
 [[h-firewall-settings]]
 ==== Firewall settings
 
-When adding sites or testing DNS cutovers, you might need to reference the following ThreatX sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
+When adding sites or testing DNS cutovers, you might need to reference the following {organization} sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
 
-* *ThreatX Service IPs*. IP addresses that represent the ThreatX ** sensors**.** These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
-* *Sensor DNS Targets.* CNAMEs you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The ThreatX sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
+* *{organization} Service IPs*. IP addresses that represent the {organization} ** sensors**.** These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
+* *Sensor DNS Targets.* CNAMEs you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
-In the ThreatX user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/services endpoint, *list* command.
+In the {organization} user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/services endpoint, *list* command.
 
-*NOTE*: The ThreatX /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAMEs.
+*NOTE*: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAMEs.
 
 [[h-tenants-and-channels]]
 ==== Tenants and channels
 
 Tenants are organizational units. Administrator user accounts are provisioned within these tenants. Once provisioned, users can view protected sites, attack heuristics, real-time data, and other configuration information.
 
-Alternatively, you can have your ThreatX platform organized by channels, where a channel can contain multiple tenants. If you have channels, you can administer all users and sites within the tenants and add tenants as needed.
+Alternatively, you can have your {organization} platform organized by channels, where a channel can contain multiple tenants. If you have channels, you can administer all users and sites within the tenants and add tenants as needed.
 
 [[h-optional-features]]
 ==== Optional features
 
-The ThreatX platform has the following optional features that are available depending on your configuration.
+The {organization} platform has the following optional features that are available depending on your configuration.
 
 * Risk-based blocking
 * Edge caching
 * Sensitive data
 * Site certificate management
 
-For more information about these features, see the https://www.threatx.com/documentation/using-threatx/overview-guide/[ThreatX Managed API and Application Protection Platform Overview Guide]. If you require any feature that is not enabled, contact the ThreatX SOC.
+For more information about these features, see the https://www.threatx.com/documentation/using-threatx/overview-guide/[{organization} Managed API and Application Protection Platform Overview Guide]. If you require any feature that is not enabled, contact the {organization} SOC.
 
 === Managing listed IPs
 
 The IP lists are used to block, deny, and allow IP addresses. An IP address in the block list is there temporarily. An IP address in the blacklist or whitelist is there permanently until it is manually removed. As an administrator, you might need to manually add or remove an IP address or CIDR range from the list.
 
-In the ThreatX user interface, navigate to *Settings* *> IWAF*. The IWAF Settings page has tabs for *Blocked IPs*, *Blacklisted IPs*,and *Whitelisted IPs*. If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/lists endpoint to manage the lists.
+In the {organization} user interface, navigate to *Settings* *> IWAF*. The IWAF Settings page has tabs for *Blocked IPs*, *Blacklisted IPs*,and *Whitelisted IPs*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/lists endpoint to manage the lists.
 
-The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[ThreatX Managed API and Application Protection Platform Analyst Guide]. **
+The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[{organization} Managed API and Application Protection Platform Analyst Guide]. **
 
 === Managing Risk-Based Blocking
 
-If the ThreatX Risk-Based Blocking feature is enabled, you can configure the following settings.
+If the {organization} Risk-Based Blocking feature is enabled, you can configure the following settings.
 
-In the ThreatX user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/customers endpoint.
+In the {organization} user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/customers endpoint.
 
 [cols=",",options="header",]
 |===
 |*Setting* |*Description*
 |Risk-Based Blocking Timeout |Length of time a threat is blocked. Applies only to those threats that are blocked automatically. Default is 30 minutes.
 |Risk-Based Blocking Threshold |Risk Level score. Any threat that meets or exceeds the score is blocked automatically. Default is 70.
-|Block Embargoed Countries |When checked, any traffic from a country that is on the USA embargo list is blocked automatically. Countries include Iran, North Korea, Syria, Sudan, Cuba, and Venezuela. Contact ThreatX SOC if you need rules to block countries not on the list.
+|Block Embargoed Countries |When checked, any traffic from a country that is on the USA embargo list is blocked automatically. Countries include Iran, North Korea, Syria, Sudan, Cuba, and Venezuela. Contact {organization} SOC if you need rules to block countries not on the list.
 |Block TOR Exit nodes |When checked, all incoming traffic from a TOR Exit node is not allowed. Tor Exit Nodes are the gateways where encrypted Tor traffic hits the Internet.
 |===
 
 === Managing sites and site groups
 
-A site is a web property serving API responses intended for consumption by an application. Your environment might have many sites, where some sites might not be under ThreatX protection.
+A site is a web property serving API responses intended for consumption by an application. Your environment might have many sites, where some sites might not be under {organization} protection.
 
-You can add, edit, or remove sites with the ThreatX user interface or ThreatX API.
+You can add, edit, or remove sites with the {organization} user interface or {organization} API.
 
 [[h-site-settings]]
 ==== Site settings
 
-The ThreatX sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IPs – wherever traffic can be properly routed to reach your origin servers. 
+The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IPs – wherever traffic can be properly routed to reach your origin servers. 
 
-If using the ThreatX user interface, navigate to *Settings > Sites*. If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/sites endpoint.
+If using the {organization} user interface, navigate to *Settings > Sites*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/sites endpoint.
 
 Some of the settings are on the *Sites* page as column headers.
 
@@ -108,7 +109,7 @@ To add a site, click the *Add Site* button. To edit a site, click the *Edit Site
 |===
 |*Section* |*Setting* |*Description*
 |Listener Configuration |Host Name |Domain name protected by the sensor (for example, www.example.com). It must be unique across all configured sites and cannot contain uppercase letters. Once created, the configured hostname cannot be changed. 
-| |SSL Enabled  |Allows HTTPS connections to the hostname. Use this setting to provide your own site certificate (in PEM format). The setting does not need to be enabled if using ThreatX managed certificates with Let’s Encrypt. For more information, see the _Site certificates_ section.
+| |SSL Enabled  |Allows HTTPS connections to the hostname. Use this setting to provide your own site certificate (in PEM format). The setting does not need to be enabled if using {organization} managed certificates with Let’s Encrypt. For more information, see the _Site certificates_ section.
 | |SSL Terminate Only  |If set, SSL connection is terminated at the sensor and requests are sent through a proxy to the backend using HTTP. 
 | |Redirect HTTP traffic to HTTPS  |If enabled, requests made to the hostname using HTTP receive a 301 response code and are redirected to the same hostname using HTTPS instead.  
 | |HTTP2 Enabled |Allows HTTP Version 2 traffic.
@@ -120,7 +121,7 @@ If you are forwarding traffic to a load balancer, supply the FQDN or IP addresse
 | |HTTPS Backend Port |Port number of the origin server or load balancer accepting HTTPS traffic.
 |Blocking Modes |Risk-Based Blocking  +
  + |If set, any entity with accumulated risk above the risk-based blocking threshold https://support.threatx.com/hc/en-us/articles/360047689451-IWAF-Settings-Explained[]is blocked. The threshold settings are described in link:#managing-risk-based-blocking[Managing Risk-Based Blocking].
-| |Request Blocking  |If set, individual requests that are obvious hostile attacks, as determined by the ThreatX rules, are blocked. 
+| |Request Blocking  |If set, individual requests that are obvious hostile attacks, as determined by the {organization} rules, are blocked. 
 | |Manual Action Blocking  |If set, users can manually add IP addresses to the blocked list and blacklist.
 |Caching Configuration   |Static Caching Enabled |Enables static caching. See link:#managing-caching[Managing caching] for details.
 | |Dynamic Caching Enabled |Enables dynamic caching. See link:#managing-caching[Managing caching] for details.
@@ -138,11 +139,11 @@ If you are forwarding traffic to a load balancer, supply the FQDN or IP addresse
 [[h-adding-a-site]]
 ==== Adding a site
 
-*NOTE*: Adding a site can impact the cost of the ThreatX platform. For information, contact the ThreatX SOC.
+*NOTE*: Adding a site can impact the cost of the {organization} platform. For information, contact the {organization} SOC.
 
-If you are adding a site for protection within the ThreatX platform, perform the following.
+If you are adding a site for protection within the {organization} platform, perform the following.
 
-Review the following onboarding checklist. If the answer to ANY of the questions is yes, contact ThreatX Support at support@threatx.com with details so we can assist.
+Review the following onboarding checklist. If the answer to ANY of the questions is yes, contact {organization} Support at support@threatx.com with details so we can assist.
 
 [cols=",,",options="header",]
 |===
@@ -153,28 +154,28 @@ Review the following onboarding checklist. If the answer to ANY of the questions
 |Does the application utilize WebSockets? |  | 
 |Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. | 
 |Are any custom rules required to enforce a unique security or business requirement? |For example, block traffic from foreign countries.  | 
-|Is there ANY additional infrastructure that exists outside of the following flow? Client —–> ThreatX sensor —–> Application  |Examples include a load balancer or proxy in use between the client and ThreatX sensor. | 
-|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your ThreatX service IPs?  |  | 
+|Is there ANY additional infrastructure that exists outside of the following flow? Client —–> {organization} sensor —–> Application  |Examples include a load balancer or proxy in use between the client and {organization} sensor. | 
+|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your {organization} service IPs?  |  | 
 |===
 
-. Use the ThreatX user interface or API to add the site and enter the configuration settings, as described in the _Site settings_ section.
+. Use the {organization} user interface or API to add the site and enter the configuration settings, as described in the _Site settings_ section.
 . If you are not using the Let’s Encrypt option for client-facing certificates, provide the SSL Certificate PEM file in the *SSL Enabled* site setting.
-. Once the site is available in the ThreatX user interface, cutover DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAMEs are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. This can be done at your own pace.
+. Once the site is available in the {organization} user interface, cutover DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAMEs are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. This can be done at your own pace.
 
 If you are adding multiple sites, you can add the additional sites first then cutover DNS after.
 
-If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact ThreatX SOC to provide the sensor ingress IP addresses to use as A records.  
+If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact {organization} SOC to provide the sensor ingress IP addresses to use as A records.  
 
-Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard.  If you do not see any traffic, contact the ThreatX SOC. 
+Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard.  If you do not see any traffic, contact the {organization} SOC. 
 
 [[h-site-certificates]]
 ==== Site certificates
 
 You have two options. You can use Let’s Encrypt or upload your own certificate.
 
-The ThreatX platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the ThreatX SOC. 
+The {organization} platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
 
-To upload your own certificate using the ThreatX user interface, perform the following:
+To upload your own certificate using the {organization} user interface, perform the following:
 
 . Navigate to *Settings > Sites*.
 . If updating a certificate for an existing site, locate the site. You can use the search icon in the *Hostname* column to locate a site. Then click the site’s *Edit Site* button.
@@ -185,14 +186,14 @@ To upload your own certificate using the ThreatX user interface, perform the fol
 
 If adding a site, enter your certificate using steps 3 through 6.
 
-To ensure the correct certificate is being presented, the ThreatX platform validates the following: 
+To ensure the correct certificate is being presented, the {organization} platform validates the following: 
 
 * Correct site or wildcard domain is listed as the Common Name or in the SAN attribute within the certificate.  
 * Current date is within the _notBefore_ and__ notAfter __fields.
 * Private key provided is the same key that was used to sign the certificate.
 * Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist. 
 
-If one of these criteria is not successfully validated, you receive an error describing the issue and, where applicable, the old certificate continues to be utilized. If you confirm that you have the correct certificate and keypair for the site and the certificate has not expired but are still receiving an error, contact the ThreatX SOC. 
+If one of these criteria is not successfully validated, you receive an error describing the issue and, where applicable, the old certificate continues to be utilized. If you confirm that you have the correct certificate and keypair for the site and the certificate has not expired but are still receiving an error, contact the {organization} SOC. 
 
 Optionally, you can ask a third-party test group, such as https://www.ssllabs.com/ssltest/index.html[Qualys SSL Lab], to test and validate your certificate.
 
@@ -203,28 +204,28 @@ You can create a site group then assign sites to a single group, which allows yo
 
 When creating a group, give it a name, list of sites to include in the group, and list of users that can access the sites in the group.
 
-If using the ThreatX user interface, navigate to *Settings > Site Groups*. If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/sitegroups endpoint.
+If using the {organization} user interface, navigate to *Settings > Site Groups*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/sitegroups endpoint.
 
 === Managing sensors
 
-Sensors are managed by your local administrator or the ThreatX SOXC depending on if you self-host or are hosted within the ThreatX cloud, respectively.
+Sensors are managed by your local administrator or the {organization} SOXC depending on if you self-host or are hosted within the {organization} cloud, respectively.
 
-You can view the on-premises deployed sensors and their status from the ThreatX user interface, *Settings > Sensors*. The *Sensor Keys* tab lists the keys used with the sensors. You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
+You can view the on-premises deployed sensors and their status from the {organization} user interface, *Settings > Sensors*. The *Sensor Keys* tab lists the keys used with the sensors. You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
 
-If using the ThreatX API, you can access the same information using the */tx_api/v1/sensor* endpoint.
+If using the {organization} API, you can access the same information using the */tx_api/v1/sensor* endpoint.
 
-The sensor IP addresses are available in the ThreatX user interface, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. ** These addresses must be added to the whitelist ** in your environment to ensure traffic can reach your application.
+The sensor IP addresses are available in the {organization} user interface, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. ** These addresses must be added to the whitelist ** in your environment to ensure traffic can reach your application.
 
-If the ThreatX SOC hosts your sensors, you might notice the number of sensors fluctuate, or that an individual sensor’s uptime has changed. This is because sensors are designed to be added, removed, upgraded, and replaced as needed to ensure optimal site availability and protection. For the latest information, see our https://support.threatx.com/hc/en-us/sections/360008495931-Release-Notes[release notes].
+If the {organization} SOC hosts your sensors, you might notice the number of sensors fluctuate, or that an individual sensor’s uptime has changed. This is because sensors are designed to be added, removed, upgraded, and replaced as needed to ensure optimal site availability and protection. For the latest information, see our https://support.threatx.com/hc/en-us/sections/360008495931-Release-Notes[release notes].
 
-If you are contemplating deploying new sites, new tech stacks, or new architecture, contact the ThreatX SOC. For more information about deploying sensors, see the https://www.threatx.com/documentation/deployment-guides/[ThreatX Sensor Deployment Guides].
+If you are contemplating deploying new sites, new tech stacks, or new architecture, contact the {organization} SOC. For more information about deploying sensors, see the https://www.threatx.com/documentation/deployment-guides/[{organization} Sensor Deployment Guides].
 
 === Configuring notifications
 
 There are two types of notifications:
 
 * Analytical events
-* ThreatX platform maintenance and system status
+* {organization} platform maintenance and system status
 For information about receiving logs, see link:#receiving-event-logs[Receiving event logs].
 
 [[h-analytical-events]]
@@ -232,9 +233,9 @@ For information about receiving logs, see link:#receiving-event-logs[Receiving e
 
 You can configure users to receive notifications on various events relating to threats, rule matches, changes to the IP allow, deny, and block lists. Notifications are typically sent by email, but you can configure a webhook notification to another app, such as Slack.
 
-You create notifications in the ThreatX user interface by navigating to *Settings > Notifications*. You can add a notification or edit an existing notification.
+You create notifications in the {organization} user interface by navigating to *Settings > Notifications*. You can add a notification or edit an existing notification.
 
-If using the ThreatX API, you can use the */tx_api/v1/subscriptions* endpoint.
+If using the {organization} API, you can use the */tx_api/v1/subscriptions* endpoint.
 
 The following table describes the notification settings.
 
@@ -249,7 +250,7 @@ Entity-related Events +
 Rule-related Events +
 WAF List (Blacklist, Blocklist, Whitelist) Entry-related Events
 |Event Incident |If you specify a type of event in the *Event Subject Area*, you can further limit the type of event. There is no selection available if you select *All Event Subjects* in the *Event Subject Area*.
-|Event Source |You can limit notifications to alerts from a specific ThreatX system component. +
+|Event Source |You can limit notifications to alerts from a specific {organization} system component. +
 All Event Sources +
 Automatic, Risk Engine-initiated Events +
 Manual, API-initiated Events
@@ -259,13 +260,13 @@ Manual, API-initiated Events
 |===
 
 [[h-threatx-maintenance-and-system-status]]
-==== ThreatX maintenance and system status
+==== {organization} maintenance and system status
 
-You can view and subscribe to notifications for scheduled maintenance windows and any issues that might impact your ThreatX services at https://status.threatx.com/[ThreatX Status].
+You can view and subscribe to notifications for scheduled maintenance windows and any issues that might impact your {organization} services at https://status.threatx.com/[{organization} Status].
 
 === Receiving event logs
 
-The ThreatX Log Emitter exports event logs from the ThreatX platform to your log receiver and SIEM. You can use the logs in your investigations and to trigger events in your chosen log management solution.
+The {organization} Log Emitter exports event logs from the {organization} platform to your log receiver and SIEM. You can use the logs in your investigations and to trigger events in your chosen log management solution.
 
 [[h-features]]
 ==== Features
@@ -295,7 +296,7 @@ Before starting, make sure the following requirements are met.
 
 You must also generate a self-signed or CA signed certificate for the hostname where the log receiver receives logs, as described in the following section.
 
-A certificate is needed to encrypt the connection between the ThreatX Log Emitter service and your log receiver. You have two options:
+A certificate is needed to encrypt the connection between the {organization} Log Emitter service and your log receiver. You have two options:
 
 * A *Simple* configuration sets up an encrypted TCP connection without authentication.
 * An *Advanced* configuration adds mutual server and client certificate authentication to your configuration.
@@ -315,11 +316,11 @@ Configure your on-premises log receiver to accept TCP connections with TLS encry
 
 *Advanced configuration*
 
-To further secure the TCP encrypted connection between the ThreatX Log Emitter and your log receiver, add mutual server and client certificate authentication.
+To further secure the TCP encrypted connection between the {organization} Log Emitter and your log receiver, add mutual server and client certificate authentication.
 
-The ThreatX Log Emitter authenticates and encrypts the TCP session using TLS. To add mutual certificate authentication, perform the following:
+The {organization} Log Emitter authenticates and encrypts the TCP session using TLS. To add mutual certificate authentication, perform the following:
 
-. Use the Certificate Authority of your choice to create an SSL certificate and private key for the ThreatX Log Emitter.
+. Use the Certificate Authority of your choice to create an SSL certificate and private key for the {organization} Log Emitter.
 . Create a valid server certificate and key in PEM format to install on the on-premises Log Receiver. Ensure the CN of the server certificate matches the public DNS domain name of the Log Receiver.
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
@@ -327,7 +328,7 @@ The ThreatX Log Emitter authenticates and encrypts the TCP session using TLS. To
 [[h-adding-a-log-emitter]]
 ==== Adding a Log Emitter
 
-From the user interface, navigate to *Settings > Log Emitter* then click *Add Log Emitter*. If using the ThreatX API, use the** /tx_api/v1/subscriptions** endpoint.
+From the user interface, navigate to *Settings > Log Emitter* then click *Add Log Emitter*. If using the {organization} API, use the** /tx_api/v1/subscriptions** endpoint.
 
 Configure the settings as described in the following table. Click *Save* when done.
 
@@ -345,7 +346,7 @@ Configure the settings as described in the following table. Click *Save* when do
 [[h-description-of-logs]]
 ==== Description of logs
 
-The BlockEvent log type provides full details on requests that were blocked by the ThreatX sensor.
+The BlockEvent log type provides full details on requests that were blocked by the {organization} sensor.
 
 Example Log:
 
@@ -370,10 +371,10 @@ Request was blocked at the individual request level or due to the entity being b
 |dst_host |Target hostname of the request. | 
 |uri |Target path of the request. | 
 |args |Arguments (if any) provided in the request in www-url-encoded form. | 
-|request_id |Unique identifier assigned to each request by the ThreatX platform. | 
-|random_id |Additional unique identifier assigned to an entity by the ThreatX platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the ThreatX SOC.
+|request_id |Unique identifier assigned to each request by the {organization} platform. | 
+|random_id |Additional unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
-|js_fingerprint |Additional Unique identifier assigned to an entity by the ThreatX platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the ThreatX SOC.
+|js_fingerprint |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |===
 
 The MatchEvent log type provides full details on requests that matched custom or common rule definitions when examined by the sensor. 
@@ -401,7 +402,7 @@ js_fingerprint":0,"created":"2020-12-18T14:05:52.174+00:00"}
 |msg_type |[MatchEvent] +
 Request matched a custom or common rule. | 
 |timestamp |UTC timestamp of the request. | 
-|request_id |Unique identifier assigned to each request by the ThreatX platform. | 
+|request_id |Unique identifier assigned to each request by the {organization} platform. | 
 |user_agent |UserAgent header value presented by the Entity making the request. | 
 |matches : [ +
 description +
@@ -414,10 +415,10 @@ beta] |Values following this field provide specific information about why the ru
 *description*: Description or name of the matched rule. +
 *classification*: Industry-defined classification of the attack described in the rule. +
 *state*: Industry-defined goal of the attack described in the rule. +
-*contrib_score*: Reserved for ThreatX internal use. +
+*contrib_score*: Reserved for {organization} internal use. +
 *risk*: Amount of risk that the matched rule contributes to the requesting entity’s risk score. +
 *blocking*: Rule blocked a request [True] or allowed the request [False]. +
-*beta*: Reserved for ThreatX internal use. | 
+*beta*: Reserved for {organization} internal use. | 
 |ip |IP address presented by the entity making the request. | 
 |dst_host |Target hostname of the request. | 
 |uri |Target path of the request. | 
@@ -429,10 +430,10 @@ beta] |Values following this field provide specific information about why the ru
 |response_length |Length in bytes (if any) that the request received from the upstream server. | 
 |upstream_response_time |Length of time in milliseconds (if any) that it took the upstream server to respond to the request. | 
 |postblock_event |Request was submitted after a risk-based block was applied to the entity [True]. | 
-|random_id |Additional Unique identifier assigned to an entity by the ThreatX platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the ThreatX SOC.
+|random_id |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
-|cookie |Additional Unique identifier assigned to an entity by the ThreatX platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the ThreatX SOC.
-|js_fingerprint |Additional Unique identifier assigned to an entity by the ThreatX platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the ThreatX SOC.
+|cookie |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
+|js_fingerprint |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |created |Timestamp of the request. | 
 |===
 
@@ -513,17 +514,17 @@ The Log Emitter *Send Client SSL Credentials to Log Receiver* option might be en
 
 === Accessing the audit log
 
-The ThreatX audit feature logs events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. As opposed to the Log Emitter, the audit log focuses mostly on user actions.
+The {organization} audit feature logs events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. As opposed to the Log Emitter, the audit log focuses mostly on user actions.
 
-If using the ThreatX user interface, navigate to *Settings > Audit Log.* If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/logs endpoint, *audit_events* command.
+If using the {organization} user interface, navigate to *Settings > Audit Log.* If you have access to the {organization} API, you can use the {organization} /tx_api/v1/logs endpoint, *audit_events* command.
 
 *NOTE*: The Log Emitter also exports the audit logs.
 
 === Managing user accounts
 
-If using the ThreatX user interface, navigate to *Settings > Users*. You can add users or edit existing users. To delete a user, click *Edit User* then use the *Delete* button.
+If using the {organization} user interface, navigate to *Settings > Users*. You can add users or edit existing users. To delete a user, click *Edit User* then use the *Delete* button.
 
-If you have access to the ThreatX API, you can use the ThreatX /tx_api/v1/users endpoint.
+If you have access to the {organization} API, you can use the {organization} /tx_api/v1/users endpoint.
 
 The following table describes the settings you use to manage user accounts.
 
@@ -543,7 +544,7 @@ The following table describes the settings you use to manage user accounts.
 
 === Generating and revoking API keys
 
-If using the ThreatX API to access the ThreatX platform, you need an API key to help you authenticate and create a session token. You can then use your Session Token to execute commands.
+If using the {organization} API to access the {organization} platform, you need an API key to help you authenticate and create a session token. You can then use your Session Token to execute commands.
 
 To generate an API key:
 
@@ -560,7 +561,7 @@ To revoke an API key:
 
 === Generating and revoking sensor API keys
 
-If you deploy sensors in your environment, you are asked to provide a Sensor API key. The sensor uses the key to authenticate to the ThreatX platform.  
+If you deploy sensors in your environment, you are asked to provide a Sensor API key. The sensor uses the key to authenticate to the {organization} platform.  
 
 To generate a sensor API key:
 
@@ -581,13 +582,13 @@ The benefits of Edge Caching include:
 * Increased load capacity and reduced application server load.
 * Better ratings from search engines such as Google.
 
-By default, ThreatX Edge Caching follows Cache-Control headers defined by the origin servers. The ThreatX platform does not cache for the following response scenarios:
+By default, {organization} Edge Caching follows Cache-Control headers defined by the origin servers. The {organization} platform does not cache for the following response scenarios:
 
 * Where Cache-Control is set to Private, No-Cache, or No-Store.
 * Responses that include Set-Cookie in the response header.
 * Responses to POST requests.
 
-The ThreatX platform offers two types of Edge Caching, static and dynamic.
+The {organization} platform offers two types of Edge Caching, static and dynamic.
 
 Caching can be enabled for a configured site as described in the _Site settings_ section under link:#managing-sites-and-site-groups[Managing sites and site groups].
 
@@ -602,48 +603,48 @@ The following lists the static caching settings:
 * *Supported static file extensions:* jpg, jpeg, gif, png, ico, bmp, tif, tiff, svg, svgz, swf, pict, cur, doc, docx, xlsx, ppt, pptx, pdf, woff, woff2, eot, otf, js, ejs, css
 * *Support for non-responsive origin servers:* No.
 * *URI Specific Caching:* Per-URI features can be enabled, overriding the origin server values.
-* *Manual Cache Purging:* Can be purged by ThreatX SOC upon request. Purging can be limited to a specific URI.
+* *Manual Cache Purging:* Can be purged by {organization} SOC upon request. Purging can be limited to a specific URI.
 
 [[h-dynamic-caching]]
 ==== Dynamic caching
 
-Dynamic caching offers a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The ThreatX platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, ThreatX sensors cache dynamic pages only after they are requested at least 3 times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. The following lists the dynamic caching settings:
+Dynamic caching offers a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The {organization} platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, {organization} sensors cache dynamic pages only after they are requested at least 3 times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. The following lists the dynamic caching settings:
 
 * *Default cache time:* 30 minutes.
-* *“time-to-cache” and “hits-required” to cache:* Can be configured by ThreatX SOC upon request.
-* *URL based caching:* Can be configured by ThreatX SOC upon request.
+* *“time-to-cache” and “hits-required” to cache:* Can be configured by {organization} SOC upon request.
+* *URL based caching:* Can be configured by {organization} SOC upon request.
 * *Supported file types:* Any dynamic resources.
-* *Support for non-responsive origin servers:* 500, 502, 503, and 504 response codes. Can be configured by ThreatX SOC upon request.
+* *Support for non-responsive origin servers:* 500, 502, 503, and 504 response codes. Can be configured by {organization} SOC upon request.
 * *Supported request methods:* GET, HEAD.
 * *URI Specific Caching:* Per-URI features can be enabled, overriding the origin server values.
-* *Manual Cache Purging:* Can be purged by ThreatX SOC upon request. Purging can be limited to a specific URI.
+* *Manual Cache Purging:* Can be purged by {organization} SOC upon request. Purging can be limited to a specific URI.
 
 Dynamic caching is a billable feature and requires an add-on license.
 
 === Managing rate limiting
 
-The ThreatX platform rate limiting is in the form of rules in the common rule set. Rate limiting is primarily focused on count and timeframe. What causes a rule to trigger when based off count and timeframe is limited only by what the rules can match within the requests. For example, one rule is “10 404s in 10s,” where the rule assigns risk to an entity that receives more than 10 404 responses within 10 seconds.
+The {organization} platform rate limiting is in the form of rules in the common rule set. Rate limiting is primarily focused on count and timeframe. What causes a rule to trigger when based off count and timeframe is limited only by what the rules can match within the requests. For example, one rule is “10 404s in 10s,” where the rule assigns risk to an entity that receives more than 10 404 responses within 10 seconds.
 
-As needed, the ThreatX SOC team can make custom rate limiting rules tailored for your environment. A typical use of this would be to assign risk to entities that fail logins at a login endpoint. These rate limiting rules are very customizable, including the timings (number of requests over time). These rules can be applied across the entire tenant, down to a site or group of sites, or to a single endpoint. The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Args.
+As needed, the {organization} SOC team can make custom rate limiting rules tailored for your environment. A typical use of this would be to assign risk to entities that fail logins at a login endpoint. These rate limiting rules are very customizable, including the timings (number of requests over time). These rules can be applied across the entire tenant, down to a site or group of sites, or to a single endpoint. The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Args.
 
 === Managing rules
 
-ThreatX rules can specify firewall behavior required for your business’s individual needs, such as restricting certain resources to company IP addresses or limiting the number of failed login attempts to an application developed in-house.
+{organization} rules can specify firewall behavior required for your business’s individual needs, such as restricting certain resources to company IP addresses or limiting the number of failed login attempts to an application developed in-house.
 
-A ThreatX _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. ThreatX rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor. 
+A {organization} _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. {organization} rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor. 
 
 You can add, modify, and delete rules, and view’s rule’s activity to determine its effectiveness.
 
-To access rules in the ThreatX user interface, navigate to *Settings > Rules*. You can also manage custom rules using the ThreatX API /tx_api/v1/rules endpoint__.__
+To access rules in the {organization} user interface, navigate to *Settings > Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
 
-*IMPORTANT*: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the ThreatX SOC group to create rules or modify any rule in the ThreatX platform to meet the specific needs and behavior of your environment.
+*IMPORTANT*: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the {organization} SOC group to create rules or modify any rule in the {organization} platform to meet the specific needs and behavior of your environment.
 
 [[h-rule-details]]
 ==== Rule details
 
 To view a rule’s details, navigate to *Settings > Rules* then click *Edit Rule Details* for a specific rule. The details are the properties of the rule as follows:
 
-* *Description*. Text that describes the intended behavior or logic a rule match is intended to indicate. This information is displayed in the ThreatX user interface when your custom rule is matched.
+* *Description*. Text that describes the intended behavior or logic a rule match is intended to indicate. This information is displayed in the {organization} user interface when your custom rule is matched.
 * *Tag Name*. Text that identifies a rule when a description is long.
 * *Classification*. Describes the kind of attack or behavior the rule is meant to detect.
 
@@ -689,7 +690,7 @@ To view a rule’s details, navigate to *Settings > Rules* then click *Edit Rule
 |*CustomerRule* |Custom rules to enforce business logic which might not fit in another rule category.
 |===
 
-* __*State*. Assumed objective. The state maps the intent to a stage on ThreatX Web Application Kill Chain. __ __
+* __*State*. Assumed objective. The state maps the intent to a stage on {organization} Web Application Kill Chain. __ __
 
 [cols=",",]
 |===
@@ -808,9 +809,9 @@ For a rule to be matched, the condition set by the operator of the group must be
 [[h-rule-activity]]
 ==== Rule activity
 
-The ThreatX user interface displays how often a rule is matched and its action implemented. To view a rule’s activity, navigate to *Settings > Rules* then click *View Activity* for a specific rule. This page is also accessible from other pages by clicking a rule name in the *Rules* column.
+The {organization} user interface displays how often a rule is matched and its action implemented. To view a rule’s activity, navigate to *Settings > Rules* then click *View Activity* for a specific rule. This page is also accessible from other pages by clicking a rule name in the *Rules* column.
 
-Depending on your configuration, you might need the ThreatX SOC to enable the permission for you to access the rule activity.
+Depending on your configuration, you might need the {organization} SOC to enable the permission for you to access the rule activity.
 
 image::https://www.threatx.com/wp-content/uploads/2024/01/Rule-Activity-no-nav-1024x766.png[https://www.threatx.com/wp-content/uploads/2024/01/Rule-Activity-no-nav-1024x766,width=1024,height=766]
 
@@ -829,23 +830,23 @@ The *Matched Threats* table provides data for each threat that matched the rule.
 
 You can click *Activity* to view the *Activity* table, which lists each attack and the time it occurred.
 
-For detailed information about the other data in the table, see the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[ThreatX Managed API and Application Protection Platform Analyst Guide].
+For detailed information about the other data in the table, see the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[{organization} Managed API and Application Protection Platform Analyst Guide].
 
 === Configuring Single Sign On (SSO)
 
-You can manage SSO configuration directly using the ThreatX API. Once SSO has been configured for a ThreatX tenant or channel, your users can sign in using your SSO identity provider, such as Okta or Azure Active Directory B2C, rather than logging in to the ThreatX web application with a username and password. 
+You can manage SSO configuration directly using the {organization} API. Once SSO has been configured for a {organization} tenant or channel, your users can sign in using your SSO identity provider, such as Okta or Azure Active Directory B2C, rather than logging in to the {organization} web application with a username and password. 
 
 [[h-prerequisites]]
 ==== *Prerequisites*
 
-To configure SSO access to the ThreatX user interface for your users, you need the following:
+To configure SSO access to the {organization} user interface for your users, you need the following:
 
 * SAML2 IDP metadata reference URL from your SSO provider where the most up-to-date metadata file can be found. Most SAML2 implementations provide a quick and easy way to access these files. Consult your IDP documentation. Examples of an IDP metadata reference URL:
 ** *Okta URL*: https://threat-x.oktapreview.com/app/exk8lh09bhSIfhupl0h7/sso/saml/metadata
 ** *Azure AD B2C*: https://login.microsoftonline.com/daad3805-fde6-4334-817f-82c723533123/federationmetadata/2007-06/federationmetadata.xml +
-*NOTE*: If you do not have access to your IDP metadata URL, you can alternatively provide a complete IDP metadata file. Contact ThreatX support if you wish to provide an IDP metadata file instead of an IDP metadata URL.
-* Users must have accounts in both the IDP and ThreatX platform.
-* User’s email address in the IDP must match the email address used for the ThreatX username.
+*NOTE*: If you do not have access to your IDP metadata URL, you can alternatively provide a complete IDP metadata file. Contact {organization} support if you wish to provide an IDP metadata file instead of an IDP metadata URL.
+* Users must have accounts in both the IDP and {organization} platform.
+* User’s email address in the IDP must match the email address used for the {organization} username.
 * API key with tenant or channel administrator permissions. See link:#generating-and-revoking-api-keys[Generating and revoking API keys] for details about generating a key.
 * Name and UUID of your tenant or channel.
 ** Use the **Customers:list **command to retrieve the name and UUID of the tenant.
@@ -870,7 +871,7 @@ If you are configuring your ACS URL:
 [[h-configuring-sso-access]]
 ==== *Configuring SSO access*
 
-Use the following steps to configure SSO access for your ThreatX tenant and channel partners:
+Use the following steps to configure SSO access for your {organization} tenant and channel partners:
 
 . Log into the API. Authenticate to the API using the Login command.
 . Gather the tenant or channel data you need.  +
@@ -882,11 +883,11 @@ Use the Customers:list or Channels:list command to find your Customer or Cha
 
 Test the new configuration. Navigate to *https://x.threatx.io/auth/v2/customers/<name>/saml* or *https://x.threatx.io/auth/v2/channels/<name>/saml* from a web browser. 
 
-You should be redirected to your SSO Identity Provider to confirm you wish to authorize ThreatX Dashboard to act on your behalf. Follow the prompts in your SSO Identity Provider. You should be then redirected to the ThreatX Dashboard and authorized to access the system on behalf of your configured user account.
+You should be redirected to your SSO Identity Provider to confirm you wish to authorize {organization} Dashboard to act on your behalf. Follow the prompts in your SSO Identity Provider. You should be then redirected to the {organization} Dashboard and authorized to access the system on behalf of your configured user account.
 
 Single-Sign On access is now configured for your tenant.
 
-**Optional: **You can now update your tenant configuration again using “required: true” to force all your users to use SSO to access the ThreatX Dashboard. This option prevents users from accessing the ThreatX Dashboard directly using the username/password authentication.
+**Optional: **You can now update your tenant configuration again using “required: true” to force all your users to use SSO to access the {organization} Dashboard. This option prevents users from accessing the {organization} Dashboard directly using the username/password authentication.
 
 [[h-api-commands-and-responses]]
 ==== API commands and responses
@@ -895,7 +896,7 @@ Single-Sign On access is now configured for your tenant.
 
 The **login **command uses an API key to return an API access token to be used for further endpoint commands.
 
-The *api_key*, created within the ThreatX user interface (*Settings > API Keys*), is used within the request for the *api_token* parameter. The response then provides a unique and temporary *access_token* string to be used in further endpoint commands.
+The *api_key*, created within the {organization} user interface (*Settings > API Keys*), is used within the request for the *api_token* parameter. The response then provides a unique and temporary *access_token* string to be used in further endpoint commands.
 
 [cols=",",]
 |===
@@ -1004,8 +1005,8 @@ The **update **command updates a specified tenant. The SSO object is used to c
 [cols=",,",]
 |===
 |*Parameters* |*Type* |*Description*
-|“enabled”: true / false |Boolean |When true, users belonging to the tenant are allowed to sign in to the ThreatX user interface using SSO.
-|“required”: true / false |Boolean |When true, users are required to use SSO to sign in to the ThreatX user interface.
+|“enabled”: true / false |Boolean |When true, users belonging to the tenant are allowed to sign in to the {organization} user interface using SSO.
+|“required”: true / false |Boolean |When true, users are required to use SSO to sign in to the {organization} user interface.
 |“saml_metadata_url”: “<saml_url>” |String |IDP metadata URL or file. See the Prerequisites. 
 |===
 
@@ -1112,8 +1113,8 @@ The *update* command updates a specified channel. The SSO object is used to co
 [cols=",,",]
 |===
 |*Parameters* |*Type* |*Description*
-|“enabled”: true / false |Boolean |When true, users belonging to the channel are allowed to sign in to the ThreatX user interface using SSO.
-|“required”: true / false |Boolean |When true, users in the channel are required to use SSO to sign in to the ThreatX user interface.
+|“enabled”: true / false |Boolean |When true, users belonging to the channel are allowed to sign in to the {organization} user interface using SSO.
+|“required”: true / false |Boolean |When true, users in the channel are required to use SSO to sign in to the {organization} user interface.
 |“saml_metadata_url”: “<saml_url>” |String |IDP metadata URL or file. See the Prerequisites. 
 |===
 
@@ -1205,7 +1206,7 @@ By configuring Mutual TLS in both downstream and upstream modes, you establish a
 
 === *Testing for Vulnerabilities*
 
-The ThreatX four-stage blocking strategy is designed to reduce false positives while preventing malicious behavior from reaching your sites. When Request-Based blocking is enabled, the sensor blocks any standalone malicious request. When Risk-Based blocking is enabled, the sensor issues a series of timed block periods to any entity that exhibits persistent suspicious or malicious behavior, leading to a permanent blacklisting if the behavior continues. During a 30-minute Block period or while an entity is blacklisted, all requests from that entity are blocked from reaching the site.
+The {organization} four-stage blocking strategy is designed to reduce false positives while preventing malicious behavior from reaching your sites. When Request-Based blocking is enabled, the sensor blocks any standalone malicious request. When Risk-Based blocking is enabled, the sensor issues a series of timed block periods to any entity that exhibits persistent suspicious or malicious behavior, leading to a permanent blacklisting if the behavior continues. During a 30-minute Block period or while an entity is blacklisted, all requests from that entity are blocked from reaching the site.
 
 When testing for vulnerabilities against your internal applications, the IP addresses of your penetration testers should be added to the whitelist prior to testing, and removed after testing is complete. 
 
@@ -1226,23 +1227,21 @@ When done testing, remove the address by opening the *Whitelisted IPs* tab and c
 *Recommended Tools and Methodologies*
 
 * *Scanners* +
-Scanners, such as https://www.zaproxy.org/[ZAP] and https://portswigger.net/burp/[Burp], can be a useful tool for testing the ThreatX Request and Risk-based blocking capabilities. However, they are likely to be blocked quickly and sent to the blacklist.
+Scanners, such as https://www.zaproxy.org/[ZAP] and https://portswigger.net/burp/[Burp], can be a useful tool for testing the {organization} Request and Risk-based blocking capabilities. However, they are likely to be blocked quickly and sent to the blacklist.
 * *Leverage multiple IP addresses* +
-When attacking the ThreatX sensor with a single IP address, that IP address accumulates risk and is delivered a series of Risk and Request-Based blocks before being placed on the blacklist. The entity associated with that IP address can be removed from the blacklist, but the associated Risk Level from that entity does not reset to “0” upon removal. An entity’s Risk Level can be reduced over time by demonstrating a reduction in suspicious behavior or malicious attack attempts. Try leveraging several IP addresses or ranges when pen testing the ThreatX sensor.
+When attacking the {organization} sensor with a single IP address, that IP address accumulates risk and is delivered a series of Risk and Request-Based blocks before being placed on the blacklist. The entity associated with that IP address can be removed from the blacklist, but the associated Risk Level from that entity does not reset to “0” upon removal. An entity’s Risk Level can be reduced over time by demonstrating a reduction in suspicious behavior or malicious attack attempts. Try leveraging several IP addresses or ranges when pen testing the {organization} sensor.
 
-You can see when the IP address is blocked from the ThreatX user interface. In the following screenshot, the Gray requests were blocked from reaching the application. The White request was allowed through as it did not contain a standalone, viable attack or high-risk behavior.
+You can see when the IP address is blocked from the {organization} user interface. In the following screenshot, the Gray requests were blocked from reaching the application. The White request was allowed through as it did not contain a standalone, viable attack or high-risk behavior.
 
-image::https://www.threatx.com/wp-content/uploads/2024/01/Pen-test-screenshot-1024x836.png[https://www.threatx.com/wp-content/uploads/2024/01/Pen-test-screenshot-1024x836,width=1024,height=836]
-
-image:Pen-test-screenshot-1024x836.pngPen-test-screenshot-1024x836,width=1024,height=836]
+image::Pen-test-screenshot-1024x836.png[width=1024,height=836]
 
 === Troubleshooting sensor issues
 
-When you have an issue with sensors, contact the ThreatX SOC at support@threatx.com with a description of your issue.
+When you have an issue with sensors, contact the {organization} SOC at support@threatx.com with a description of your issue.
 
-Depending on the nature of the issue, the ThreatX SOC might request one of the following files.
+Depending on the nature of the issue, the {organization} SOC might request one of the following files.
 
-* HTTP Archive format (HAR) file. HAR files contain sensitive data, including content of the pages you downloaded while recording as including your cookies. The ThreatX SOC can use it to troubleshoot connectivity or other issues with the sensor.
+* HTTP Archive format (HAR) file. HAR files contain sensitive data, including content of the pages you downloaded while recording as including your cookies. The {organization} SOC can use it to troubleshoot connectivity or other issues with the sensor.
 * PCAP (Pocket CAPture) file. The file contains captured network packets. The SOC requests a PCAP file only if you host your own sensors.
 
 [[h-how-to-generate-a-har-file]]
@@ -1260,7 +1259,7 @@ Generating a HAR file in Chrome:
 . Click the Clear button to clear out any existing logs from the Network tab.
 . Reproduce the issue you are experiencing.
 . Once you have reproduced the issue, right-click anywhere on the grid of network requests and select *Save as HAR with Content.*
-. Upload the HAR file as an attachment to your ThreatX support ticket for further.
+. Upload the HAR file as an attachment to your {organization} support ticket for further.
 
 Generating a HAR file in Mozilla Firefox:
 
@@ -1269,7 +1268,7 @@ Generating a HAR file in Mozilla Firefox:
 . From the panel, click the *Network* tab.
 . The recording automatically starts when you begin performing actions in the browser.
 . Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), right-click anywhere under the *File* column, and click on *Save all as Har*.
-. Upload the HAR file as an attachment to your ThreatX support ticket for further analysis.
+. Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 Generating a HAR file in Internet Explorer:
 
@@ -1278,7 +1277,7 @@ Generating a HAR file in Internet Explorer:
 . Click the *Network* tab.
 . Reproduce the issue that you were experiencing while the network requests are being recorded.
 . Once done, click *Save* and save it as a .*har file.*
-. Upload the HAR file as an attachment to your ThreatX support ticket for further analysis.
+. Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 Generating a HAR file in Safari:
 
@@ -1286,21 +1285,21 @@ Generating a HAR file in Safari:
 . Open the *Develop* menu and select *Show Web Inspector*.
 . Click the *Network* tab and complete the activity that is causing issues.
 . Click the *Export* icon on the far right of the network tab and save the HAR file.
-. Upload the HAR file as an attachment to your ThreatX support ticket for further analysis.
+. Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 Edge natively produces HAR files. For more instructions, see the instructions from the https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/network[Microsoft website]. To generate a HAR file in Edge:
 
 . Open the *Network* tool in F12 developer tools.
 . Reproduce the issue.
 . Export captured traffic as a HAR (CTRL + S).
-. Upload the HAR file as an attachment to your ThreatX support ticket for further analysis.
+. Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 [[h-how-to-generate-a-pcap-file]]
 ==== How to generate a PCAP file
 
 The PCAP file is relevant only if you host your own sensors.
 
-To generate a PCAP file that the ThreatX SOC can analyze for troubleshooting connectivity or other issues with the WAF sensor, follow these instructions:
+To generate a PCAP file that the {organization} SOC can analyze for troubleshooting connectivity or other issues with the WAF sensor, follow these instructions:
 
 . Use ssh to connect into the docker host system.
 . Use the following command to display the name of the desired container: +
@@ -1314,8 +1313,7 @@ apt-get install `tcpdump`*
 *`tcpdump` -i eth0 -s 0 port not 22 -w /tmp/upload_to_threatx.pcap*
 . Exit the Docker container and use the following command to copy the PCAP to the host system: +
 *docker cp <container ID>:/tmp/upload_to_threatx.pcap* *upload_to_threatx.pcap*
-. Upload the PCAP file to a ThreatX support ticket for further analysis. +
+. Upload the PCAP file to a {organization} support ticket for further analysis. +
 
-image:data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=[data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjMiIHZpZXdib3g9IjAgMCAyMCAyMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMSA0SDE5VjIySDFWNFoiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xIDRIMTlWNkgxVjRaIiBmaWxsPSIjRDIzMjAwIiBzdHJva2U9IiNEMjMyMDAiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjExLjU2OTYiIHgyPSI4LjY5Nzc1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjExLjU2OTYiIHgyPSIxNS4zMDI1IiB5Mj0iMTEuNTY5NiIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNC42OTc3NSIgeTE9IjE2Ljk4NDUiIHgyPSI4LjY5Nzc1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iMTEuMzAyNSIgeTE9IjE2Ljk4NDUiIHgyPSIxNS4zMDI1IiB5Mj0iMTYuOTg0NSIgc3Ryb2tlPSIjRDIzMjAwIiBzdHJva2Utd2lkdGg9IjIiPjwvbGluZT4KICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT0iNi4xNTUyNyIgeTE9IjUiIHgyPSI2LjE1NTI3IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE0LjI1IiB5MT0iNSIgeDI9IjE0LjI1IiB5Mj0iNC4zNzExNGUtMDgiIHN0cm9rZT0iI0QyMzIwMCIgc3Ryb2tlLXdpZHRoPSIyIj48L2xpbmU+CiAgICAgICAgICAgICAgICA8L3N2Zz4=]
 
 

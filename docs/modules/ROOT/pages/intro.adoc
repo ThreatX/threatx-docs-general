@@ -1,35 +1,36 @@
-= Introduction to ThreatX
+= Introduction to {organization}
+:organization: {organization}
 :page-category: Guide
 :page-edition: Enterprise
-:product-name: ThreatX
+:product-name: {organization} Managed API and Application Protection 
 :page-product-name:  {product-name}
 :page-origin-type: git
 :sectlinks:
 :sectanchors:
 :sectids:
-:copyright: 2024 ThreatX, Inc.
+:copyright: 2024 {organization}, Inc.
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images
 
 
 
-ThreatX is the future of API and web application security. The ThreatX Web Application and API Protection platform provides unmatched protection capabilities while simplifying the work of operational security. With ThreatX, you’ll enjoy unparalleled visibility into attacks and external risk to your enterprise.
+{organization} is the future of API and web application security. The {organization} Web Application and API Protection platform provides unmatched protection capabilities while simplifying the work of operational security. With {organization}, you’ll enjoy unparalleled visibility into attacks and external risk to your enterprise.
 
-ThreatX uses advanced attacker-centric behavior analysis to identify and block malicious or suspicious traffic, while collecting and prioritizing threat intelligence to protect your APIs and applications from OWASP attacks, bot attacks, DDoS threats, and sophisticated mixed-mode cyberthreats. Our managed service provides round-the-clock protection and access to expert Layer-7 security analysts, to keep APIs and applications secure.
+{organization} uses advanced attacker-centric behavior analysis to identify and block malicious or suspicious traffic, while collecting and prioritizing threat intelligence to protect your APIs and applications from OWASP attacks, bot attacks, DDoS threats, and sophisticated mixed-mode cyberthreats. Our managed service provides round-the-clock protection and access to expert Layer-7 security analysts, to keep APIs and applications secure.
 
-== ThreatX Architecture
+== {organization} Architecture
 
-The ThreatX platform is designed to protect applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks. Our specialty, however, is advanced, multi-step attacks where correlation and analysis are required for events often initiated across thousands of IPs.  
+The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks. Our specialty, however, is advanced, multi-step attacks where correlation and analysis are required for events often initiated across thousands of IPs.  
 
 
-.Sensors can also be deployed into public/private cloud and private datacenters environments to support specific architectural or compliance requirements.
+.Sensors can also be deployed into public or private cloud and private data centers environments to support specific architectural or compliance requirements.
 image::treatx-architecture_1v2-1024x542.png[treatx-architecture_1v2-1024x542,width=1024,height=542]
 
 
-== *What Makes ThreatX Different?*
+== *What Makes {organization} Different?*
 
-ThreatX is challenging the current standards of API and application protection that have left many organizations frustrated, exposed, and at significant risk. ThreatX takes a unique approach that combines multiple, best-of-breed security techniques into a single platform. The result is a solution that provides unmatched protection capabilities and does so in a way that simplifies the effort for our customers. 
+{organization} is challenging the current standards of API and application protection that have left many organizations frustrated, exposed, and at significant risk. {organization} takes a unique approach that combines multiple, best-of-breed security techniques into a single platform. The result is a solution that provides unmatched protection capabilities and does so in a way that simplifies the effort for our customers. 
 
 The key differentiators include: 
 
@@ -39,19 +40,19 @@ The key differentiators include: 
 * Effortless deployment and management 
 * 24/7 managed services support 
 
-ThreatX’s behavior-based API and application protection platform secures APIs and web applications from cyberthreats across cloud and on-prem environments. We deliver complete protection and deep threat visibility by combining attacker behavior profiling, collective threat intelligence, and advanced analytics. Our managed service combines threat hunting with 24X7 access to the security experts in the ThreatX SOC, significantlyreducing the operational overhead and maintenance burdens for enterprises that choose ThreatX.
+{organization}’s behavior-based API and application protection platform secures APIs and web applications from cyberthreats across cloud and on-prem environments. We deliver complete protection and deep threat visibility by combining attacker behavior profiling, collective threat intelligence, and advanced analytics. Our managed service combines threat hunting with 24X7 access to the security experts in the {organization} SOC, significantlyreducing the operational overhead and maintenance burdens for enterprises that choose {organization}.
 
 === *Attacker-Centric Behavioral Analysis*
 
-ThreatX uses Attacker-Centric Behavioral Analytics (ACBA). This is an approach that identifies critical elements of an attack, responds to them before any damage is done, and maintains protection even if attackers change or obfuscate their attack pattern to avoid detection. The ThreatX platform delivers a range of responsive actions, including blocking, IP interrogation and challenges, and targeted rate limiting or tarpitting. 
+{organization} uses Attacker-Centric Behavioral Analytics (ACBA). This is an approach that identifies critical elements of an attack, responds to them before any damage is done, and maintains protection even if attackers change or obfuscate their attack pattern to avoid detection. The {organization} platform delivers a range of responsive actions, including blocking, IP interrogation and challenges, and targeted rate limiting or tarpitting. 
 
 Attacker-Centric Behavioral Analytics continuously monitors all users as they interact with an application or API looking for key indicators of suspicious behavior and tracking risk over time and across multiple applications. Combining these indicators helps the system track malicious or suspicious users across many IP addresses as they use various evasion techniques and modify attack parameters. Individual requests may be blocked based on severity, but the approach is designed to limit false positives and identify truly malicious users to be blocked. 
 
 === *Complete Platform Providing Full-Spectrum Protection* 
 
-ThreatX brings together a complementary set of technologies that work together in ways that siloed tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks using multiple IPs in order to evade detection.  By bringing multiple perspectives together in a single context, the ThreatX Platform gives security teams a highly accurate, reliable, and complete view of threat activities. 
+{organization} brings together a complementary set of technologies that work together in ways that siloed tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks using multiple IPs in order to evade detection.  By bringing multiple perspectives together in a single context, the {organization} Platform gives security teams a highly accurate, reliable, and complete view of threat activities. 
 
-Specifically, ThreatX provides protection often distributed across multiple tools: 
+Specifically, {organization} provides protection often distributed across multiple tools: 
 
 * Web application firewall (WAF) 
 * API discovery & compliance  
@@ -62,48 +63,48 @@ Specifically, ThreatX provides protection often distributed across multiple tool
 
 === *Agentless Deployment*
 
-ThreatX provides a new approach to agentless deployment that supports both AppSec and DevOps teams without locking either into architectural decisions or sacrificing their autonomy and flexibility. Our agentless architecture ensures that there is no need to disrupt either your applications or your operations.
+{organization} provides a new approach to agentless deployment that supports both AppSec and DevOps teams without locking either into architectural decisions or sacrificing their autonomy and flexibility. Our agentless architecture ensures that there is no need to disrupt either your applications or your operations.
 
-== How Can I Install ThreatX? 
+== How Can I Install {organization}? 
 
-Purpose-built for the modern application landscape, ThreatX’s web stack agnostic, cloud-native, container-based options deploy in minutes and block in hours, combining WAF, DDoS, bot, and API protection capabilities into one solution for all your applications and API endpoints.  
+Purpose-built for the modern application landscape, {organization}’s web stack agnostic, cloud-native, container-based options deploy in minutes and block in hours, combining WAF, DDoS, bot, and API protection capabilities into one solution for all your applications and API endpoints.  
 
-Unlike other sensors such as plugins or source code scanners that need to be installed and upgraded frequently, the ThreatX sensor operates a reverse proxy. This means it decrypts traffic between web clients (such as browsers) on your network with APIs/origin servers before re-encrypting them for you – all without any complicated maintenance. The ThreatX sensor containers are decoupled from the ThreatX Cloud Analytics platform and can be deployed virtually anywhere, delivering global flexibility and enterprise-grade scalability across complex, geographically dispersed application environments.  
+Unlike other sensors such as plugins or source code scanners that need to be installed and upgraded frequently, the {organization} sensor operates a reverse proxy. This means it decrypts traffic between web clients (such as browsers) on your network with APIs/origin servers before re-encrypting them for you – all without any complicated maintenance. The {organization} sensor containers are decoupled from the {organization} Cloud Analytics platform and can be deployed virtually anywhere, delivering global flexibility and enterprise-grade scalability across complex, geographically dispersed application environments.  
 
-The ThreatX platform is flexible, adaptive to customer preference, and compliant with a range of customer network and computing infrastructures. Our agentless architecture lets us deploy our sensors into ThreatX’s globally hosted cloud environment, a public cloud infrastructure, and servers hosted by our customers in their data centers. We can honestly say “We’ve never met an application or API we can’t protect!” 
+The {organization} platform is flexible, adaptive to customer preference, and compliant with a range of customer network and computing infrastructures. Our agentless architecture lets us deploy our sensors into {organization}’s globally hosted cloud environment, a public cloud infrastructure, and servers hosted by our customers in their data centers. We can honestly say “We’ve never met an application or API we can’t protect!” 
 
 === *Sensor Deployment Options:* 
 
-ThreatX offers four simple methods of deployment: 
+{organization} offers four simple methods of deployment: 
 
-*ThreatX Cloud  * 
+*{organization} Cloud  * 
 
-ThreatX hosts and manages sensor deployment. 
+{organization} hosts and manages sensor deployment. 
 
-*ThreatX Machine Images for AWS, Azure, and GCP * 
+*{organization} Machine Images for AWS, Azure, and GCP * 
 
-ThreatX provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.  
+{organization} provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.  
 
-*ThreatX Docker Container Deployment * 
+*{organization} Docker Container Deployment * 
 
-ThreatX provides the customer with a Docker-based ThreatX sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.  
+{organization} provides the customer with a Docker-based {organization} sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.  
 
-*ThreatX Hybrid Deployment * 
+*{organization} Hybrid Deployment * 
 
-Mix of the ThreatX cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. ThreatX will work with the customer to map out the optimal configurations and support models. 
+Mix of the {organization} cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. {organization} will work with the customer to map out the optimal configurations and support models. 
 
 For more information on sensor deployment see: Deployment Guides
 
 == *How Does Blocking Work?* 
 
-ThreatX’s blocking modes are designed to block malicious requests and deter suspicious entities from attacking your sites while allowing benign traffic and real users through.  
+{organization}’s blocking modes are designed to block malicious requests and deter suspicious entities from attacking your sites while allowing benign traffic and real users through.  
 
 === Risk-Based, Request-Based, and Manual Blocking 
 
-There are three different blocking modes available for each site after onboarding: 
+There are three different blocking modes available for each site after on-boarding: 
 
 .Blocking Modes
-image::https://www.threatx.com/wp-content/uploads/2022/03/ThreatX-Blocking-Modes-1024x310.png[https://www.threatx.com/wp-content/uploads/2022/03/ThreatX-Blocking-Modes-1024x310,width=1024,height=310]
+image::ThreatX-Blocking-Modes-1024x310.png[width=1024,height=310]
 
 
 *Request Blocking* 
@@ -112,17 +113,17 @@ When enabled for your sites, request blocking will block malicious traffic at th
 
 *Risk-Based Blocking* 
 
-When enabled, risk-based blocking will allow ThreatX’s behavioral analytics engine, hackerMind™, to evaluate each unique entity and block persistently malicious entities based on their behavior over time.  
+When enabled, risk-based blocking will allow {organization}’s behavioral analytics engine, hackerMind™, to evaluate each unique entity and block persistently malicious entities based on their behavior over time.  
 
 *Manual Action Blocking* 
 
-When enabled, this option permits manual blocking of specific IP addresses. Enabling also permits a ThreatX console user (security admin) to add entity IP addresses to the deny list for permanent blocking. 
+When enabled, this option permits manual blocking of specific IP addresses. Enabling also permits a {organization} console user (security admin) to add entity IP addresses to the deny list for permanent blocking. 
 
-We recommend leveraging all three blocking modes, but provide users the flexibility to gradually expand blocking levels when onboarding a new application to help prevent potential false positives or unwanted impacts to your sites.  
+We recommend leveraging all three blocking modes, but provide users the flexibility to gradually expand blocking levels when on-boarding a new application to help prevent potential false positives or unwanted impacts to your sites.  
 
 == *Free Proof of Concept* 
 
-ThreatX offers a free POC where you can work closely with our SOC staff to configure a solution for your API and web application protection needs.   
+{organization} offers a free POC where you can work closely with our SOC staff to configure a solution for your API and web application protection needs.   
 
 Get started today: https://www.threatx.com/request-a-demo/[Request a Personalized Demo]
 
@@ -130,7 +131,7 @@ Get started today: https://www.threatx.com/request-a-demo/[Request a Personalize
 
 === Best-in-Class Visibility  
 
-ThreatX evaluates each request to identify the nature of the request and determine if it is malicious. It is then classified, scored, and passed along to the behavioral analysis engine to process and adjust the entity risk score. The ThreatX platform provides visibility into all this historic and live threat activity for your web applications and API endpoints through two dashboards: the Attack Dashboard and API Defender.
+{organization} evaluates each request to identify the nature of the request and determine if it is malicious. It is then classified, scored, and passed along to the behavioral analysis engine to process and adjust the entity risk score. The {organization} platform provides visibility into all this historic and live threat activity for your web applications and API endpoints through two dashboards: the Attack Dashboard and API Defender.
 
 [[attack-dashboard-threat-entities]]
 === Attack Dashboard
@@ -138,18 +139,18 @@ ThreatX evaluates each request to identify the nature of the request and determi
 
 ==== Threat Entities: 
 
-The ThreatX Attack Dashboard visualizes both malicious and benign traffic over time and allows ThreatX users to drill down and investigate attacking entities, and the responsive actions the ThreatX Platform took to protect their APIs and web applications. The Attack Dashboard is comprised of three main views: Threat Entities, Top Targets, and Threat Map. Each view provides a different perspective on an organization’s attack surface.
+The {organization} Attack Dashboard visualizes both malicious and benign traffic over time and allows {organization} users to drill down and investigate attacking entities, and the responsive actions the {organization} Platform took to protect their APIs and web applications. The Attack Dashboard is comprised of three main views: Threat Entities, Top Targets, and Threat Map. Each view provides a different perspective on an organization’s attack surface.
 
 .Attack Dashboard, Threat Entities
-image::https://www.threatx.com/wp-content/uploads/2022/04/Figure-1-Attack-Dashboard-Threat-Entities-1024x571.png[https://www.threatx.com/wp-content/uploads/2022/04/Figure-1-Attack-Dashboard-Threat-Entities-1024x571,width=1024,height=571]
+image::Figure-1-Attack-Dashboard-Threat-Entities-1024x571.png[width=1024,height=571]
 
 
 ==== Top Targets:
 
-The Attack Dashboard Top Targets view highlights the most frequently targeted sites and endpoints within a tenant. This view is critical for large enterprises with dozens or hundreds of sites protected by the ThreatX Platform. This view puts the most frequently and aggressively targeted sites front and center, allowing administrators to understand their risk profile, and the protection they’re receiving from ThreatX.
+The Attack Dashboard Top Targets view highlights the most frequently targeted sites and endpoints within a tenant. This view is critical for large enterprises with dozens or hundreds of sites protected by the {organization} Platform. This view puts the most frequently and aggressively targeted sites front and center, allowing administrators to understand their risk profile, and the protection they’re receiving from {organization}.
 
 .Attack Dashboard, Top Targets
-image::https://www.threatx.com/wp-content/uploads/2022/03/ThreatX-Attack-Dashboard-Top-Targets-1024x521.png[https://www.threatx.com/wp-content/uploads/2022/03/ThreatX-Attack-Dashboard-Top-Targets-1024x521,width=1024,height=521]
+image::ThreatX-Attack-Dashboard-Top-Targets-1024x521.png[width=1024,height=521]
 
 
 ==== Threat Map:
@@ -157,31 +158,27 @@ image::https://www.threatx.com/wp-content/uploads/2022/03/ThreatX-Attack-Dashboa
 The Threat Map view, in the Attack Dashboard, provides visibility into the location of each unique entity and its associated risk. The interactive map allows the user to identify how many unique attackers are acting from each country.
 
 .Attack Dashboard, Threat Map
-image::https://www.threatx.com/wp-content/uploads/2022/03/Threat-Map-1024x553.png[https://www.threatx.com/wp-content/uploads/2022/03/Threat-Map-1024x553,width=1024,height=553]
+image::Threat-Map-1024x553.png[width=1024,height=553]
 
-
-To learn more about ThreatX’s Attack Dashboard, visit https://www.threatx.com/documentation/using-threatx/[Using ThreatX]. 
 
 === API Defender
 
 ==== API Observability:
 
-The API Defender dashboard provides visibility into endpoints discovered and protected by the ThreatX platform. API traffic analytics, error code summaries, and visualizations of API schema conformance are displayed in API Defender, as shown below in Figure 4, providing the ability to compare what API traffic is expected vs. an anomaly against your organization’s API specifications. The API Defender dashboard brings together API discovery, observability, and the context needed to understand your organization’s entire attack surface against what is being seen in the wild.
+The API Defender dashboard provides visibility into endpoints discovered and protected by the {organization} platform. API traffic analytics, error code summaries, and visualizations of API schema conformance are displayed in API Defender, as shown below in Figure 4, providing the ability to compare what API traffic is expected vs. an anomaly against your organization’s API specifications. The API Defender dashboard brings together API discovery, observability, and the context needed to understand your organization’s entire attack surface against what is being seen in the wild.
 
 .API Defender
-image::https://www.threatx.com/wp-content/uploads/2022/03/API-Defender-Endpoint-Table-with-schema-1024x575.png[https://www.threatx.com/wp-content/uploads/2022/03/API-Defender-Endpoint-Table-with-schema-1024x575,width=1024,height=575]
+image::API-Defender-Endpoint-Table-with-schema-1024x575.png[width=1024,height=575]
 
 
 
 ==== API Discovery:
 
-ThreatX’s API discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate the endpoints as well as the traffic they serve. While monitoring API interactions in real-time, ThreatX can accurately detect real API endpoints and determine identifying attributes of their tech stacks or markup encodings. 
+{organization}’s API discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate the endpoints as well as the traffic they serve. While monitoring API interactions in real-time, {organization} can accurately detect real API endpoints and determine identifying attributes of their tech stacks or markup encodings. 
 
 ==== Schema Compliance:
 
 Schema Compliance gives users the ability to upload, manage, and cross-compare which API traffic is expected according to your organization’s schema vs. what is being seen in the wild. Manage your organization’s API schemas within the API Defender page to gain risk visibility, simplify schema enforcement, or create API-centered protection rules.
 
 .API Defender, Endpoint Details
-image::https://www.threatx.com/wp-content/uploads/2022/03/API-Defender-Endpoint-Details2-1024x575.png[https://www.threatx.com/wp-content/uploads/2022/03/API-Defender-Endpoint-Details2-1024x575,width=1024,height=575]
-
-
+image::API-Defender-Endpoint-Details2-1024x575.png[width=1024,height=575]

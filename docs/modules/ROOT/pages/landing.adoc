@@ -1,7 +1,17 @@
-= ThreatX Documentation
-:description:   This project contains the source files for the ThreatX product documentation. 
+= Documentation Home
+:organization: ThreatX
+:page-category: Navigation
+:txprevent-current-version: 1.0
+:txprotect-current-version: 3.20
 
-== 🗃️Directory
-* xref:index.adoc[🧭 General Documentation]
-* xref:1.0@txprevent:ROOT:index.adoc[📚 TX Prevent Documentation]
-* xref:3.20@txprotect:ROOT:index.adoc[📚 TX Protect Documentation]
+
+
+
+== 🧭 Explore 
+* xref:index.adoc[☁️ Managed API and Application Protection (Platform)]
+* xref:{txprevent-current-version}@txprevent:ROOT:index.adoc[🛑 TX Prevent v{txprevent-current-version}]
+* xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[🛡️ TX Protect v{txprotect-current-version}]
+
+'''''
+
+Last updated {build-date}
