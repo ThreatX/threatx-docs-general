@@ -1,5 +1,10 @@
 = Documentation Home
 
+== 📍 Places
+
+* xref:1.0@txprevent:ROOT:index.adoc[TX Prevent]
+* xref:3.20@txprotect:ROOT:index.adoc[TX Protect]
+
 == 🗞️ News
 
 
