@@ -12,6 +12,9 @@
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images 
+:label-api-example: API (api.threatx.com)
+:label-web-ui-example: Web UI (x.threatx.com)
+:page-pdf-filename: administator-guide.pdf
 
 The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
@@ -23,7 +26,7 @@ This guide focuses on the administrator tasks.
 
 The {organization} platform has configuration, user, firewall, and other settings that can be managed by the {organization} SOC, your local administrator, or a combination of both. Your {organization} account must have write access to perform these tasks.
 
-[[h-interfaces]]
+
 === Interfaces
 
 The administrative settings can be accessed from the {organization} user interface or API command line interface.
@@ -34,26 +37,27 @@ image:Dashboard-no-bot-1024x666.jpg[Dashboard-no-bot-1024x666,width=1024,height=
 
 The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation toolsets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
-[[h-firewall-settings]]
+
 ==== Firewall settings
 
 When adding sites or testing DNS cutovers, you might need to reference the following {organization} sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
 
-* *{organization} Service IPs*. IP addresses that represent the {organization} ** sensors**.** These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
-* *Sensor DNS Targets.* CNAMEs you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
+{organization} Service IPs:: IP addresses that represent the {organization} sensors. These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
+Sensor DNS Targets:: CNAMEs you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
-In the {organization} user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/services endpoint, *list* command.
+In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/services` endpoint, *list* command.
 
-*NOTE*: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAMEs.
+NOTE: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAME records.
 
-[[h-tenants-and-channels]]
+
+
 ==== Tenants and channels
 
 Tenants are organizational units. Administrator user accounts are provisioned within these tenants. Once provisioned, users can view protected sites, attack heuristics, real-time data, and other configuration information.
 
 Alternatively, you can have your {organization} platform organized by channels, where a channel can contain multiple tenants. If you have channels, you can administer all users and sites within the tenants and add tenants as needed.
 
-[[h-optional-features]]
+
 ==== Optional features
 
 The {organization} platform has the following optional features that are available depending on your configuration.
@@ -69,7 +73,7 @@ For more information about these features, see the https://www.threatx.com/docum
 
 The IP lists are used to block, deny, and allow IP addresses. An IP address in the block list is there temporarily. An IP address in the blacklist or whitelist is there permanently until it is manually removed. As an administrator, you might need to manually add or remove an IP address or CIDR range from the list.
 
-In the {organization} user interface, navigate to *Settings* *> IWAF*. The IWAF Settings page has tabs for *Blocked IPs*, *Blacklisted IPs*,and *Whitelisted IPs*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/lists endpoint to manage the lists.
+In the {organization} user interface, navigate to *Settings* *> IWAF*. The IWAF Settings page has tabs for *Blocked IPs*, *Blacklisted IPs*,and *Whitelisted IPs*. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/lists` endpoint to manage the lists.
 
 The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the https://www.threatx.com/documentation/using-threatx/threatx-analyst-guide/[{organization} Managed API and Application Protection Platform Analyst Guide]. **
 
@@ -77,7 +81,7 @@ The lists are often managed by your analysts and, therefore, the procedures to m
 
 If the {organization} Risk-Based Blocking feature is enabled, you can configure the following settings.
 
-In the {organization} user interface, navigate to *Settings > IWAF* then click the *Firewall* tab. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/customers endpoint.
+In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/customers` endpoint.
 
 [cols=",",options="header",]
 |===
@@ -94,16 +98,15 @@ A site is a web property serving API responses intended for consumption by an ap
 
 You can add, edit, or remove sites with the {organization} user interface or {organization} API.
 
-[[h-site-settings]]
 ==== Site settings
 
 The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IPs – wherever traffic can be properly routed to reach your origin servers. 
 
-If using the {organization} user interface, navigate to *Settings > Sites*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/sites endpoint.
+If using the {organization} user interface, navigate to menu:Settings[Site]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/sites` endpoint.
 
 Some of the settings are on the *Sites* page as column headers.
 
-To add a site, click the *Add Site* button. To edit a site, click the *Edit Site* button for the specific site. In either case, the configuration settings open in the *Site Details* page.
+To add a site, click the btn:[Add Site]. To edit a site, click btn:[Edit Site] button for the specific site. In either case, the configuration settings open in the *Site Details* page.
 
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
@@ -136,10 +139,10 @@ If you are forwarding traffic to a load balancer, supply the FQDN or IP addresse
 |Access Configuration |Site Groups |You can assign the site to an existing site group, which allows you to limit which users can access the site configuration and its associated data. 
 |===
 
-[[h-adding-a-site]]
+
 ==== Adding a site
 
-*NOTE*: Adding a site can impact the cost of the {organization} platform. For information, contact the {organization} SOC.
+NOTE: Adding a site can impact the cost of the {organization} platform. For information, contact the {organization} SOC.
 
 If you are adding a site for protection within the {organization} platform, perform the following.
 
@@ -168,21 +171,21 @@ If your DNS provider does not allow you to point to a root domain directly to a 
 
 Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard.  If you do not see any traffic, contact the {organization} SOC. 
 
-[[h-site-certificates]]
+
 ==== Site certificates
 
 You have two options. You can use Let’s Encrypt or upload your own certificate.
 
-The {organization} platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
+The {organization} platform can manage the SSL/TLS certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
 
 To upload your own certificate using the {organization} user interface, perform the following:
 
-. Navigate to *Settings > Sites*.
-. If updating a certificate for an existing site, locate the site. You can use the search icon in the *Hostname* column to locate a site. Then click the site’s *Edit Site* button.
+. Navigate to menu:Settings[Sites].
+. If updating a certificate for an existing site, locate the site. You can use the search icon in the *Hostname* column to locate a site. Then click  btn:[Edit Site].
 . In the configuration page, enable *SSL Enabled*.
-. Click *Edit SSL credentials* under the setting.
+. Click menu:Settings[Edit SSL credentials]
 . Paste your** Site Certificate**, *Intermediate Certificate*, and your *Private Key*, in *PEM* format and in that order.
-. Click *Save* at the bottom of the page.
+. Click btn:[Save] at the bottom of the page.
 
 If adding a site, enter your certificate using steps 3 through 6.
 
@@ -197,20 +200,20 @@ If one of these criteria is not successfully validated, you receive an error des
 
 Optionally, you can ask a third-party test group, such as https://www.ssllabs.com/ssltest/index.html[Qualys SSL Lab], to test and validate your certificate.
 
-[[h-site-groups]]
+
 ==== Site groups
 
 You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data. 
 
 When creating a group, give it a name, list of sites to include in the group, and list of users that can access the sites in the group.
 
-If using the {organization} user interface, navigate to *Settings > Site Groups*. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/sitegroups endpoint.
+If using the {organization} user interface, navigate to menu:Settings[Site Groups]. If you have access to the {organization} API, you can use the {organization} /tx_api/v1/sitegroups endpoint.
 
 === Managing sensors
 
 Sensors are managed by your local administrator or the {organization} SOXC depending on if you self-host or are hosted within the {organization} cloud, respectively.
 
-You can view the on-premises deployed sensors and their status from the {organization} user interface, *Settings > Sensors*. The *Sensor Keys* tab lists the keys used with the sensors. You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
+You can view the on-premises deployed sensors and their status from the {organization} user interface, menu:Settings[Sensors]. The btn:[Sensor Keys] tab lists the keys used with the sensors. You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
 
 If using the {organization} API, you can access the same information using the */tx_api/v1/sensor* endpoint.
 
@@ -233,7 +236,7 @@ For information about receiving logs, see link:#receiving-event-logs[Receiving e
 
 You can configure users to receive notifications on various events relating to threats, rule matches, changes to the IP allow, deny, and block lists. Notifications are typically sent by email, but you can configure a webhook notification to another app, such as Slack.
 
-You create notifications in the {organization} user interface by navigating to *Settings > Notifications*. You can add a notification or edit an existing notification.
+You create notifications in the {organization} user interface by navigating to menu:Settings[Notifications]. You can add a notification or edit an existing notification.
 
 If using the {organization} API, you can use the */tx_api/v1/subscriptions* endpoint.
 
@@ -259,7 +262,7 @@ Manual, API-initiated Events
 |Notification Targets: Method |Notifications can be sent to as many email addresses and webhooks as needed. For webhooks, you enter the URL of the app where you want to receive the notifications. However, you need to configure the app to receive the notifications. For example, you can send notifications to Slack as described in their https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack[Incoming Webhooks] article.
 |===
 
-[[h-threatx-maintenance-and-system-status]]
+
 ==== {organization} maintenance and system status
 
 You can view and subscribe to notifications for scheduled maintenance windows and any issues that might impact your {organization} services at https://status.threatx.com/[{organization} Status].
@@ -268,7 +271,6 @@ You can view and subscribe to notifications for scheduled maintenance windows a
 
 The {organization} Log Emitter exports event logs from the {organization} platform to your log receiver and SIEM. You can use the logs in your investigations and to trigger events in your chosen log management solution.
 
-[[h-features]]
 ==== Features
 
 The Log Emitter forwards full details for all block, match, and audit events.
@@ -279,13 +281,14 @@ In the event a Log Emitter subscription becomes suspended, the Log Emitter servi
 
 Once the Log Emitter re-establishes a connection for a previously suspended subscription, all queued log events are sent to the configured receiver. If the Log Emitter subscription cannot be resumed after several retries, this might indicate a configuration error or log receiver error.  
 
-[[h-configuring-a-log-emitter]]
+
 ==== Configuring a Log Emitter
 
 To receive logs, you create an instance of the Log Emitter and then encrypt the connection between the Log Emitter and your receiver.
 
-Before starting, make sure the following requirements are met.
-
+[IMPORTANT]
+.Prerequisites
+****
 * Whitelist the following IP address ranges to ensure your log receiver can receive logs from the Log Emitter:
 ** 169.44.76.160/28
 ** 169.61.156.0/28
@@ -293,28 +296,32 @@ Before starting, make sure the following requirements are met.
 * Verify that your log receiver or SIEM can parse JSON lines.
 * Ensure your firewall is configured to allow incoming TCP connections to your log receiver at the TCP port it is configured to listen on.
 * Ensure your log receiver’s hostname resolves to a public IP address.
+****
 
-You must also generate a self-signed or CA signed certificate for the hostname where the log receiver receives logs, as described in the following section.
+IMPORTANT: A certificate is needed to encrypt the connection between the {organization} Log Emitter service and your log receiver.
 
-A certificate is needed to encrypt the connection between the {organization} Log Emitter service and your log receiver. You have two options:
+You must generate a self-signed or CA signed certificate for the hostname where the log receiver receives logs, as described in the following section.
 
-* A *Simple* configuration sets up an encrypted TCP connection without authentication.
-* An *Advanced* configuration adds mutual server and client certificate authentication to your configuration.
+There are two options:
 
-*Simple configuration*
+[horizontal]
+Simple:: Sets up an encrypted TCP connection without authentication
+Advanced:: Adds mutual server and client certificate authentication to your configuration.
+
+===== Simple configuration
 
 For simple encryption of the log data, you need only to generate a self-signed certificate. You can generate a certificate with the following command:
 
-[source,wp-block-code]
+[source,console]
 ----
-openssl req -newkey rsa:2048 -nodes -keyout logreceiver.key -x509 -days 365 -out logreceiver.crt
+$ openssl req -newkey rsa:2048 -nodes -keyout logreceiver.key -x509 -days 365 -out logreceiver.crt
 ----
 
-Use the logreceiver.key and logreceiver.crt files on your log receiver.
+Use the `logreceiver.key` and `logreceiver.crt` files on your log receiver.
 
 Configure your on-premises log receiver to accept TCP connections with TLS encryption.
 
-*Advanced configuration*
+===== Advanced configuration
 
 To further secure the TCP encrypted connection between the {organization} Log Emitter and your log receiver, add mutual server and client certificate authentication.
 
@@ -325,10 +332,22 @@ The {organization} Log Emitter authenticates and encrypts the TCP session using 
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
 
-[[h-adding-a-log-emitter]]
+
 ==== Adding a Log Emitter
 
-From the user interface, navigate to *Settings > Log Emitter* then click *Add Log Emitter*. If using the {organization} API, use the** /tx_api/v1/subscriptions** endpoint.
+From the user interface, navigate to . If using the {organization} API, use the** /tx_api/v1/subscriptions** endpoint.
+
+.{label-web-ui-example}
+--
+[horizontal]
+Navigation:: menu:Settings[Log Emitter] then click btn:[Add Log Emitter]
+--
+
+.{label-api-example}
+--
+[horizontal]
+Endpoint:: `/tx_api/v1/subscriptions`
+--
 
 Configure the settings as described in the following table. Click *Save* when done.
 
@@ -350,7 +369,7 @@ The BlockEvent log type provides full details on requests that were blocked by t
 
 Example Log:
 
-[source,wp-block-code]
+[source,json]
 ----
 {"message":"www.examplesite.net/example_uri","msg_type":"BlockEvent",
 "timestamp":"2020-12-18T14:05:52Z","user_agent":"Mozilla/5.0 (X11; Linux x86_64;
@@ -381,7 +400,7 @@ The MatchEvent log type provides full details on requests that matched custom or
 
 Example Log:
 
-[source,wp-block-code]
+[source,json]
 ----
 {"message":"www.examplesite.net/example_uri","msg_type":"MatchEvent","
 timestamp":"2020-12-18T14:05:52Z","request_id":"d3f02fff5db4824d83d145fad1258959",
@@ -449,7 +468,7 @@ Verify that the server and client certificates are correctly generated and insta
 
 If using a using self-signed certificate:
 
-[source,wp-block-code]
+[source,console]
 ----
 $ echo '{"message":"test1"}' | openssl s_client
     -servername logreceiver.yourdomain.com
@@ -458,7 +477,7 @@ $ echo '{"message":"test1"}' | openssl s_client
 
 If using a using mutual certificate authentication:
 
-[source,wp-block-code]
+[source,console]
 ----
 $ echo '{"message":"test1"}' | openssl s_client
     -servername logreceiver.yourdomain.com
@@ -477,10 +496,9 @@ Your log receiver must be able to receive TCP data at the hostname provided to t
 
 Use `tcpdump` to verify that the log receiver is receiving TCP traffic on the correct port.
 
-[source,wp-block-code]
-----
-$ `tcpdump` port 12345
-----
+
+    $ `tcpdump` port 12345
+
 
 Even if you see traffic via `tcpdump`, you still need to ensure that any host-based firewall, such as iptables, is configured to allow the incoming traffic.
 
@@ -489,7 +507,7 @@ Even if you see traffic via `tcpdump`, you still need to ensure that any host-ba
 
 In logstash, you can create a file output so you can quickly see if it is receiving the logs from the Log Emitter. Add the following to your logstash configuration file and restart logstash:
 
-[source,wp-block-code]
+[source,console]
 ----
 output {
     file {
@@ -498,33 +516,55 @@ output {
 }
 ----
 
-[[h-handshake-failed-error]]
+
 ===== *Handshake failed error*
 
 If you use a self-signed certificate and you receive this error message:
 
-[source,wp-block-code]
+[source,console]
 ----
 the handshake failed: error 1416F086: SSL Routines: 
 tls_process_server_certificate:certificate verify 
 failed:../ssl/statem/statem...cint.c:1915:: self signed certificate
 ----
 
-The Log Emitter *Send Client SSL Credentials to Log Receiver* option might be enabled. When this option is selected, the Log Emitter uses the provided SSL credentials to authenticate itself to the log receiver; however, this authentication fails when using a self-signed certificate. Uncheck the *Send Client SSL Credentials to Log Receiver* box then click *Restart Log Emitter*.
+The Log Emitter *Send Client SSL Credentials to Log Receiver* option might be enabled. When this option is selected, the Log Emitter uses the provided SSL credentials to authenticate itself to the log receiver; however, this authentication fails when using a self-signed certificate. Uncheck the *Send Client SSL Credentials to Log Receiver* box then click btn:[Restart Log Emitter].
 
 === Accessing the audit log
 
 The {organization} audit feature logs events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. As opposed to the Log Emitter, the audit log focuses mostly on user actions.
 
-If using the {organization} user interface, navigate to *Settings > Audit Log.* If you have access to the {organization} API, you can use the {organization} /tx_api/v1/logs endpoint, *audit_events* command.
+ 
+.{label-web-ui-example}
+--
+menu:Settings[Audit Log]
+--
 
-*NOTE*: The Log Emitter also exports the audit logs.
+.{label-api-example}
+--
+[horizontal]
+Endpoint:: `/tx_api/v1/logs`
+Command:: `audit_events`
+--
+
+TIP: The Log Emitter also exports the audit logs.
 
 === Managing user accounts
+ 
 
-If using the {organization} user interface, navigate to *Settings > Users*. You can add users or edit existing users. To delete a user, click *Edit User* then use the *Delete* button.
+.{label-web-ui-example}
+--
+menu:Settings[Users]
 
-If you have access to the {organization} API, you can use the {organization} /tx_api/v1/users endpoint.
+Delete User:: Click btn:[Edit User] followed by btn:[Delete].
+--
+
+.{label-api-example}
+--
+[horizontal]
+Endpoint:: `/tx_api/v1/users`
+--
+
 
 The following table describes the settings you use to manage user accounts.
 
@@ -548,16 +588,16 @@ If using the {organization} API to access the {organization} platform, you need 
 
 To generate an API key:
 
-. Navigate to **Settings > API Keys **and click *Add API Key* in the top right corner.
+. Navigate to *menu:Settings[API Keys] and click btn:[Add API Key] in the top right corner.
 . Fill in the necessary fields.
-. Click *Save*. You are presented with your new API Key.
+. Click btn:[Save]. You are presented with your new API Key.
 
 To revoke an API key:
 
-. ****Navigate to *Settings > API Keys.*
-. Click **Edit API Key **next to the API key to revoke.
-. Click *Revoke*.
-. Click *Revoke* again in the confirmation popup.
+. Navigate to menu:Settings[API Keys]
+. Click btn:[Edit API Key] next to the API key to revoke.
+. Click btn:[Revoke]
+. Click btn:[Revoke] again in the confirmation popup.
 
 === Generating and revoking sensor API keys
 
@@ -565,8 +605,8 @@ If you deploy sensors in your environment, you are asked to provide a Sensor API
 
 To generate a sensor API key:
 
-. ****Navigate to *Settings > Sensors > Sensor Keys.*
-. Click *Add Sensor Key*. You are presented with a new *Sensor API Key.*
+. Navigate to menu:Settings[Sensors > Sensor Keys]
+. Click btn:[Add Sensor Key]. You are presented with a new Sensor API Key.
 . Save it to a secure location then use it when deploying a sensor.
 
 If you no longer require a key, you can delete the key.
@@ -592,7 +632,7 @@ The {organization} platform offers two types of Edge Caching, static and dynamic
 
 Caching can be enabled for a configured site as described in the _Site settings_ section under link:#managing-sites-and-site-groups[Managing sites and site groups].
 
-[[h-static-caching]]
+
 ==== Static caching
 
 Static caching is configured to cache static elements such as images, CSS & JavaScript. Static caching does not store HTML pages and as a result does not enhance performance if the origin server becomes unresponsive. 
@@ -610,16 +650,16 @@ The following lists the static caching settings:
 
 Dynamic caching offers a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The {organization} platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, {organization} sensors cache dynamic pages only after they are requested at least 3 times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. The following lists the dynamic caching settings:
 
-* *Default cache time:* 30 minutes.
-* *“time-to-cache” and “hits-required” to cache:* Can be configured by {organization} SOC upon request.
-* *URL based caching:* Can be configured by {organization} SOC upon request.
-* *Supported file types:* Any dynamic resources.
-* *Support for non-responsive origin servers:* 500, 502, 503, and 504 response codes. Can be configured by {organization} SOC upon request.
-* *Supported request methods:* GET, HEAD.
-* *URI Specific Caching:* Per-URI features can be enabled, overriding the origin server values.
-* *Manual Cache Purging:* Can be purged by {organization} SOC upon request. Purging can be limited to a specific URI.
+Default cache time:: 30 minutes
+Time-to-cache:: Can be configured by {organization} SOC upon request.
+URL based caching:: Can be configured by {organization} SOC upon request
+Supported file types:: Any dynamic resources
+Support for non-responsive origin servers:: 500, 502, 503, and 504 response codes. Can be configured by {organization} SOC upon request.
+Supported request methods::  GET, HEAD
+URI Caching::  Per-URI features can be enabled, overriding the origin server values.
+Manual Cache Purging::  Can be purged by {organization} SOC upon request. Purging can be limited to a specific URI.
 
-Dynamic caching is a billable feature and requires an add-on license.
+NOTE: Dynamic caching is a billable feature and requires an add-on license.
 
 === Managing rate limiting
 
@@ -635,18 +675,20 @@ A {organization} _rule_ is a set of Boolean conditions that, when true, implemen
 
 You can add, modify, and delete rules, and view’s rule’s activity to determine its effectiveness.
 
-To access rules in the {organization} user interface, navigate to *Settings > Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
+To access rules in the {organization} user interface, navigate to menu:Settings[Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
 
-*IMPORTANT*: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the {organization} SOC group to create rules or modify any rule in the {organization} platform to meet the specific needs and behavior of your environment.
+IMPORTANT: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the {organization} SOC group to create rules or modify any rule in the {organization} platform to meet the specific needs and behavior of your environment.
 
-[[h-rule-details]]
+
 ==== Rule details
 
-To view a rule’s details, navigate to *Settings > Rules* then click *Edit Rule Details* for a specific rule. The details are the properties of the rule as follows:
+To view a rule’s details, navigate to menu:Settings[Rules] then click btn:[Edit Rule Details] for a specific rule. 
 
-* *Description*. Text that describes the intended behavior or logic a rule match is intended to indicate. This information is displayed in the {organization} user interface when your custom rule is matched.
-* *Tag Name*. Text that identifies a rule when a description is long.
-* *Classification*. Describes the kind of attack or behavior the rule is meant to detect.
+The details are the properties of the rule as follows:
+
+Description:: Text that describes the intended behavior or logic a rule match is intended to indicate. This information is displayed in the {organization} user interface when your custom rule is matched.
+Tag Name:: Text that identifies a rule when a description is long.
+Classification:: Describes the kind of attack or behavior the rule is meant to detect.
 
 [cols=",",options="header",]
 |===
@@ -809,7 +851,7 @@ For a rule to be matched, the condition set by the operator of the group must be
 [[h-rule-activity]]
 ==== Rule activity
 
-The {organization} user interface displays how often a rule is matched and its action implemented. To view a rule’s activity, navigate to *Settings > Rules* then click *View Activity* for a specific rule. This page is also accessible from other pages by clicking a rule name in the *Rules* column.
+The {organization} user interface displays how often a rule is matched and its action implemented. To view a rule’s activity, navigate to menu:Settings[Rules* then click *View Activity* for a specific rule. This page is also accessible from other pages by clicking a rule name in the *Rules* column.
 
 Depending on your configuration, you might need the {organization} SOC to enable the permission for you to access the rule activity.
 
@@ -896,7 +938,7 @@ Single-Sign On access is now configured for your tenant.
 
 The **login **command uses an API key to return an API access token to be used for further endpoint commands.
 
-The *api_key*, created within the {organization} user interface (*Settings > API Keys*), is used within the request for the *api_token* parameter. The response then provides a unique and temporary *access_token* string to be used in further endpoint commands.
+The *api_key*, created within the {organization} user interface (menu:Settings[API Keys*), is used within the request for the *api_token* parameter. The response then provides a unique and temporary *access_token* string to be used in further endpoint commands.
 
 [cols=",",]
 |===

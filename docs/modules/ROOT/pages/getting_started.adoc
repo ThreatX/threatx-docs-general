@@ -18,24 +18,20 @@ After connecting hostnames to {organization}, real-time attack information will 
 
 == *{organization} Attack Dashboard* 
 
-[[h-introduction]]
-=== Introduction 
+=== Introduction
+ThreatX's Attack Dashboard offers comprehensive visibility into how the platform secures APIs and web applications from security threats. Within the dashboard, security teams and application owners can view vital data collected about each protected API endpoint, web application, or website. ThreatX analytics automatically correlates vast amounts of data related to the suspicious and malicious traffic the platform has identified, tracked, and blocked, providing teams with real-time situational awareness essential for safeguarding their Internet-facing assets.
 
-{organization}’s Attack Dashboard provides complete visibility into how the solution protects APIs and web applications from security threats. In the dashboard, security teams and application owners can see essential data collected about each API endpoint, web application, or web site protected through the platform. {organization} analytics automatically correlate enormous amounts of data – about suspicious and malicious traffic {organization} has identified, tracked, and blocked – so that teams have the real-time situational awareness needed to keep their Internet-facing assets safe and secure.
-
-[[h-how-it-works]]
 === How It Works 
 
-The Attack Dashboard is comprised of three main views: Threat Entities, Top Targets, and Threat Map. Each view poses a different perspective of an organization’s attack surface, as shown below. 
+The Attack Dashboard consists of three main views: Threat Entities, Top Targets, and Threat Map. Each view offers a unique perspective on an organization's attack surface.
 
-Data displayed in the dashboard is live and is driven by active site traffic. By default, the data displayed will update every few seconds with real-time dynamic data. Platform users can also specify a fixed view of historical data, using the time picker to zero in on specific time frames. An interactive graph and high-level details, such as request statistics and maximum entity risk, are displayed in a banner throughout the three main views of the dashboard. By hovering over a point on the interactive graph, users can view the total numbers of matched and blocked requests for specific times to prompt further investigation into the attack state of an entity.  
+The data in the dashboard is live and reflects active site traffic. By default, it updates every few seconds with real-time dynamic data. Users can opt for a historical data view at specified times using the time picker. An interactive graph and high-level details, such as request statistics and maximum entity risk, are displayed across the three main views. Hovering over a point on the graph allows users to see the total numbers of matched and blocked requests at specific times, encouraging further investigation into the attack state of an entity.
 
-[[h-threat-entities]]
 === Threat Entities 
 
-As {organization} analyzes HTTP traffic, the platform extracts identifying metadata, including IP address, user agent, TLS fingerprint, and other characteristics to create a profile and identifier for each attacker. The Threat Entities view provides the visibility security teams need to quickly evaluate Entities prioritized by risk and to drill into the fully correlated view of suspicious and malicious behaviors observed. Users can further search, sort, and filter based on specific attack states and classifications to better understand the implied risk. 
+As ThreatX analyzes HTTP traffic, the platform extracts identifying metadata, including IP addresses, user agents, TLS fingerprints, and other characteristics to formulate profiles and identifiers for each attacker. The Threat Entities view equips security teams with the necessary visibility to swiftly assess Entities prioritized by risk and explore a fully correlated view of the suspicious and malicious behaviors observed. Users can delve further by searching, sorting, and filtering based on specific attack states and classifications to better comprehend the implied risk.
 
-As shown in the figure below, the information is clearly presented with special emphasis on key attributes to further help identify trends and patterns. 
+The information is presented clearly below, with special emphasis on key attributes that assist in identifying trends and patterns.
 
 .Attack Dashboard, Threat Entities
 image::Screen-Shot-2022-08-15-at-12.14.17-PM-1024x516.png[Screen-Shot-2022-08-15-at-12.14.17-PM-1024x516,width=1024,height=516]

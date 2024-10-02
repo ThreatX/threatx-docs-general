@@ -12,6 +12,7 @@
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images
+:page-pdf-filename: analyst-guide.pdf
 
 
 == Introduction
