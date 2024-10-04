@@ -15,7 +15,7 @@
 
 
 
-{organization} is the future of API and web application security. The {organization} Web Application and API Protection platform provides unmatched protection capabilities while simplifying the work of operational security. With {organization}, you’ll enjoy unparalleled visibility into attacks and external risk to your enterprise.
+image:getting-started.svg[] {organization} is the future of API and web application security. The {organization} Web Application and API Protection platform provides unmatched protection capabilities while simplifying the work of operational security. With {organization}, you’ll enjoy unparalleled visibility into attacks and external risk to your enterprise.
 
 {organization} uses advanced attacker-centric behavior analysis to identify and block malicious or suspicious traffic, while collecting and prioritizing threat intelligence to protect your APIs and applications from OWASP attacks, bot attacks, DDoS threats, and sophisticated mixed-mode cyberthreats. Our managed service provides round-the-clock protection and access to expert Layer-7 security analysts, to keep APIs and applications secure.
 

@@ -1,9 +1,15 @@
 = Documentation Home
+:page-build-date: {build-date}
 
-== 📍 Places
+== 📦 ThreatX Products
 
-* xref:1.0@txprevent:ROOT:index.adoc[TX Prevent]
-* xref:3.20@txprotect:ROOT:index.adoc[TX Protect]
+* xref:{txprevent-current-version}@txprevent:ROOT:index.adoc[TX Prevent {txprevent-current-version}]    
+* xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[TX Protect {txprotect-current-version}]
+
+== ℹ️ About ThreatX
+* xref:intro.adoc[Introduction to ThreatX]
+* xref:overview.adoc[Platform Overview]
+* xref:getting_started.adoc[Start Using ThreatX]
 
 == 🗞️ News
 

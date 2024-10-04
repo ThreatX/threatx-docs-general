@@ -16,7 +16,7 @@
 
 
 == Introduction
-The _Analyst Guide_ focuses on those areas of the {{product-name}} platform that provide analytical data. Security analysts can use the data to perform various tasks, including:
+image:deployment-guides.svg[] The _Analyst Guide_ focuses on those areas of the {{product-name}} platform that provide analytical data. Security analysts can use the data to perform various tasks, including:
 
 * Monitor changes.
 * Review details about a specific attack.

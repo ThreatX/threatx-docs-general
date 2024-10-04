@@ -14,7 +14,7 @@
 :imagesdir: ../images
 
 
-The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
+image:how-it-works.svg[] The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
 This guide provides a detailed description of the ThreatX platform, its features, and how it interacts with your environment.
 

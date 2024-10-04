@@ -13,8 +13,7 @@
 :source-highlighter: highlightjs
 :imagesdir: ../images
 
-
-After connecting hostnames to {organization}, real-time attack information will be displayed via the Attack Dashboard and API Defender in the {organization} platform. Use the latest available sensor version to see all information populated on the {organization} platform. 
+image:getting-started.svg[] After connecting hostnames to {organization}, real-time attack information will be displayed via the Attack Dashboard and API Defender in the {organization} platform. Use the latest available sensor version to see all information populated on the {organization} platform. 
 
 == *{organization} Attack Dashboard* 
 

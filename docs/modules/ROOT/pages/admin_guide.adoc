@@ -16,7 +16,7 @@
 :label-web-ui-example: Web UI (x.threatx.com)
 :page-pdf-filename: administator-guide.pdf
 
-The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
+image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
 This guide focuses on the administrator tasks.
 
