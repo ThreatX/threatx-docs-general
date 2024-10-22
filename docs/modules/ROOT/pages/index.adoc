@@ -8,7 +8,7 @@
 
 == ℹ️ About ThreatX
 * xref:intro.adoc[Introduction to ThreatX]
-* xref:overview.adoc[Platform Overview]
+* xref:overview_guide.adoc[Platform Overview]
 * xref:getting_started.adoc[Start Using ThreatX]
 
 == 🗞️ News
