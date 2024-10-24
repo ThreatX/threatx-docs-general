@@ -24,13 +24,14 @@ image:deployment-guides.svg[] The _Analyst Guide_ focuses on those areas of the 
 * Identify unexpected usage patterns.
 * Allow, deny, or temporarily block specific traffic.
 
-You should be familiar with the various terms used in the {organization} platform and this guide. The terms are defined in the link:#glossary[Glossary].
+You should be familiar with the various terms used in the {organization} platform and this guide. The terms are defined in the <<glossary,Glossary>>.
 
 == {organization} platform
 
 The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, malicious automation, DDoS, and API-specific attacks.
 
-[[h-architecture]]
+'''
+
 === Architecture
 
 {organization} sensors channel your ingress traffic through the {organization} platform, analyzes API traffic for threats, and performs actions as needed, including block, tarpit, and IP interrogation, before sending the traffic to your environment.
@@ -41,7 +42,8 @@ The {organization} platform provides metrics and analytical data of API traffic 
 
 image:Admin-Guide-Architecture-high-level-1024x543.png[Admin-Guide-Architecture-high-level-1024x543,width=1024,height=543]
 
-[[h-attacker-centric-behavioral-analytics]]
+'''
+
 === Attacker-Centric Behavioral Analytics
 
 The {organization} platform uses Attacker-Centric Behavioral Analytics (ACBA), which is an approach that identifies critical elements of an attack, responds to them before any damage is done, and maintains protection even if attackers change or obfuscate their attack pattern to avoid detection. The {organization} platform delivers a range of responsive actions, including blocking, IP interrogation and challenges, and targeted rate limiting which is also known as tarpitting. 
@@ -50,7 +52,8 @@ ACBA continuously monitors all users as they interact with an application or API
 
 The {organization} risk engine also tracks attackers over time, observing risky behavior that is not obviously malicious on the basis of a single request, but exhibits a pattern of risky behavior known to be associated with malicious actors. This data is correlated in the activity logs and can be displayed in the Dashboard.
 
-[[h-rules]]
+'''
+
 === Rules
 
 A {organization} WAF _rule_ is a set of Boolean conditions that, when True, implement the rule’s defined action and risk level. A True state is known as a match. The conditions are based on threat, request, or response attributes.
@@ -67,6 +70,8 @@ The {organization} platform gathers, organizes, and presents the data it collect
 
 The following sections describe each major type of data given in the tables.
 
+'''
+
 === Sites
 
 The {organization} platform displays all the sites under the {organization} protection, the API profile for each site, and every endpoint for each site.
@@ -74,6 +79,8 @@ The {organization} platform displays all the sites under the {organization} prot
 A _site_ is a web property serving API responses intended for consumption by an application. It is also called an API site. An _endpoint_ is a URL pattern representing a group of resources within a site. A site can have multiple endpoints. The _API profile_ is a type of API such as JSON, XML, and URL-encoded.
 
 The {organization} platform shows the sites by their hostname. You can drill-in to a site to see its endpoints and the activity at each endpoint.
+
+'''
 
 === Threats
 
@@ -83,11 +90,17 @@ Where it is common for attackers to use many IP addresses in a single attack, th
 
 The tables in the {organization} dashboard offers analytical data about the threat. The following metrics are common to several tables.
 
+.Threat Metrics
+****
+[horizontal]
 *Status*:: Current response to the threat. Status includes Watched, Blocked, Allow Listed, or Deny Listed.
 *IP Address*:: Origin of the threat.
 *Last Seen*:: Time of the last request.
 *Location*:: Country where the attack originated.
 *Attack Class*:: Category of the threat, such as XSS, password guessing, and Trojan activity.
+****
+
+'''
 
 === Risk Score and Risk Level
 
@@ -98,39 +111,53 @@ Risk Level:: This attribute is associated with all activities of a threat. The l
 
 NOTE: Many of the tables in the {organization} platform show *Max Level*, which is the maximum Risk Level in the specified time range.
 
+'''
+
 === Rule activity
 
 Requests match a rule a certain number of times within a specific time range, which determines the Rule Activity. It is displayed as Intensity, either in exact numerical form or a simplified form (Low, Medium, High).
 
 Matched rules are displayed in various tables. Clicking a rule name in the *Rules* column of a table displays that rule’s activity page. Clicking a rule name in the *Description* column displays the properties for that rule.
 
+'''
+
 === Data controls and filters
 
 The {organization} dashboard pages offer the following controls and filters that you can use to focus on specific data.
 
+.Dashboard Pages
+****
+[horizontal]
 Site group:: If your {organization} platform organizes sites into groups, you can choose which group to view. You can view one site group or all site groups.
 Sites:: You can display the data for one or all sites.
 Tenant:: If your {organization} platform has many tenants and your account has permission, you can choose which tenant to view. You can view one tenant only at a time.
 Live:: Refreshes the data.
 Time range:: Choose the time frame to view the data. You can choose a relative time frame, such as the last 12 hours, or an absolute time frame. The time range you select for each page affects the data shown on that page.
+****
 
-image:image-3.png[width=975,height=54]
+image:analyst_guide/image-3.png[width=975,height=54]
 
 
 Some data in the various tables include a percentage with an arrow. The value indicates a change in the data relative to the baseline reporting period, which is 7 days before the selected time range. For example, when you select a 12-hour time range, the baseline period is the same 12-hour period from 7 days previous. The arrow indicates an increase or decrease in value. The following figure shows an increase in the number of Match Events of 30%.
 
-image::image-4.png[width=214,height=377]
+image:analyst_guide/image-4.png[width=214,height=377]
 
+'''
 
 === Allow, deny, and block lists
 
 You can use the following lists to always deny, temporarily block, or always allow specific entities. An _entity_ is a specific IP address or IP group. A suspicious entity is a threat. 
 
+
+.Lists
+****
+[horizontal]
 Blacklist:: Permanently prevents an entities from interacting with any of your sites. 
 Blocklist:: Prevents an entities from interacting with any of your sites for 30 minutes. Request tracking continues during the block period.
 Whitelist:: Entities on the whitelist are always allowed to interact with your sites.
+****
 
-You can add an entity as an IP address or CIDR to any of the lists manually, as described in _Managing threats_ in the link:#managing-analytical-data[Managing analytical data] section. You should exercise caution when manually adding a threat to the Blacklist or Whitelist to prevent a problem with legitimate traffic or always allowing malicious traffic.
+You can add an entity as an IP address or CIDR to any of the lists manually, as described in _Managing threats_ in the <<managing-analytical-data,Managing Analytical Data>> section. You should exercise caution when manually adding a threat to the Blacklist or Whitelist to prevent a problem with legitimate traffic or always allowing malicious traffic.
 
 If the {organization} Risk-Based Blocking feature is enabled, the {organization} platform can add a threat automatically to the Blacklist or Blocklist based on the threat’s behavior. The {organization} behavioral analytics engine, hackerMind™, blocks persistently malicious threats when the threats’ behavior surpasses the Risk-Based Blocking threshold. The analytics engine automatically places a threat on the permanent Blacklist after it is blocked three times.
 
@@ -142,14 +169,16 @@ Data from the sensors is displayed in the pages offered by the {organization} Da
 
 The following sections describe the pages and data. Some features are optional; therefore, depending on your {organization} configuration, some pages might not be available.
 
+'''
+
 === Dashboard
 
 The Dashboard, available from the navigation bar, displays essential data collected for each site in your environment under {organization} protection. The data is live and driven by active site traffic.
 
-image::Dashboard-no-bot-2-1024x666.jpg[width=1024,height=666]
+image::common/Attack-Dashboard.jpg[width=1024,height=666]
 
 
-By default, the {organization} platform updates the data every few seconds. You can choose to display historical data by selecting a time frame, as described in the _Data controls and filters_ in the *link:#analytical-data[Analytical data]* section.
+By default, the {organization} platform updates the data every few seconds. You can choose to display historical data by selecting a time frame, as described in the _Data controls and filters_ in the <<analytical-data,Analytical Data>> section.
 
 You can use the data for various analytical tasks, including:
 
@@ -158,15 +187,18 @@ You can use the data for various analytical tasks, including:
 * Determine if traffic from an origin is to be allowed or blocked.
 * Identify unexpected usage patterns.
 
-The Dashboard includes graphs and three tables, which are described in the following sections. Each table is a different perspective of the organization’s attack surface. For detailed information about the data in the table, see *link:#analytical-data[Analytical data]*.
+The Dashboard includes graphs and three tables, which are described in the following sections. Each table is a different perspective of the organization’s attack surface. For detailed information about the data in the table, see <<analytical-data,Analytical Data>>.
 
 ==== Graphs
 
 The Dashboard includes three interactive graphs.
 
+.Interactive Graphs
+****
 All Requests:: Displays the total number of requests, including benign requests, within the selected time range. It also displays the average number of Requests per Second (RPS). The associated chart displays the number of requests over the selected time range.
 Blocked Requests:: Displays the total number of requests that were blocked within the selected time range. It also displays the average number of RPS. The associated chart displays the number of blocked requests over the time range.
 Max Risk:: Displays the highest system Risk Score recorded during the time range selected. The associated chart displays the maximum Risk Score at each time interval.
+****
 
 You can hover over a point on any graph to display the metrics at that time.
 
@@ -174,7 +206,7 @@ You can hover over a point on any graph to display the metrics at that time.
 
 The Threat Entities table offers the visibility security teams need to quickly evaluate threats prioritized by the Risk Score and Intensity, which represents the number of times rules were matched over the selected time range.
 
-You can drill into the threat to view specific metadata of that threat, as described in link:#Entity_Details[*Entity Details*]. You can also drill into each rule that was matched to see its specific activity, as described in *link:#rule_activity[Rule Activity]*.
+You can drill into the threat to view specific metadata of that threat, as described in <<entity-details,Entity Details>>. You can also drill into each rule that was matched to see its specific activity, as described in *link:#rule_activity[Rule Activity]*.
 
 If you are unfamiliar with the Status icons, you can hover over the icon to see its definition.
 
@@ -184,9 +216,13 @@ The *Top Targets* table focuses on the sites that are most frequently or aggress
 
 The table includes the following data.
 
-* The *Entities* column shows the number of threats that targeted the site.
-* The *Match Events* column shows the number of times one or more rules were matched.
-* The *Status Code summary* field shows the number of responses for each HTTP code and a logarithmic scale to illustrate the relative difference between the numbers.
+.Top Targets Table Column Descriptions
+****
+[horizontal]
+Entities:: column shows the number of threats that targeted the site.
+Match Events:: column shows the number of times one or more rules were matched.
+Status Code summary:: field shows the number of responses for each HTTP code and a logarithmic scale to illustrate the relative difference between the numbers.
+****
 
 You can drill into a site to view its endpoints, which are displayed as paths.
 
@@ -194,36 +230,44 @@ You can drill into a site to view its endpoints, which are displayed as paths.
 
 Threat Map offers visibility into the location of each unique threat and its associated risk. The interactive map allows the user to identify how many unique attackers are acting from each country. You can hover over a country on the map, and a pop-up displays the number of attacking threats originating in that country.
 
-[[Entity_Details]]
+'''
+
 === *Entity Details***
 
 The {organization} platform analyzes HTTP traffic then extracts identifying metadata, including IP address, user agent, TLS fingerprint, and other characteristics to create a profile and identifier for each attacker, which is displayed in the Entity Details page. The data is presented with special emphasis on key attributes to further help identify trends and patterns.
 
 The Entity Details page is accessible by clicking a threat on another page, such as the Dashboard.
 
-image::entity-details-no-bot-1024x670.jpg[width=1024,height=670]
+image:entity-details-no-bot-1024x670.jpg[width=1024,height=670]
 
 ==== Metrics
 
 At a glance, you can see the following data:
 
+.Metrics
+****
+[horizontal]
 Risk Score::
 Threat name::
 Intensity:: Represents the number of times rules were matched over the selected time range.
-Current Status:: The current action taken on the threat. You can change the action as needed. See the _Managing threats_ section in the link:#managing-analytical-data[Managing analytical data] for details.
+Current Status:: The current action taken on the threat. You can change the action as needed. See the _Managing threats_ section in the <<managing-analytical-data,Managing Analytical Data>> for details.
 IP Address:: If available, you can click the address to see any data about it in the ViewdnsInfo web site.
 IP Reputation:: Represents the legitimacy of the IP address with a score of 0 to 100. The higher the score, the more likely that the IP address is legitimate. A low score can indicate an attacker. A score of 0 could mean that the IP reputation is unknown. The scoring system is the opposite of Risk Score.
 Location:: Country of origin.
 User agent:: The program that sent the request on behalf of the user, such as a web browser or curl, as indicated in the User-Agent header field.
 Any tags assigned to the threat:: If your account has permission, you can add a tag to track similar threats.
 Chart that displays the attacks over time:: You can hover over various locations for details of the threat at that time.
+****
 
 The Entity Details page includes tables with  the following sections. Each table is a different perspective of the organization’s attack surface.
 
 ==== Activity
 
-The Activity table offers the following data in addition to the site and threat data described in *link:#analytical-data[**]*link:#analytical-data[Analytical data]**.
+The Activity table offers the following data in addition to the site and threat data described in *link:#analytical-data[**]<<analytical-data,Analytical Data>>*.
 
+.Activity Table Column Descriptions
+****
+[horizontal]
 Type:: If there was an action taken on the request, the column shows the action which can be Watched, Blocked, Whitelisted, or Blacklisted. If there was no action taken, then the Type is Rule Match when the request matches a rule.
 Risk:: Risk Score.
 Blocked:: A red dot indicates that a request from the threat was blocked.
@@ -240,6 +284,7 @@ Size:: Length of the response in bytes.
 Time (ms):: Time taken to receive the response from the upstream server.
 Description:: Lists the rules that were matched by the threat. You can click a rule to display the properties for that rule.
 Count:: Number of rules matched by the request.
+****
 
 You can click the search icon in each column header to filter the table. The search icon for some rows also display a count of each type of entry. For example, the Domain row would show every type of domain and the number of each.
 
@@ -270,15 +315,19 @@ The page lists the endpoints that were targeted by the threat. It contains two t
 
 The non-API endpoints table might list API endpoints when the {organization} profiling engine is actively determining if the site is an API or web service site.
 
+'''
+
 === Rule Details
 
 The Rule Details page displays a rule’s properties, its conditions, and the actions it takes when the conditions are matched.
 
-image::rule-details-no-bot.jpg[width=1003,height=595]
+image:common/rule-details-no-bot.jpg[width=1003,height=595]
 
 
-The properties include:
 
+.Rule Detail Properties
+****
+[horizontal]
 Description:: Text that defines the behavior or purpose of the rule.
 Tag Name:: Brief text to identify the rule. The tag exists to identify a rule when a description is long.
 Classification:: Describes the type of attack which the rule assigns to a threat. The classification displays in various tables as the attack class.
@@ -289,6 +338,7 @@ Track::: Begin or continue tracking a risk score for the offending entity, base
 Block::: Immediately block the request and track a risk score for the offending entity.
 Tarpit::: Limit the speed at which the offending entity receives responses and track a risk score for the entity.
 Interrogate::: Challenge an offending entity with a cookie and try to fingerprint the user-agent.
+****
 
 The *Visual* and *JSON* tabs display the programmatic rule conditions in a Visual or JSON format.
 
@@ -296,11 +346,13 @@ The Rule Details page is accessible from various tables by clicking a rule name 
 
 NOTE: Rule details are read-only unless your account has permission to edit rules.
 
+'''
+
 === API Catalog
 
 The API Catalog displays statistics about the API traffic to the sites in your environment under {organization} protection. It lists all the known sites, their endpoints, any threats or attacks, type of attack, and the number of times API traffic at a site matched a rule. You can view details about a specific site and then view details about a single endpoint within the site.
 
-image::API-Catalog-with-sens-data2-1024x588.png[width=1024,height=588]
+image:common/API-Catalog-with-sens-data2.png[width=1024,height=588]
 
 
 If your account has the Sensitive Data feature, the {organization} platform monitors API responses to detect various data types as shown in the following table. The metrics within the API Catalog indicate the data type, counts and which sites and endpoints are exposing the data.
@@ -357,7 +409,7 @@ The table organizes the data by site and includes the following:
 * The *Threats* column shows the number of threats, not the number of attacks. A threat can be associated with multiple matched rules. The number of threats is typically smaller than the number of matched rules since one threat can match multiple rules.
 * The *Response Codes* column shows the number of HTTP responses for each HTTP response code within the selected time range. Hover over the response code bar to see the number of responses per HTTP code. A high count or percentage could indicate that the endpoint is experiencing high levels of invalid input or suffering from elevated error rates. For example, it could represent clients misbehaving, servers being misconfigured, or attempts to exploit software by intentionally exercising unexpected inputs.
 
-For detailed information about the data in the tables, see *link:#analytical-data[**]*link:#analytical-data[Analytical data]**.
+For detailed information about the data in the tables, see <<analytical-data,Analytical Data>>.
 
 ==== Site Details
 
@@ -373,14 +425,19 @@ You can click an endpoint to see API traffic details for that endpoint. The page
 
 The Endpoint Details page includes the following tables.
 
-The tables under *Details* gives the following data.
 
+.Details Table
+****
+[horizontal]
 Traffic Trends:: List of metrics for the endpoint along with the percentage of change of the requests within the selected time range.
 Response Code Trends:: HTTP response codes, number of times they occurred within the selected time range, and the percentage change.
 Sensitive Data:: This table shows the type of sensitive data detected in the endpoint, number of times they occurred within the selected time range, and the percentage change. The Data Type shows the type of data, such as credit card, social security number, or credentials.
-Threats::  This table gives details about the threats for that endpoint. You can click a threat name to open its link:#Entity_Details[*Entity Details*] page. You can also click a rule name to see the activity of that rule.
+Threats::  This table gives details about the threats for that endpoint. You can click a threat name to open its <<entity-details,Entity Details>> page. You can also click a rule name to see the activity of that rule.
+****
 
 If you see traffic that should be monitored, click *Request a Rule* to request that the {organization} SOC write a rule for a specific situation.
+
+'''
 
 === *Audit Log***
 
@@ -409,32 +466,33 @@ Each column in the audit log has a search icon which you can use to search for a
 
 If you have access to the {organization} API, you can access the audit logs. The following is an example command.
 
-[source,console]
+[,console]
 ----
-$ curl https://provision.threatx.io/tx_api/v2/logs -H 'Content-Type: 
-application/json' -d '{ "command":"audit_events", "token":"<api_token>", 
-"customer_name":"<tenant_name>", "limit": 100 }'
+$ curl https://api.threatx.io/tx_api/v2/logs -H 'Content-Type: 
+application/json' -d '{ "command":"audit_events", "token":"_<api_token>_", 
+"customer_name":"_<tenant_name>_", "limit": 100 }'
 ----
 
 *Blocked Requests*
 
 The Blocked Requests page lists the requests that were blocked and relevant data about when and where the attack occurred that caused the threat to be blocked.
 
-image::blocked-requests-no-nav-1024x358.png[width=1024,height=358]
+image:common/blocked-requests-no-nav.png[width=1024,height=358]
 
 
 The Request ID is a random string generated to help identify every request that passes through your {organization} sensors. This request ID is visible on every allowed request in the response header, and also is presented in the 403 message of every blocked request.
 
 Request IDs are useful for investigating issues or blocked requests, and can be given to the {organization} SOC if more assistance is needed. {organization} SOC retains the logs of all suspicious and malicious requests for 90 days, and IDs for those requests remain searchable during that time.  +
  +
-Click the *View Entity* button to be taken to that entity’s link:#Entity_Details[*Entity Details*] __ page, where you see the full details of the request that was blocked.
+Click the *View Entity* button to be taken to that entity’s <<entity-details,Entity Details>> __ page, where you see the full details of the request that was blocked.
 
-[[rule_activity]]
+'''
+
 === *Rule Activity*
 
 The Rule Activity page, shown as Rule Details, provides data about the threats that matched the rule. This page is accessible from other pages by clicking a rule name in the *Rules* column.
 
-image::Rule-Activity-no-nav-1024x766.png[width=1024,height=766]
+image:common/Rule-Activity-no-nav.png[width=1024,height=766]
 
 
 You can use the data to determine the effectiveness of the rule and if a change is needed. For example:
@@ -446,10 +504,15 @@ You can use the data to determine the effectiveness of the rule and if a change 
 
 The *Rule ID* tile provides the ID of the rule, description and the following data:
 
+
+.Rule ID Tile Data
+****
+[horizontal]
 State that the rule assigns to a threat:: The state is shown as a bar with text underneath. The state displays in various pages as the Max Level. In the previous figure, the state is Recon.
 Classification that the rule assigns to a threat:: The classification displays in various pages as the attack class. In the previous figure, the classification is Scanner.
 Responsive action:: Action that the rule performs when responding to a threat. The action displays in various pages as the status.
 Risk Score:: Score that the rule assigns to a threat.
+****
 
 The *Matched Threats* tile shows the total number of threats that matched the rule in the selected time frame.
 
@@ -461,21 +524,24 @@ The table lists the other rules that were matched by the threat. Clicking a rule
 
 The *Match Events* column shows the number of times traffic matched a rule within the selected time range and its change over time. A significant value could indicate a security problem.
 
-You can drill into each threat to display its link:#Entity_Details[*Entity Details*] __ page.
+You can drill into each threat to display its <<entity-details,Entity Details>> page.
 
-For detailed information about the other data in the table, see *link:#analytical-data[**]*link:#analytical-data[Analytical data]**.
+For detailed information about the other data in the table, see <<analytical-data,Analytical Data>>.
 
 ==== Activity
 
-The *Activity* table lists each attack and the time it occurred. You can drill into each threat to display its link:#Entity_Details[*Entity Details*] __ page.
+The *Activity* table lists each attack and the time it occurred. You can drill into each threat to display its <<entity-details,Entity Details>> page.
+
 
 If you are unfamiliar with the Status icons, you can hover over the icon in the *Status* column to see its activity.
 
-For detailed information about the other data in the table, see *link:#analytical-data[Analytical data]*.
+For detailed information about the other data in the table, see <<analytical-data,Analytical Data>>.
 
 == Managing analytical data
 
 The following sections describe the tasks you can perform to manage analytical data.
+
+'''
 
 === Managing threats
 
@@ -483,7 +549,6 @@ If your account has permission, you can manually allow, block or deny entities.
 
 You can perform these actions from the threat’s Entity Details page, IWAF Settings, or by using the {organization} API.
 
-[[entity-details]]
 ==== Entity Details
 
 If the threat has interacted with your sites, you can add it to a list as follows.
@@ -492,7 +557,7 @@ If the threat has interacted with your sites, you can add it to a list as follow
 . Click *Current Status*, as shown in the following figure.
 . Change it to the desired list.
 
-image::image.png[width=975,height=138]
+image:analyst_guide/image.png[width=975,height=138]
 
 
 To remove a threat from a list, open *Current Status* and select a different list or Watched.
@@ -501,11 +566,11 @@ To remove a threat from a list, open *Current Status* and select a different lis
 
 Click *Settings* in the navigation bar then select *IWAF*. The IWAF Settings page has a tab for *Blocked IPs*, *Blacklisted IPs* and *Whitelisted IPs*.
 
-image::IWAF-blacklisted-ips-no-nav-1024x432.png[width=1024,height=432]
+image:common/IWAF-blacklisted-ips-no-nav.png[width=1024,height=432]
 
 You can click each tab to view the entities in each list. In each tab, use *Add Entry* to add an IP address or CIDR range to the list. You are prompted to provide a reason for the action. Use the *Remove* button in the entity’s row to manually remove an entity.
 
-==== *{organization} API***
+==== *{organization} API*
 
 If you have access to the {organization} API, you can use the {organization} /tx_api/v1/lists endpoint to manage the lists. To use the endpoint, you need to know the API token and the tenant name. For details, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
@@ -531,9 +596,9 @@ Deletes one or more new entries.
 
 The following example removes an IP address from the Block list.
 
-[source,console]
+[,console]
 ----
-$ curl https://provision.threatx.io/tx_api/v1/lists -H 'Content-Type: application/json' -d '{ "command":"delete_blocklist", "token":"<api_token>", "customer_name":"<tenant_name>", "ip":"1.2.3.4" } }
+$ curl https://api.threatx.io/tx_api/v1/lists -H 'Content-Type: application/json' -d '{ "command":"delete_blocklist", "token":"_<api_token>_", "customer_name":"_<tenant_name>_", "ip":"1.2.3.4" } }
 ----
 
 The response to the command is as follows:
@@ -542,9 +607,9 @@ The response to the command is as follows:
 
 The following example adds an IP address to the Blacklist.
 
-[source,console]
+[,console]
 ----
-$ curl https://api.threatx.io/tx_api/v1/lists -H 'Content-Type: application/json' -d '{ "command":"new_blacklist", "token":"<api_token>", "customer_name":"<tenant_name>", "entry":{ "ip":"1.2.3.4", "description":"Test Blacklist", "created":1} }'
+$ curl https://api.threatx.io/tx_api/v1/lists -H 'Content-Type: application/json' -d '{ "command":"new_blacklist", "token":"_<api_token>_", "customer_name":"_<tenant_name>_", "entry":{ "ip":"1.2.3.4", "description":"Test Blacklist", "created":1} }'
 ----
 
 The response to the command is as follows:

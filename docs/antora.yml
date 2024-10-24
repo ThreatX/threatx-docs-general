@@ -2,5 +2,15 @@
 name: txgeneral
 title: Managed Protection 
 version: ~
+asciidoc:
+  attributes:
+    txprotect-current-version: 3.20
+    txprevent-current-version: 1.1
+    tip-caption: 💡 TIP
+    caution-caption: 🚦 CAUTION
+    note-caption: 📝 NOTE
+    warning-caption: ⚠️ WARNING
+    error-caption: ❌ ERROR
+    important-caption: ❕ IMPORTANT
 nav:
 - modules/ROOT/nav.adoc

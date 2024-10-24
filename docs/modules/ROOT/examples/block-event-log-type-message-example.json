@@ -1,0 +1,14 @@
+{
+    "message": "www.examplesite.net/example_uri",
+    "msg_type": "BlockEvent",
+    "timestamp": "2020-12-18T14:05:52Z",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64;rv: 82.0)",
+    "dst_host": "www.examplesite.net",
+    "uri": "/example_uri",
+    "args": "oneequals1--",
+    "request_id": "d3f02fff5db4824d83d145fad1258959",
+    "random_id": null,
+    "tls_fingerprint": null,
+    "cookie": null,
+    "js_fingerprint": null
+}

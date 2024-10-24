@@ -1,0 +1,37 @@
+{
+    "message": "www.examplesite.net/example_uri",
+    "msg_type": "MatchEvent",
+    "timestamp": "2020-12-18T14: 05: 52Z",
+    "request_id": "d3f02fff5db4824d83d145fad1258959",
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:82.0)",
+    "matches": [
+        {
+            "id": 202202,
+            "description": "SqlAnalyzer: SQLi detected in form/args, sql_ids: 1",
+            "classification": "SqlInjection",
+            "state": "Exploitation",
+            "contrib_score": 100,
+            "risk": 70,
+            "blocking": true,
+            "beta": false
+        }
+    ],
+    "ip": "222.222.222.222",
+    "dst_host": "www.examplesite.net",
+    "uri": "/",
+    "args": "oneequals1--",
+    "status_code": 0,
+    "ssl": false,
+    "risk": 70,
+    "request_method": "GET",
+    "content_type": null,
+    "content_length": 0,
+    "response_length": null,
+    "upstream_response_time": null,
+    "postblock_event": false,
+    "random_id": 0,
+    "tls_fingerprint": null,
+    "cookie": null,
+    "js_fingerprint": 0,
+    "created": "2020-12-18T14: 05: 52.174+00: 00"
+}

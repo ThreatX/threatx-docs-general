@@ -1,19 +1,23 @@
 = Documentation Home
+:toclevels: 2
 :page-build-date: {build-date}
 
-== 📦 ThreatX Products
+👋 *Welcome to ThreatX's Product Knowledge Base for End-Users*
+
+== 📦 Explore ThreatX Products 
 
 * xref:{txprevent-current-version}@txprevent:ROOT:index.adoc[TX Prevent {txprevent-current-version}]    
 * xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[TX Protect {txprotect-current-version}]
 
-== ℹ️ About ThreatX
-* xref:intro.adoc[Introduction to ThreatX]
-* xref:overview_guide.adoc[Platform Overview]
-* xref:getting_started.adoc[Start Using ThreatX]
+'''
 
 == 🗞️ News
 
+=== October 24, 2024
 
+* A new version of TX Prevent was released. See the xref:1.1@txprevent:ROOT:index.adoc[TX Prevent 1.1] documentation for details.
+
+'''
 
 
 Last updated {build-date}
