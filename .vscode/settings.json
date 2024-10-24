@@ -1,6 +1,7 @@
 {
- "asciidoc.preview.fontFamily": "Roboto,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
- "asciidoc.extensions.registerWorkspaceExtensions": true,
+ "asciidoc.useWorkspaceRootAsBaseDirectory": false,
  "asciidoc.preview.preservePreviewWhenHidden": true,
- "asciidoc.antora.enableAntoraSupport": true,
+ "asciidoc.extensions.enableKroki": true,
+ "asciidoc.preview.fontFamily": "Roboto,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+ "asciidoc.antora.showEnableAntoraPrompt": true,
 }

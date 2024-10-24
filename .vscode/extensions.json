@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "asciidoctor.asciidoctor-vscode"
+        "asciidoctor.asciidoctor-vscode",
+        "chrischinchilla.vale-vscode",
+        "travismichette.adoc-snippets"
       ]
 }
