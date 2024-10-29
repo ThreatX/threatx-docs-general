@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "yamllint antora.yml",
+    "check-yaml": "./node-modules/.bin/yamllint docs/antora.yml",
     "sync-styles": "./node_modules/@vvago/vale/bin/vale sync",
     "check-style": "./node_modules/@vvago/vale/bin/vale --ext=.adoc --config=.vale.ini ./docs"
   }

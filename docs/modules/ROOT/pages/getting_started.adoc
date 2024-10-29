@@ -18,31 +18,40 @@ image:getting-started.svg[] After connecting hostnames to {organization}, real-t
 == *{organization} Attack Dashboard* 
 
 === Introduction
-ThreatX's Attack Dashboard offers comprehensive visibility into how the platform secures APIs and web applications from security threats. Within the dashboard, security teams and application owners can view vital data collected about each protected API endpoint, web application, or website. ThreatX analytics automatically correlates vast amounts of data related to the suspicious and malicious traffic the platform has identified, tracked, and blocked, providing teams with real-time situational awareness essential for safeguarding their Internet-facing assets.
+ThreatX's Attack Dashboard offers comprehensive visibility into how the platform secures APIs and web applications from security threats.
+Within the dashboard, security teams and application owners can view vital data collected about each protected API endpoint, web application, or website.
+ThreatX analytics automatically correlates vast amounts of data related to the suspicious and malicious traffic the platform has identified, tracked, and blocked, providing teams with real-time situational awareness essential for safeguarding their Internet-facing assets.
 
 === How It Works 
 
 The Attack Dashboard consists of three main views: Threat Entities, Top Targets, and Threat Map. Each view offers a unique perspective on an organization's attack surface.
 
-The data in the dashboard is live and reflects active site traffic. By default, it updates every few seconds with real-time dynamic data. Users can opt for a historical data view at specified times using the time picker. An interactive graph and high-level details, such as request statistics and maximum entity risk, are displayed across the three main views. Hovering over a point on the graph allows users to see the total numbers of matched and blocked requests at specific times, encouraging further investigation into the attack state of an entity.
+The data in the dashboard is live and reflects active site traffic.
+By default, it updates every few seconds with real-time dynamic data.
+Users can opt for a historical data view at specified times using the time picker.
+An interactive graph and high-level details, such as request statistics and maximum entity risk, are displayed across the three main views.
+Hovering over a point on the graph allows users to see the total numbers of matched and blocked requests at specific times, encouraging further investigation into the attack state of an entity.
 
 === Threat Entities 
 
-As ThreatX analyzes HTTP traffic, the platform extracts identifying metadata, including IP addresses, user agents, TLS fingerprints, and other characteristics to formulate profiles and identifiers for each attacker. The Threat Entities view equips security teams with the necessary visibility to swiftly assess Entities prioritized by risk and explore a fully correlated view of the suspicious and malicious behaviors observed. Users can delve further by searching, sorting, and filtering based on specific attack states and classifications to better comprehend the implied risk.
+As ThreatX analyzes HTTP traffic, the platform extracts identifying metadata, including IP addresses, user agents, TLS fingerprints, and other characteristics to formulate profiles and identifiers for each attacker.
+The Threat Entities view equips security teams with the necessary visibility to swiftly assess Entities prioritized by risk and explore a fully correlated view of the suspicious and malicious behaviors observed.
+Users can delve further by searching, sorting, and filtering based on specific attack states and classifications to better comprehend the implied risk.
 
 The information is presented clearly below, with special emphasis on key attributes that assist in identifying trends and patterns.
 
 .Attack Dashboard, Threat Entities
 image::Screen-Shot-2022-08-15-at-12.14.17-PM-1024x516.png[Screen-Shot-2022-08-15-at-12.14.17-PM-1024x516,width=1024,height=516]
 
-Remembering specific IP addresses can be difficult, and it’s common for attackers to use multiple IP addresses in a single attack. Therefore, {organization} uses a human-readable name format consisting of a “negative” adjective (such as Smelly) and a pirate name (such as Blackbeard) to identify each unique attacker. {organization} users will see lists of entities containing names such as SmellyBlackbeard, AnnoyingSpider, and MoodyMorris. 
+Remembering specific IP addresses can be difficult, and it’s common for attackers to use multiple IP addresses in a single attack.
+Therefore, {organization} uses a human-readable name format consisting of a “negative” adjective (such as Smelly) and a pirate name (such as Blackbeard) to identify each unique attacker.
+{organization} users will see lists of entities containing names such as SmellyBlackbeard, AnnoyingSpider, and MoodyMorris. 
 
 By clicking on a specific Entity name in the Threat Entities view, users will be taken to the Entity Details page where they can view more specific event metadata and request and response information.
 
 .Attack Dashboard, Entity Details
 image::Attack-Dashboard-Threat-Entities-Entity-Details-1024x529.png[width=1024,height=529]
 
-[[h-top-targets]]
 === Top Targets 
 
 The Top Targets view features API and web hostnames that have been targeted during the time selected. Administrators can easily see the assets that are most frequently or aggressively targeted,  [line-through]## gaining insight and understanding of their risk profile, and the protection they are receiving from {organization}. The Top Targets view makes it easy for the user to drill into each hostname to view the details for each path.
@@ -51,10 +60,12 @@ The Top Targets view features API and web hostnames that have been targeted duri
 image::{organization}-Attack-Dashboard-Top-Targets-1024x521.png[width=1024,height=521]
 
 
-[[h-threat-map]]
 === Threat Map 
 
-Threat Map is another key view in the Attack Dashboard. It provides visibility into the location of each unique entity and its associated risk. The interactive map allows the user to identify how many unique attackers are acting from each country. Users can hover over a country on the Threat Map, and a pop-up will display the number of attacking entities originating in that country. 
+Threat Map is another key view in the Attack Dashboard.
+It provides visibility into the location of each unique entity and its associated risk.
+The interactive map allows the user to identify how many unique attackers are acting from each country.
+Users can hover over a country on the Threat Map, and a pop-up will display the number of attacking entities originating in that country. 
 
 .Attack Dashboard, Threat Map
 image::Threat-Map-1024x553.png[width=1024,height=553]
@@ -63,41 +74,50 @@ image::Threat-Map-1024x553.png[width=1024,height=553]
 
 == *{organization} API Defender* 
 
-[[h-introduction-1]]
 === Introduction 
 
-The API Defender dashboard provides visibility into the APIs and their endpoints discovered and protected by the {organization} platform. API traffic analytics, error code summaries, and a visualization of API schema conformance are displayed in API Defender, as shown below in Figure 5, providing the ability to compare what API traffic is expected vs. variances against your organization’s API specifications. The API Defender dashboard brings together API discovery, observability, and the context needed to understand your organization’s entire attack surface and what is being seen in the wild.  
+The API Defender dashboard provides visibility into the APIs and their endpoints discovered and protected by the {organization} platform.
+API traffic analytics, error code summaries, and a visualization of API schema conformance are displayed in API Defender, as shown below in Figure 5, providing the ability to compare what API traffic is expected vs.
+variances against your organization’s API specifications.
+The API Defender dashboard brings together API discovery, observability, and the context needed to understand your organization’s entire attack surface and what is being seen in the wild.  
 
-{organization}’s API Defender makes it easier than ever for organizations to drill into the finer points of API attacks. With a comprehensive set of data available, customers can quickly take responsive actions, such as enabling automatic blocking, establishing geo-fencing to block traffic from parts of the globe where there shouldn’t be clients, or tarpitting attacks to prevent overconsumption of backend resources.
+{organization}’s API Defender makes it easier than ever for organizations to drill into the finer points of API attacks.
+With a comprehensive set of data available, customers can quickly take responsive actions, such as enabling automatic blocking, establishing geo-fencing to block traffic from parts of the globe where there shouldn’t be clients, or tarpitting attacks to prevent overconsumption of backend resources.
 
 .API Defender
 image::API-Defender-Endpoint-Table-with-schema-1024x575.png[width=1024,height=575]
 
 
 
-[[h-api-discovery]]
 === API Discovery 
 
 {organization}’s API Discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate endpoints. While monitoring API interactions in real-time, {organization} can accurately detect real API endpoints and determine their active tech stacks or markup encodings for JSON, XML, GraphQL, and URL-encoded endpoints. The {organization} platform is actively expanding its support for additional API tech stacks such as gRPC and SOAP. 
 
-[[h-how-it-works-1]]
 ==== *How It Works* 
 
-The API Defender page will appear empty until {organization}’s API Discovery analyzes traffic hitting API endpoints. {organization} API Discovery determines if an HTTP target is an API endpoint by decoding the target path of the request and parsing the payload to identify API calls. {organization} can accurately detect real API endpoints and determine their active tech stacks or markup encodings for JSON, XML, GraphQL, and URL-Encoded endpoints. The {organization} platform is actively expanding its support to profile additional API tech stacks such as gRPC and SOAP. 
+The API Defender page will appear empty until {organization}’s API Discovery analyzes traffic hitting API endpoints.
+{organization} API Discovery determines if an HTTP target is an API endpoint by decoding the target path of the request and parsing the payload to identify API calls.
+{organization} can accurately detect real API endpoints and determine their active tech stacks or markup encodings for JSON, XML, GraphQL, and URL-Encoded endpoints.
+The {organization} platform is actively expanding its support to profile additional API tech stacks such as gRPC and SOAP. 
 
-If an endpoint is not displayed within the API Defender page, it hasn’t been profiled yet. This does not mean the API is not protected, but rather that our profiling analytics haven’t yet collected the required criteria to profile the endpoint as an API. {organization}’s protection-first approach will still protect the API from attacks, even before it crosses the profiling threshold. 
+If an endpoint is not displayed within the API Defender page, it hasn’t been profiled yet.
+This does not mean the API is not protected, but rather that our profiling analytics haven’t yet collected the required criteria to profile the endpoint as an API. {organization}’s protection-first approach will still protect the API from attacks, even before it crosses the profiling threshold. 
 
-[[h-api-observability]]
-== *API Observability* 
+== *API Observability*
 
-{organization}’s API Discovery analyzes and profiles endpoints on a given site, and any inaccurate paths being displayed as endpoints will fall off the API Defender page as {organization} continues to baseline and make profiling decisions based on traffic being observed. Ultimately, the API Discovery capabilities provide analytics on actual traffic hitting real endpoints or attackers blindly targeting common or well-known directory paths with API fuzzing or API enumeration techniques. This gives teams complete visibility into expected and suspicious API traffic hitting their API attack surface.  
+{organization}’s API Discovery analyzes and profiles endpoints on a given site, and any inaccurate paths being displayed as endpoints will fall off the API Defender page as {organization} continues to baseline and make profiling decisions based on traffic being observed.
+Ultimately, the API Discovery capabilities provide analytics on actual traffic hitting real endpoints or attackers blindly targeting common or well-known directory paths with API fuzzing or API enumeration techniques.
+This gives teams complete visibility into expected and suspicious API traffic hitting their API attack surface.  
 
-[[h-schema-compliance]]
 === Schema Compliance 
 
-The API Defender dashboard gives users the ability to upload, manage, and cross-compare which API traffic is expected according to your organization’s schema vs. what is being seen in the wild. Manage your organization’s API schemas within the API Defender page to gain risk visibility and simplify schema enforcement. API traffic analytics will display and highlight the anomalies seen based on your organization’s API specifications, as seen in Figure 7.  
+The API Defender dashboard gives users the ability to upload, manage, and cross-compare which API traffic is expected according to your organization’s schema vs. what is being seen in the wild.
+Manage your organization’s API schemas within the API Defender page to gain risk visibility and simplify schema enforcement.
+API traffic analytics will display and highlight the anomalies seen based on your organization’s API specifications, as seen in Figure 7.  
 
-In addition, {organization}’s real-time discovery capabilities pinpoint API endpoints that may be out of the view of security and development teams, such as zombie and rogue APIs. Overall, these capabilities give an organization a holistic and clear picture of their API attack surface, along with an understanding of when and where APIs are being managed appropriately. Build more confidence in your API specifications with the ability to customize or create API-centered protection rules. 
+In addition, {organization}’s real-time discovery capabilities pinpoint API endpoints that may be out of the view of security and development teams, such as zombie and rogue APIs.
+Overall, these capabilities give an organization a holistic and clear picture of their API attack surface, along with an understanding of when and where APIs are being managed appropriately.
+Build more confidence in your API specifications with the ability to customize or create API-centered protection rules. 
 
 .API Defender, Endpoint Details
 image::API-Defender-Endpoint-Details2-1024x575.png[width=1024,height=575]

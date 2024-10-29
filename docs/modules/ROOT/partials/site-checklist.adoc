@@ -1,0 +1,14 @@
+.Site Checklist
+[cols=",,",options="header",]
+|===
+|*Question* |*Notes* |*Yes/No*
+|Does the application process requests with well-formed SQL queries?  |This is common in Help Desk and Bug-Tracking software. 
+|Does the application process requests with well-formed HTML?  |This is common for Content Management Systems.  
+|Does the application require Two-Way SSL/TLS for client authentication? |  
+|Does the application utilize WebSockets? |  
+|Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. 
+|Are any custom rules required to enforce a unique security or business requirement? |For example, block traffic from foreign countries.  
+|Is there ANY additional infrastructure that exists outside of the following flow? Client —–> {organization} sensor —–> Application  |Examples include a load balancer or proxy in use between the client and {organization} sensor. 
+|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your {organization} service IPs?  |  
+|===
+
