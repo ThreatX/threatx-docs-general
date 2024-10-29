@@ -41,7 +41,7 @@ Several dimensions are considered, including intensity, TOR exit nodes, IP reput
 Attack profiling and threat intelligence:: A continuously expanding Data Warehouse of identified attack patterns, classifications and correlations from suspicious entities collected across all ThreatX protected web applications and customers. The analytics engine correlates the latest intelligence and behavior over time to create a highly accurate decision and response engine to reduce workloads for security teams.
 Dynamic behavior rules:: Determines attacker intent (based on application and entity profiling data) and generates behavior rules (not signatures) that can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. You can work with the ThreatX SOC to create custom behavior rules to meet the needs of your environment.
 Caching and resource optimization:: Static and dynamic caching along with advanced page optimization.
-SSL/TLS/TLS inspection:: Full decryption and re-encryption of requests for deep inspection.
+SSL/TLS inspection:: Full decryption and re-encryption of requests for deep inspection.
 ****
 
 You can use the data the platform gathers to better understand your sites, traffic usage, and behavior, and uncover potential issues such as exposure of sensitive data and vulnerabilities.
@@ -223,7 +223,7 @@ The ThreatX sensor operates as a reverse proxy and is designed to monitor and ac
 ****
 An administrator or ThreatX SOC can configure the following settings.
 
-Listener:: Settings include host name, SSL/TLS/TLS, redirect traffic, HTTP2.
+Listener:: Settings include host name, SSL/TLS, redirect traffic, HTTP2.
 Backend:: Backend configuration for the connection of sites to sensors can be specified as a single hostname or CNAME, or a comma-separated list of IP addresses. 
 Blocking modes:: Determine whether threats can be automatically blocked by risk-based blocking or by rules when it is an obvious hostile attack. Additionally, you can enable users to add IP addresses to the blocked or deny lists.
 Caching configuration:: Enable or disable static or dynamic caching. For more information about caching, see _Edge caching_ under link:#additional-features[Additional Features]
@@ -330,7 +330,7 @@ Additionally, the ThreatX SOC can create custom rate limiting rules tailored for
 
 ==== Site Certificate Management
 
-The ThreatX platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors.
+The ThreatX platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors.
 
 === Privacy
 
@@ -402,12 +402,12 @@ Before onboarding the ThreatX platform, review the following site onboarding che
 [cols=",,",options="header",]
 |===
 |*Question* |*Description* |*Yes/No*
-|Does the application process requests with well-formed SQL queries?  |This is common in Help Desk and Bug-Tracking software. 
-|Does the application process requests with well-formed HTML?  |This is common for Content Management Systems.  
-|Does the application require Two-Way SSL/TLS/TLS for client authentication?  |  
-|Does the application utilize WebSockets?  |  
-|Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. 
-|Are any custom WAF rules required to enforce a unique security or business requirement?  |For example, you want to block traffic from foreign countries.  
+|Does the application process requests with well-formed SQL queries?  |This is common in Help Desk and Bug-Tracking software. | 
+|Does the application process requests with well-formed HTML?  |This is common for Content Management Systems.  | 
+|Does the application require Two-Way SSL/TLS for client authentication?  |  | 
+|Does the application utilize WebSockets?  |  | 
+|Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. | 
+|Are any custom WAF rules required to enforce a unique security or business requirement?  |For example, you want to block traffic from foreign countries.  | 
 |Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your ThreatX service IPs?  |  |* *
 |===
 ****
