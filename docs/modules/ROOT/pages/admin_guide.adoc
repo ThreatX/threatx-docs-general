@@ -1,5 +1,6 @@
-:organization: ThreatX
+= Administrator Guide
 :page-category: Guide
+:toc: 
 :page-edition: Enterprise
 :product-name: {organization} Managed API and Application Protection 
 :example-caption: Example
@@ -13,9 +14,9 @@
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images
-:label-api-example: API (api.threatx.com)
-:label-web-ui-example: Web UI (x.threatx.com)
-:page-pdf-filename: administator-guide.pdf
+:outline: true
+:outlinelevels: 3
+:page-pdf-filename: administrator-guide.pdf
 
 image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
@@ -1269,7 +1270,6 @@ Depending on the nature of the issue, the {organization} SOC might request one o
 
 How you generate a HAR file depends on the web browser you use.
 
-[discrete]
 ===== Generating a HAR file in Chrome:
 
 . Open Google Chrome and navigate to the page where the issue is occurring.
@@ -1282,7 +1282,6 @@ How you generate a HAR file depends on the web browser you use.
 . Once you have reproduced the issue, right-click anywhere on the grid of network requests and select *Save as HAR with Content.*
 . Upload the HAR file as an attachment to your {organization} support ticket for further.
 
-[discrete]
 ===== Generating a HAR file in Mozilla Firefox:
 
 . Open Mozilla Firefox and navigate to the page where the issue is occurring.
@@ -1292,7 +1291,6 @@ How you generate a HAR file depends on the web browser you use.
 . Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), right-click anywhere under the *File* column, and click on *Save all as Har*.
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
-[discrete]
 ===== Generating a HAR file in Internet Explorer:
 
 . Open Internet Explorer and go to the page where the issue is occurring.

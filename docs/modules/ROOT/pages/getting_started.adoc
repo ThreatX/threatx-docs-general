@@ -5,6 +5,7 @@
 :page-edition: Enterprise
 :page-product-name:  {product-name}
 :page-origin-type: git
+:page-pdf-filename: getting-started.pdf
 :sectlinks:
 :sectanchors:
 :sectids:

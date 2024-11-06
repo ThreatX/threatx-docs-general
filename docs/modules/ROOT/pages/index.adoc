@@ -1,5 +1,4 @@
 = Documentation Home
-:toclevels: 2
 :page-build-date: {build-date}
 
 👋 *Welcome to ThreatX's Product Knowledge Base for End-Users*

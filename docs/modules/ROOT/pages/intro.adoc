@@ -5,6 +5,7 @@
 :product-name: {organization} Managed API and Application Protection 
 :page-product-name:  {product-name}
 :page-origin-type: git
+:page-pdf-filename: introduction-to-threatx.pdf
 :sectlinks:
 :sectanchors:
 :sectids:

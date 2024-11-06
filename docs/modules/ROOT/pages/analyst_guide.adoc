@@ -1,5 +1,4 @@
 = Analyst Guide
-:organization: ThreatX 
 :page-category: Guide
 :page-edition: Enterprise
 :product-name: {organization} Managed API and Application Protection 
