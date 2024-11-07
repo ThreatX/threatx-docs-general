@@ -1,5 +1,5 @@
-= Introduction to {organization}
-:organization: {organization}
+= Introduction to ThreatX
+:organization: ThreatX
 :page-category: Guide
 :page-edition: Enterprise
 :product-name: {organization} Managed API and Application Protection 
@@ -22,7 +22,15 @@ image:getting-started.svg[] {organization} is the future of API and web applicat
 
 == {organization} Architecture
 
-The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks. Our specialty, however, is advanced, multi-step attacks where correlation and analysis are required for events often initiated across thousands of IPs.  
+The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, including ...
+
+* Traditional OWASP attacks
+* Bots
+* Malicious automation
+* DDoS 
+* API-specific attacks 
+
+Our specialty, however, is *advanced*, *multi-step attacks* where correlation and analysis are required for events often initiated across thousands of IPs.  
 
 
 .Sensors can also be deployed into public or private cloud and private data centers environments to support specific architectural or compliance requirements.
@@ -33,13 +41,15 @@ image::treatx-architecture_1v2-1024x542.png[treatx-architecture_1v2-1024x542,wid
 
 {organization} is challenging the current standards of API and application protection that have left many organizations frustrated, exposed, and at significant risk. {organization} takes a unique approach that combines multiple, best-of-breed security techniques into a single platform. The result is a solution that provides unmatched protection capabilities and does so in a way that simplifies the effort for our customers. 
 
-The key differentiators include: 
-
+[IMPORTANT]
+.Key Differentiators
+****
 * Attacker-centric behavioral analysis 
 * A combined platform for application, API, DDoS, and bot protection
 * API discovery and real-time protection 
 * Effortless deployment and management 
 * 24/7 managed services support 
+****
 
 {organization}’s behavior-based API and application protection platform secures APIs and web applications from cyberthreats across cloud and on-prem environments. We deliver complete protection and deep threat visibility by combining attacker behavior profiling, collective threat intelligence, and advanced analytics. Our managed service combines threat hunting with 24X7 access to the security experts in the {organization} SOC, significantlyreducing the operational overhead and maintenance burdens for enterprises that choose {organization}.
 
@@ -76,23 +86,12 @@ The {organization} platform is flexible, adaptive to customer preference, and co
 
 === *Sensor Deployment Options:* 
 
-{organization} offers four simple methods of deployment: 
+{organization} offers four simple methods of deployment. 
 
-*{organization} Cloud  * 
-
-{organization} hosts and manages sensor deployment. 
-
-*{organization} Machine Images for AWS, Azure, and GCP * 
-
-{organization} provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.  
-
-*{organization} Docker Container Deployment * 
-
-{organization} provides the customer with a Docker-based {organization} sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.  
-
-*{organization} Hybrid Deployment * 
-
-Mix of the {organization} cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. {organization} will work with the customer to map out the optimal configurations and support models. 
+{organization} Cloud:: {organization} hosts and manages sensor deployment. 
+Self-Hosted w/ VM Images:: {organization} provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.  
+Self-Hosted w/ Docker Images:: {organization} provides the customer with a Docker-based {organization} sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.  
+{organization} Hybrid Deployment:: Mix of the {organization} cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. {organization} will work with the customer to map out the optimal configurations and support models. 
 
 For more information on sensor deployment see: Deployment Guides
 
@@ -108,15 +107,15 @@ There are three different blocking modes available for each site after on-boardi
 image::ThreatX-Blocking-Modes-1024x310.png[width=1024,height=310]
 
 
-*Request Blocking* 
+==== *Request Blocking* 
 
 When enabled for your sites, request blocking will block malicious traffic at the request level when an attack such as SQL injection, XSS, or another malicious request is detected.   
 
-*Risk-Based Blocking* 
+==== *Risk-Based Blocking* 
 
 When enabled, risk-based blocking will allow {organization}’s behavioral analytics engine, hackerMind™, to evaluate each unique entity and block persistently malicious entities based on their behavior over time.  
 
-*Manual Action Blocking* 
+==== *Manual Action Blocking* 
 
 When enabled, this option permits manual blocking of specific IP addresses. Enabling also permits a {organization} console user (security admin) to add entity IP addresses to the deny list for permanent blocking. 
 
@@ -126,7 +125,7 @@ We recommend leveraging all three blocking modes, but provide users the flexibil
 
 {organization} offers a free POC where you can work closely with our SOC staff to configure a solution for your API and web application protection needs.   
 
-Get started today: https://www.threatx.com/request-a-demo/[Request a Personalized Demo]
+Get started today: *https://www.threatx.com/request-a-demo/[Request a Personalized Demo]*
 
 == *What Will I See?* 
 
@@ -134,11 +133,10 @@ Get started today: https://www.threatx.com/request-a-demo/[Request a Personalize
 
 {organization} evaluates each request to identify the nature of the request and determine if it is malicious. It is then classified, scored, and passed along to the behavioral analysis engine to process and adjust the entity risk score. The {organization} platform provides visibility into all this historic and live threat activity for your web applications and API endpoints through two dashboards: the Attack Dashboard and API Defender.
 
-[[attack-dashboard-threat-entities]]
 === Attack Dashboard
 
 
-==== Threat Entities: 
+==== Threat Entities
 
 The {organization} Attack Dashboard visualizes both malicious and benign traffic over time and allows {organization} users to drill down and investigate attacking entities, and the responsive actions the {organization} Platform took to protect their APIs and web applications. The Attack Dashboard is comprised of three main views: Threat Entities, Top Targets, and Threat Map. Each view provides a different perspective on an organization’s attack surface.
 
@@ -146,7 +144,7 @@ The {organization} Attack Dashboard visualizes both malicious and benign traffic
 image::Figure-1-Attack-Dashboard-Threat-Entities-1024x571.png[width=1024,height=571]
 
 
-==== Top Targets:
+==== Top Targets
 
 The Attack Dashboard Top Targets view highlights the most frequently targeted sites and endpoints within a tenant. This view is critical for large enterprises with dozens or hundreds of sites protected by the {organization} Platform. This view puts the most frequently and aggressively targeted sites front and center, allowing administrators to understand their risk profile, and the protection they’re receiving from {organization}.
 
@@ -154,7 +152,7 @@ The Attack Dashboard Top Targets view highlights the most frequently targeted si
 image::ThreatX-Attack-Dashboard-Top-Targets-1024x521.png[width=1024,height=521]
 
 
-==== Threat Map:
+==== Threat Map
 
 The Threat Map view, in the Attack Dashboard, provides visibility into the location of each unique entity and its associated risk. The interactive map allows the user to identify how many unique attackers are acting from each country.
 
@@ -164,7 +162,7 @@ image::Threat-Map-1024x553.png[width=1024,height=553]
 
 === API Defender
 
-==== API Observability:
+==== API Observability
 
 The API Defender dashboard provides visibility into endpoints discovered and protected by the {organization} platform. API traffic analytics, error code summaries, and visualizations of API schema conformance are displayed in API Defender, as shown below in Figure 4, providing the ability to compare what API traffic is expected vs. an anomaly against your organization’s API specifications. The API Defender dashboard brings together API discovery, observability, and the context needed to understand your organization’s entire attack surface against what is being seen in the wild.
 
@@ -173,11 +171,11 @@ image::API-Defender-Endpoint-Table-with-schema-1024x575.png[width=1024,height=57
 
 
 
-==== API Discovery:
+==== API Discovery
 
 {organization}’s API discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate the endpoints as well as the traffic they serve. While monitoring API interactions in real-time, {organization} can accurately detect real API endpoints and determine identifying attributes of their tech stacks or markup encodings. 
 
-==== Schema Compliance:
+==== Schema Compliance
 
 Schema Compliance gives users the ability to upload, manage, and cross-compare which API traffic is expected according to your organization’s schema vs. what is being seen in the wild. Manage your organization’s API schemas within the API Defender page to gain risk visibility, simplify schema enforcement, or create API-centered protection rules.
 
