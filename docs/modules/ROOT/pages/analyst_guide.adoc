@@ -1,6 +1,5 @@
 = Analyst Guide
-:page-category: Guide
-:page-edition: Enterprise
+:page-category: user_guides
 :product-name: {organization} Managed API and Application Protection 
 :page-product-name:  {product-name}
 :page-origin-type: git
@@ -11,7 +10,7 @@
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images
-:page-pdf-filename: analyst-guide.pdf
+:page-pdf-filename: user-guides.pdf
 
 
 == Introduction

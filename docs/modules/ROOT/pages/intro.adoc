@@ -1,11 +1,11 @@
 = Introduction to ThreatX
 :organization: ThreatX
-:page-category: Guide
+:page-category: introduction
 :page-edition: Enterprise
 :product-name: {organization} Managed API and Application Protection 
 :page-product-name:  {product-name}
 :page-origin-type: git
-:page-pdf-filename: introduction-to-threatx.pdf
+:page-pdf-filename: {page-category}.pdf
 :sectlinks:
 :sectanchors:
 :sectids:

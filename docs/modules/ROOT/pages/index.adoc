@@ -1,19 +1,32 @@
-= Documentation Home
+= Product Documentation Home
+Brought to you by the ThreatX Documentation Team
+:keywords: ThreatX, documentation, security, WAF, eBPF, Kubernetes, API, ThreatX Protect, ThreatX Prevent, guide
+:description: This site is designed to provide you with the information you need to get started with ThreatX products, as well as to help you troubleshoot and understand the features and functionality of our products.
+:!toc:
+:page-role: home
 :page-build-date: {build-date}
 
-👋 *Welcome to ThreatX's Product Documentation Repository!* 📚
+== 👋 Introduction
 
-== 📌 Pinned
+*Welcome to ThreatX's public knowledge base and documentation site!*
 
-[horizontal]
-TX Prevent:: xref:{txprevent-current-version}@txprevent:ROOT:index.adoc[*v{txprevent-current-version}* ]    
-TX Protect:: xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[*v{txprotect-current-version}* ] 
+{description}
+
+=== 🗂️ Organization
+
+Each *minor version* (e.g., X.Y) of a product will have its own documentation version, so you can always be sure you are looking at the most up-to-date information.
 
 
+include::partial$current-versions-table.adoc[]
 
 == 🗞️ News
+include::partial$news.adoc[]
 
-November 6, 2024:: ️➕ A new documentation component version was added for xref:1.1@txprevent:ROOT:index.adoc[*TX Prevent v1.1*].
 
+== 📥 PDF Collections
+
+* link:introduction.pdf[Introduction to ThreatX]
+* link:user-guides.pdf[User Guides]
+* link:deployment-guides.pdf[Deployment Guides]
 
 

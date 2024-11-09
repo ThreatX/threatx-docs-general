@@ -1,22 +1,14 @@
 = Administrator Guide
-:page-category: Guide
-:toc: 
-:page-edition: Enterprise
+:page-category: user-guides
 :product-name: {organization} Managed API and Application Protection 
-:example-caption: Example
-:example-number: 
 :page-product-name:  {product-name}
 :page-origin-type: git
-:sectlinks:
-:sectanchors:
-:sectids:
-:copyright: 2024 {organization}, Inc.
 :icons: font
 :source-highlighter: highlightjs
 :imagesdir: ../images
 :outline: true
 :outlinelevels: 3
-:page-pdf-filename: administrator-guide.pdf
+:page-pdf-filename: user-guides.pdf
 
 image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
