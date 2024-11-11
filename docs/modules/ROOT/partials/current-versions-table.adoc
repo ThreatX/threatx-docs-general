@@ -1,5 +1,5 @@
 
-.Documentation Components
+.Current Versions
 [cols='1.0,1.0,8.0', options='header',id="current-versions-table", caption=""]
 |===
 | Product Name | Current Version | Description
@@ -13,9 +13,9 @@
 | xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[*{txprotect-current-version}*] 
 | Next-gen WAF and reverse-proxy sensor
 
-| xref:txgeneral:ROOT:index.adoc[*SaaS Platform*]
-| xref:txgeneral:ROOT:index.adoc[*latest*]
-| link:https://x.threatx.io[ThreatX Dashboard] _(x.threatx.io)_ and general info
+| xref:txgeneral:ROOT:index.adoc[*Dashboard*]
+| xref:{txdashboard-current-version}@txgeneral:ROOT:index.adoc[*{txdashboard-current-version}*]
+| link:https://x.threatx.io[x.threatx.com] SaaS Platform
 
 
 |===

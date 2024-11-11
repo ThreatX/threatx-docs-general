@@ -4,4 +4,8 @@
  "asciidoc.extensions.enableKroki": true,
  "asciidoc.preview.fontFamily": "Roboto,-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
  "asciidoc.antora.showEnableAntoraPrompt": true,
+ "asciidoc.preview.asciidoctorAttributes": {
+    "stylesdir": "../../threatx-docs-ui/public/_/css",
+    "stylesheet": "site.css"
+ },
 }

@@ -8,14 +8,11 @@ Brought to you by the ThreatX Documentation Team
 
 == 👋 Introduction
 
-*Welcome to ThreatX's public knowledge base and documentation site!*
+This is the landing page of ThreatX's public knowledge base and documentation site.
 
 {description}
 
-=== 🗂️ Organization
-
-Each *minor version* (e.g., X.Y) of a product will have its own documentation version, so you can always be sure you are looking at the most up-to-date information.
-
+Each *minor release* (e.g., X.Y) of a product or application has its own documentation component version so you can always be sure you are looking at the most up-to-date information.
 
 include::partial$current-versions-table.adoc[]
 
@@ -23,10 +20,6 @@ include::partial$current-versions-table.adoc[]
 include::partial$news.adoc[]
 
 
-== 📥 PDF Collections
 
-* link:introduction.pdf[Introduction to ThreatX]
-* link:user-guides.pdf[User Guides]
-* link:deployment-guides.pdf[Deployment Guides]
 
 

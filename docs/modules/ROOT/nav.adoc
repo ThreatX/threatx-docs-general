@@ -1,15 +1,13 @@
 * Introduction
 ** xref:intro.adoc[Introduction to ThreatX]
 ** xref:overview_guide.adoc[Platform Overview]
-** xref:getting_started.adoc[New User Guide]
 * User Guides
+** xref:getting_started.adoc[Getting Started]
 ** xref:analyst_guide.adoc[Analyst Guide]
 ** xref:admin_guide.adoc[Administrator Guide]
 * Deployment Guides
-** Prevent
-*** xref:txprevent:ROOT:kubernetes.adoc[Prevent on Kubernetes - Helm Chart]
-*** xref:txprevent:ROOT:cloudformation.adoc[Prevent on AWS EC2 - Cloudformation Template]
-** Protect
-*** xref:txprotect:ROOT:aws_ami_deployment.adoc[Protect on AWS - Marketplace AMI]
-*** xref:txprotect:ROOT:gcp_deployment.adoc[Protect on GCP]
-*** xref:txprotect:ROOT:gcp_terraform_deployment.adoc[Protect on TCP - Terraform]
+** xref:txprevent:ROOT:kubernetes.adoc[Prevent on Kubernetes - Helm Chart]
+** xref:txprevent:ROOT:cloudformation.adoc[Prevent on AWS EC2 - Cloudformation Template]
+** xref:txprotect:ROOT:aws_ami_deployment.adoc[Protect on AWS - Marketplace AMI]
+** xref:txprotect:ROOT:gcp_deployment.adoc[Protect on GCP]
+** xref:txprotect:ROOT:gcp_terraform_deployment.adoc[Protect on TCP - Terraform]

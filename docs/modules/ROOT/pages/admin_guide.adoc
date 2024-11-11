@@ -1,6 +1,6 @@
 = Administrator Guide
 :page-category: user-guides
-:product-name: {organization} Managed API and Application Protection 
+:product-name: {organization} managed API and Application Protectio
 :page-product-name:  {product-name}
 :page-origin-type: git
 :icons: font
@@ -9,6 +9,7 @@
 :outline: true
 :outlinelevels: 3
 :page-pdf-filename: user-guides.pdf
+
 
 image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
@@ -29,19 +30,19 @@ The {organization} user interface presents the data the platform collects into v
 
 image:common/Attack-Dashboard.jpg[Attack Dashboard,width=1024,height=666]
 
-The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation toolsets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
+The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
 
 ==== Firewall settings
 
-When adding sites or testing DNS cutovers, you might need to reference the following {organization} sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
+When adding sites or testing DNS cut-overs, you might need to reference the following {organization} sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
 
-{organization} Service IPs:: IP addresses that represent the {organization} sensors. These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
-Sensor DNS Targets:: CNAMEs you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
+{organization} Service IP addresses:: IP addresses that represent the {organization} sensors. These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
+Sensor DNS Targets:: CNAME records you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
-In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/services` endpoint, *list* command.
+In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/services` endpoint, *list* command.
 
-NOTE: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAME records.
+NOTE: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAME records.
 
 
 ==== Tenants and channels
@@ -64,11 +65,11 @@ TIP: For more information about these features, see the xref:overview_guide.adoc
 
 '''
 
-=== Managing listed IPs
+=== Managing listed IP addresses
 
 The IP lists are used to block, deny, and allow IP addresses. An IP address in the block list is there temporarily. An IP address in the blacklist or whitelist is there permanently until it is manually removed. As an administrator, you might need to manually add or remove an IP address or CIDR range from the list.
 
-In the {organization} user interface, navigate to menu:Settings[IWAF]. The IWAF Settings page has tabs for *Blocked IPs*, *Blacklisted IPs*,and *Whitelisted IPs*. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/lists` endpoint to manage the lists.
+In the {organization} user interface, navigate to menu:Settings[IWAF]. The IWAF Settings page has tabs for *Blocked IP addresses*, *Blacklisted IP addresses*,and *Whitelisted IP addresses*. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/lists` endpoint to manage the lists.
 
 The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the xref:analyst_guide.adoc[{organization} Managed API and Application Protection Platform Analyst Guide]. **
 
@@ -77,7 +78,7 @@ The lists are often managed by your analysts and, therefore, the procedures to m
 
 NOTE: To configure the following settings, the *{organization} Risk-Based Blocking* feature must be enabled.
 
-In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/customers` endpoint.
+In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/customers` endpoint.
 
 .Risk-Based Blocking Settings
 [cols=",",options="header",]
@@ -99,9 +100,9 @@ You can add, edit, or remove sites with the {organization} user interface or {or
 
 ==== Site settings
 
-The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IPs – wherever traffic can be properly routed to reach your origin servers. 
+The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IP addresses – wherever traffic can be properly routed to reach your origin servers. 
 
-TIP: If using the {organization} user interface, navigate to menu:Settings[Site]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/sites` endpoint.
+TIP: If using the {organization} user interface, navigate to menu:Settings[Site]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/sites` endpoint.
 
 Some of the settings are on the *Sites* page as column headers.
 
@@ -111,32 +112,32 @@ To add a site, click the btn:[Add Site]. To edit a site, click btn:[Edit Site] b
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
 |*Section* |*Setting* |*Description*
-|Listener Configuration |Host Name |Domain name protected by the sensor (for example, www.example.com). It must be unique across all configured sites and cannot contain uppercase letters. Once created, the configured hostname cannot be changed. 
-| |SSL Enabled  |Allows HTTPS connections to the hostname. Use this setting to provide your own site certificate (in PEM format). The setting does not need to be enabled if using {organization} managed certificates with Let’s Encrypt. For more information, see the _Site certificates_ section.
-| |SSL Terminate Only  |If set, SSL connection is terminated at the sensor and requests are sent through a proxy to the backend using HTTP. 
-| |Redirect HTTP traffic to HTTPS  |If enabled, requests made to the hostname using HTTP receive a 301 response code and are redirected to the same hostname using HTTPS instead.  
+|Listener Configuration |Host Name |Domain name protected by the sensor (for example, www.example.com). It must be unique across all configured sites and cannot contain uppercase letters. Once created, the configured hostname cannot be changed. 
+| |SSL/TLS Enabled  |Allows HTTPS connections to the hostname. Use this setting to provide your own site certificate (in PEM format). The setting does not need to be enabled if using {organization} managed certificates with Let’s Encrypt. For more information, see the _Site certificates_ section.
+| |SSL/TLS Terminate Only  |If set, SSL/TLS connection is terminated at the sensor and requests are sent through a proxy to the backend using HTTP. 
+| |Redirect HTTP traffic to HTTPS  |If enabled, requests made to the hostname using HTTP receive a 301 response code and are redirected to the same hostname using HTTPS instead.  
 | |HTTP2 Enabled |Allows HTTP Version 2 traffic.
 | |Wildcard Subdomains Enabled |For example, if enabled for site with “example.com” hostname, site configuration also applies to all requests sent to “subdomain.example.com”.
 | | |
-|Backend Configuration  |Origin  |Location where traffic can be properly routed to reach your origin server, also called a backend. You can specify a single hostname or CNAME, or a comma-separated list of IP addresses.  +
-If you are forwarding traffic to a load balancer, supply the FQDN or IP addresses of your load balancer. The sensor forwards all benign and unblocked traffic to that load balancer. 
+|Backend Configuration  |Origin  |Location where traffic can be properly routed to reach your origin server, also called a backend. You can specify a single hostname or CNAME, or a comma-separated list of IP addresses.  +
+If you are forwarding traffic to a load balancer, supply the FQDN or IP addresses of your load balancer. The sensor forwards all benign and unblocked traffic to that load balancer. 
 | |HTTP Backend Port |Port number of the origin server or load balancer accepting HTTP traffic.
 | |HTTPS Backend Port |Port number of the origin server or load balancer accepting HTTPS traffic.
-|Blocking Modes |Risk-Based Blocking  +
+|Blocking Modes |Risk-Based Blocking  +
  + |If set, any entity with accumulated risk above the risk-based blocking threshold https://support.threatx.com/hc/en-us/articles/360047689451-IWAF-Settings-Explained[]is blocked. The threshold settings are described in link:#managing-risk-based-blocking[Managing Risk-Based Blocking].
-| |Request Blocking  |If set, individual requests that are obvious hostile attacks, as determined by the {organization} rules, are blocked. 
-| |Manual Action Blocking  |If set, users can manually add IP addresses to the blocked list and blacklist.
-|Caching Configuration   |Static Caching Enabled |Enables static caching. See link:#managing-caching[Managing caching] for details.
+| |Request Blocking  |If set, individual requests that are obvious hostile attacks, as determined by the {organization} rules, are blocked. 
+| |Manual Action Blocking  |If set, users can manually add IP addresses to the blocked list and blacklist.
+|Caching Configuration   |Static Caching Enabled |Enables static caching. See link:#managing-caching[Managing caching] for details.
 | |Dynamic Caching Enabled |Enables dynamic caching. See link:#managing-caching[Managing caching] for details.
 | | |
-|Proxy Configuration |Maximum Request Body Size |Maximum client request body in MB as read from Content-Length header. Accepts values from 1 to 1,000,000 (1MB to 1TB). Default is 1MB. 
-| |Proxy Read Timeout  |Timeout in seconds for reading a response from the backend. Accepts values from 1 to 3,600 (1 second to 1 hour). Default is 90 seconds. 
-| |Proxy Send Timeout  |Timeout in seconds for sending a request to the backend. Accepts values from 1 to 3,600 (1 second to 1 hour). Default is 30 seconds. 
-| |Set Real IP From Enabled |When checked, client requests override the IP address (as recognized by sensors).  +
+|Proxy Configuration |Maximum Request Body Size |Maximum client request body in MB as read from Content-Length header. Accepts values from 1 to 1,000,000 (1MB to 1TB). Default is 1MB. 
+| |Proxy Read Timeout  |Timeout in seconds for reading a response from the backend. Accepts values from 1 to 3,600 (1 second to 1 hour). Default is 90 seconds. 
+| |Proxy Send Timeout  |Timeout in seconds for sending a request to the backend. Accepts values from 1 to 3,600 (1 second to 1 hour). Default is 30 seconds. 
+| |Set Real IP From Enabled |When checked, client requests override the IP address (as recognized by sensors).  +
 *Header Name*. Provides the value for the IP override; for example, “X-Real-IP” or “X-Forwarded-For”. Letters, numbers, hyphens, and underscores only. +
 *Trusted Sources*. IP addresses of the trusted sources.
-| |Custom Response Headers Enabled  |Inserts one or more custom headers into responses, including common security headers such as Content-Security-Policy. Each custom header must have a name and value.
-|Access Configuration |Site Groups |You can assign the site to an existing site group, which allows you to limit which users can access the site configuration and its associated data. 
+| |Custom Response Headers Enabled  |Inserts one or more custom headers into responses, including common security headers such as Content-Security-Policy. Each custom header must have a name and value.
+|Access Configuration |Site Groups |You can assign the site to an existing site group, which allows you to limit which users can access the site configuration and its associated data. 
 |===
 
 
@@ -146,70 +147,71 @@ NOTE: Adding a site can impact the cost of the {organization} platform. For info
 
 If you are adding a site for protection within the {organization} platform, perform the following.
 
-Review the following onboarding checklist. If the answer to ANY of the questions is yes, contact {organization} Support at support@threatx.com with details so we can assist.
+Review the following on-boarding checklist. If the answer to ANY of the questions is yes, contact {organization} Support at support@threatx.com with details so we can assist.
 
 .Site Checklist
 [cols=",,",options="header",]
 |===
 |*Question* |*Notes* |*Yes/No*
-|Does the application process requests with well-formed SQL queries?  |This is common in Help Desk and Bug-Tracking software. | 
-|Does the application process requests with well-formed HTML?  |This is common for Content Management Systems.  | 
-|Does the application require Two-Way SSL for client authentication? |  | 
-|Does the application utilize WebSockets? |  | 
-|Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. | 
-|Are any custom rules required to enforce a unique security or business requirement? |For example, block traffic from foreign countries.  | 
-|Is there ANY additional infrastructure that exists outside of the following flow? Client —–> {organization} sensor —–> Application  |Examples include a load balancer or proxy in use between the client and {organization} sensor. | 
-|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your {organization} service IPs?  |  | 
+|Does the application process requests with well-formed SQL queries?  |This is common in Help Desk and Bug-Tracking software. | 
+|Does the application process requests with well-formed HTML?  |This is common for Content Management Systems.  | 
+|Does the application require Two-Way SSL/TLS for client authentication? |  | 
+|Does the application use WebSockets? |  | 
+|Does the application require a specific TLS version or cipher suite restriction?  |Default is TLS 1.2 and 1.3. | 
+|Are any custom rules required to enforce a unique security or business requirement? |For example, block traffic from foreign countries.  | 
+|Is there ANY additional infrastructure that exists outside of the following flow? Client —–> {organization} sensor —–> Application  |Examples include a load balancer or proxy in use between the client and {organization} sensor. | 
+|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your {organization} service IP addresses?  |  | 
 |===
 
 . Use the {organization} user interface or API to add the site and enter the configuration settings, as described in the _Site settings_ section.
-. If you are not using the Let’s Encrypt option for client-facing certificates, provide the SSL Certificate PEM file in the *SSL Enabled* site setting.
-. Once the site is available in the {organization} user interface, cutover DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAMEs are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. This can be done at your own pace.
+. If you are not using the Let’s Encrypt option for client-facing certificates, provide the SSL/TLS Certificate PEM file in the *SSL/TLS Enabled* site setting.
+. Once the site is available in the {organization} user interface, cut-over DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAME records are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. This can be done at your own pace.
 
-If you are adding multiple sites, you can add the additional sites first then cutover DNS after.
+If you are adding multiple sites, you can add the additional sites first then cut-over DNS after.
 
-If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact {organization} SOC to provide the sensor ingress IP addresses to use as A records.  
+If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact {organization} SOC to provide the sensor ingress IP addresses to use as A records.  
 
-Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard.  If you do not see any traffic, contact the {organization} SOC. 
+Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard. If you do not see any traffic, contact the {organization} SOC. 
 
 
 ==== Site certificates
 
 You have two options. You can use Let’s Encrypt or upload your own certificate.
 
-The {organization} platform can manage the SSL/TLS certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
+The {organization} platform can manage the SSL/TLS/TLS certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
 
 ===== Use a Custom Certificate
 To upload your own certificate using the {organization} user interface, perform the following:
 
 . Navigate to menu:Settings[Sites].
 . If updating a certificate for an existing site, locate the site. You can use the search icon in the *Hostname* column to locate a site. Then click  btn:[Edit Site].
-. In the configuration page, enable *SSL Enabled*.
-. Click menu:Settings[Edit SSL credentials]
-. Paste your** Site Certificate**, *Intermediate Certificate*, and your *Private Key*, in *PEM* format and in that order.
+. In the configuration page, enable *SSL/TLS Enabled*.
+. Click menu:Settings[Edit SSL/TLS credentials]
+. Paste your** Site Certificate**, *Intermediate Certificate*, and your *Private Key*, in *PEM* format and in that order.
 . Click btn:[Save] at the bottom of the page.
 
 If adding a site, enter your certificate using steps 3 through 6.
 
-To ensure the correct certificate is being presented, the {organization} platform validates the following: 
+To ensure the correct certificate is being presented, the {organization} platform validates the following: 
 
-* Correct site or wildcard domain is listed as the Common Name or in the SAN attribute within the certificate.  
-* Current date is within the _notBefore_ and__ notAfter __fields.
+* Correct site or wildcard domain is listed as the Common Name or in the SAN attribute within the certificate.  
+* Current date is within the `notBefore` and `notAfter` fields.
 * Private key provided is the same key that was used to sign the certificate.
-* Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist. 
+* Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist. 
 
-If one of these criteria is not successfully validated, you receive an error describing the issue and, where applicable, the old certificate continues to be utilized. If you confirm that you have the correct certificate and keypair for the site and the certificate has not expired but are still receiving an error, contact the {organization} SOC. 
+If one of these criteria is not successfully validated, you receive an error describing the issue and, where applicable, the old certificate continues to be utilized. 
+If you confirm that you have the correct certificate and key pair for the site and the certificate has not expired but are still receiving an error, contact the {organization} SOC. 
 
-Optionally, you can ask a third-party test group, such as https://www.ssllabs.com/ssltest/index.html[Qualys SSL Lab], to test and validate your certificate.
+Optionally, you can ask a third-party test group, such as https://www.ssllabs.com/ssltest/index.html[Qualys SSL/TLS Lab], to test and validate your certificate.
 
 
 ==== Site groups
 
 [horizontal]
-Web UI:: menu::Setttings[Site Groups]
+Web UI:: menu::Settings[Site Groups]
 ThreatX API:: `/tx_api/v1/sitegroups`
 
-You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data. 
+You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data. 
 
 When creating a group, give it a name, list of sites to include in the group, and list of users that can access the sites in the group.
 
@@ -249,7 +251,7 @@ API:: `/tx_api/v1/subscriptions`
 
 You can configure users to receive notifications on various events relating to threats, rule matches, changes to the IP allow, deny, and block lists. Notifications are typically sent by email, but you can configure a webhook notification to another app, such as Slack.
 
-You create notifications in the {organization} user interface by navigating to menu:Settings[Notifications]. You can add a notification or edit an existing notification.
+You create notifications in the {organization} user interface by navigating to menu:Settings[Notifications]. You can add a notification or edit an existing notification.
 
 
 The following table describes the notification settings.
@@ -259,7 +261,7 @@ The following table describes the notification settings.
 |===
 |*Setting* |*Description*
 |Name |A unique name to identify this notification. Lowercase letters, hyphens, and numbers only.
-|Enabled |When *Enabled*, notifications are sent to the specified target as configured. When *Disabled*, no notifications are sent to the specified targets.
+|Enabled |When *Enabled*, notifications are sent to the specified target as configured. When *Disabled*, no notifications are sent to the specified targets.
 |Event Subject Area |You can send all events or limit the notification to specific types of events: +
 All Event Subjects +
 Entity-related Events +
@@ -270,15 +272,15 @@ WAF List (Blacklist, Blocklist, Whitelist) Entry-related Events
 All Event Sources +
 Automatic, Risk Engine-initiated Events +
 Manual, API-initiated Events
-|Limit By Site |You can limit notifications to alerts for events that affect one of a list of sites. Only available when you select *All Event Subjects* or *Entity-related Events* in the *Event Subject Area* field. 
-|Limit By WAF List Type |You can limit notifications to events for one or more IP lists. Only available when you select **WAF List (Blacklist, Blocklist, Whitelist) Entry-related Events **option in *Event Subject Area*.
-|Notification Targets: Method |Notifications can be sent to as many email addresses and webhooks as needed. For webhooks, you enter the URL of the app where you want to receive the notifications. However, you need to configure the app to receive the notifications. For example, you can send notifications to Slack as described in their https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack[Incoming Webhooks] article.
+|Limit By Site |You can limit notifications to alerts for events that affect one of a list of sites. Only available when you select *All Event Subjects* or *Entity-related Events* in the *Event Subject Area* field. 
+|Limit By WAF List Type |You can limit notifications to events for one or more IP lists. Only available when you select **WAF List (Blacklist, Blocklist, Whitelist) Entry-related Events **option in *Event Subject Area*.
+|Notification Targets: Method |Notifications can be sent to as many email addresses and webhooks as needed. For webhooks, you enter the URL of the app where you want to receive the notifications. However, you need to configure the app to receive the notifications. For example, you can send notifications to Slack as described in their https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack[Incoming Webhooks] article.
 |===
 
 
 ==== {organization} maintenance and system status
 
-You can view and subscribe to notifications for scheduled maintenance windows and any issues that might impact your {organization} services at https://status.threatx.com/[{organization} Status].
+You can view and subscribe to notifications for scheduled maintenance windows and any issues that might impact your {organization} services at https://status.threatx.com/[{organization} Status].
 
 '''
 
@@ -290,11 +292,11 @@ The {organization} Log Emitter exports event logs from the {organization} platfo
 
 The Log Emitter forwards full details for all block, match, and audit events.
 
-The logs are pushed are in JSON lines format over a TCP connection that is encrypted, and optionally authenticated, over TLS. If the Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically attempts to re-establish a connection. 
+The logs are pushed are in JSON lines format over a TCP connection that is encrypted, and optionally authenticated, over TLS. If the Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically attempts to re-establish a connection. 
 
-In the event a Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically (every half hour) attempts to re-establish a connection.  
+In case a Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically (every half hour) attempts to re-establish a connection.  
 
-Once the Log Emitter re-establishes a connection for a previously suspended subscription, all queued log events are sent to the configured receiver. If the Log Emitter subscription cannot be resumed after several retries, this might indicate a configuration error or log receiver error.  
+Once the Log Emitter re-establishes a connection for a previously suspended subscription, all queued log events are sent to the configured receiver. If the Log Emitter subscription cannot be resumed after several retries, this might indicate a configuration error or log receiver error.  
 
 
 ==== Configuring a Log Emitter
@@ -333,7 +335,7 @@ For simple encryption of the log data, you need only to generate a self-signed c
 $ openssl req -newkey rsa:2048 -nodes -keyout logreceiver.key -x509 -days 365 -out logreceiver.crt
 ----
 
-Use the `logreceiver.key` and `logreceiver.crt` files on your log receiver.
+Use the `logreceiver.key` and `logreceiver.crt` files on your log receiver.
 
 Configure your on-premises log receiver to accept TCP connections with TLS encryption.
 
@@ -343,7 +345,7 @@ To further secure the TCP encrypted connection between the {organization} Log Em
 
 The {organization} Log Emitter authenticates and encrypts the TCP session using TLS. To add mutual certificate authentication, perform the following:
 
-. Use the Certificate Authority of your choice to create an SSL certificate and private key for the {organization} Log Emitter.
+. Use the Certificate Authority of your choice to create an SSL/TLS certificate and private key for the {organization} Log Emitter.
 . Create a valid server certificate and key in PEM format to install on the on-premises Log Receiver. Ensure the CN of the server certificate matches the public DNS domain name of the Log Receiver.
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
 . Configure your on-premises log receiver to accept TCP connections with TLS encryption and client certificate authentication.
@@ -353,7 +355,7 @@ The {organization} Log Emitter authenticates and encrypts the TCP session using 
 
 --
 [horizontal]
-Web UI:: menu:Settings[Log Emitter] then click btn:[Add Log Emitter]
+Web UI:: menu:Settings[Log Emitter] then click btn:[Add Log Emitter]
 ThreatX API:: `/tx_api/v1/subscriptions`
 --
 
@@ -366,8 +368,8 @@ Configure the settings as described in the following table. Click *Save* when do
 |Name |Unique name to identify the Log Emitter.
 |Hostname |Host name of your log receiver.
 |Port |Port number that your log receiver listens on.
-|Send Client SSL Credentials to Log Receiver |Check to upload your SSL certificate and key.
-|Verify Log Receiver SSL Certificate |When checked, the Log Emitter verifies the SSL certificate provided by the log receiver before sending log data.
+|Send Client SSL/TLS Credentials to Log Receiver |Check to upload your SSL/TLS certificate and key.
+|Verify Log Receiver SSL/TLS Certificate |When checked, the Log Emitter verifies the SSL/TLS certificate provided by the log receiver before sending log data.
 |Enabled |Check to send logs to your log receiver.
 |===
 
@@ -383,29 +385,28 @@ The *BlockEvent* log type provides full details on requests that were blocked by
 include::example$block-event-log-type-message-example.json[]
 ----
 
-.BlockEvent Type Propertes
-[width="100%",cols="34%,33%,33%",options="header",]
+.BlockEvent Type Properties
+[width="100%",cols="34%m,33%,33%",options="header",]
 |===
 |*Field* |*Information* |*Notes*
-|message |Complete target path of the request, including hostname and URI. | 
-|msg_type |[BlockEvent] +
-Request was blocked at the individual request level or due to the entity being blocked at the Risk level. | 
-|timestamp |UTC timestamp of the request. | 
-|user_agent |UserAgent presented by the entity making the request. | 
-|ip |IP address presented by the entity making the request. | 
-|dst_host |Target hostname of the request. | 
-|uri |Target path of the request. | 
-|args |Arguments (if any) provided in the request in www-url-encoded form. | 
-|request_id |Unique identifier assigned to each request by the {organization} platform. | 
+|message |Complete target path of the request, including hostname and URI. | 
+|msg_type |[BlockEvent] Request was blocked at the individual request level or due to the entity being blocked at the Risk level. | 
+|timestamp |UTC timestamp of the request. | 
+|user_agent |UserAgent presented by the entity making the request. | 
+|ip |IP address presented by the entity making the request. | 
+|dst_host |Target hostname of the request. | 
+|uri |Target path of the request. | 
+|args |Arguments (if any) provided in the request in www-url-encoded form. | 
+|request_id |Unique identifier assigned to each request by the {organization} platform. | 
 |random_id |Additional unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
-|tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
+|tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
 |js_fingerprint |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |===
 
 
 ===== MatchEvent Log Type
 
-The *MatchEvent* log type provides full details on requests that matched custom or common rule definitions when examined by the sensor. 
+The *MatchEvent* log type provides full details on requests that matched custom or common rule definitions when examined by the sensor. 
 
 
 .MatchEvent Message Example
@@ -415,15 +416,15 @@ include::example$match-event-log-type-message-example.json[]
 ----
 
 .MatchEvent Type Properties
-[width="100%",cols="34%,33%,33%",options="header",]
+[width="100%",cols="34%m,33%,33%",options="header",]
 |===
 |*Field* |*Information* |*Notes*
-|message |Complete target path of the request, including hostname and URI. | 
+|message |Complete target path of the request, including hostname and URI. | 
 |msg_type |[MatchEvent] +
-Request matched a custom or common rule. | 
-|timestamp |UTC timestamp of the request. | 
-|request_id |Unique identifier assigned to each request by the {organization} platform. | 
-|user_agent |UserAgent header value presented by the Entity making the request. | 
+Request matched a custom or common rule. | 
+|timestamp |UTC timestamp of the request. | 
+|request_id |Unique identifier assigned to each request by the {organization} platform. | 
+|user_agent |UserAgent header value presented by the Entity making the request. | 
 |matches : [ +
 description +
 classification +
@@ -438,23 +439,23 @@ beta] |Values following this field provide specific information about why the ru
 *contrib_score*: Reserved for {organization} internal use. +
 *risk*: Amount of risk that the matched rule contributes to the requesting entity’s risk score. +
 *blocking*: Rule blocked a request [True] or allowed the request [False]. +
-*beta*: Reserved for {organization} internal use. | 
-|ip |IP address presented by the entity making the request. | 
-|dst_host |Target hostname of the request. | 
-|uri |Target path of the request. | 
-|args |Arguments (if any) provided in the request in www-url-encoded form. | 
-|status_code |Status code that the request received from the upstream server. | 
-|ssl |Request was transmitted over an HTTPS connection [True] or an HTTP connection [False]. | 
-|request_method |Request type [GET] [POST]. | 
-|content_type |MIME content type/subtype (if any) presented in the request. | 
-|response_length |Length in bytes (if any) that the request received from the upstream server. | 
-|upstream_response_time |Length of time in milliseconds (if any) that it took the upstream server to respond to the request. | 
-|postblock_event |Request was submitted after a risk-based block was applied to the entity [True]. | 
+*beta*: Reserved for {organization} internal use. | 
+|ip |IP address presented by the entity making the request. | 
+|dst_host |Target hostname of the request. | 
+|uri |Target path of the request. | 
+|args |Arguments (if any) provided in the request in www-url-encoded form. | 
+|status_code |Status code that the request received from the upstream server. | 
+|ssl |Request was transmitted over an HTTPS connection [True] or an HTTP connection [False]. | 
+|request_method |Request type [GET] [POST]. | 
+|content_type |MIME content type/subtype (if any) presented in the request. | 
+|response_length |Length in bytes (if any) that the request received from the upstream server. | 
+|upstream_response_time |Length of time in milliseconds (if any) that it took the upstream server to respond to the request. | 
+|postblock_event |Request was submitted after a risk-based block was applied to the entity [True]. | 
 |random_id |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
-|tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
+|tls_fingerprint |TLS fingerprint (if any) associated with the entity making the request. | 
 |cookie |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
 |js_fingerprint |Additional Unique identifier assigned to an entity by the {organization} platform. |Field returns a null value except when logging an interrogation event. For information on interrogation, contact the {organization} SOC.
-|created |Timestamp of the request. | 
+|created |Timestamp of the request. | 
 |===
 
 ==== Troubleshooting the Log Emitter
@@ -463,15 +464,15 @@ The following procedures describe basic checks that you can perform while troubl
 
 ===== Send test logs
 
-Verify that the server and client certificates are correctly generated and installed by running the following *openssl* command. The Log Emitter sends a single test log to your log receiver. If you do not see DONE at the end, there is an issue with network connectivity or with the server or client certificates.
+Verify that the server and client certificates are correctly generated and installed by running the following `openssl` command. The Log Emitter sends a single test log to your log receiver. If you do not see DONE at the end, there is an issue with network connectivity or with the server or client certificates.
 
 If using a using self-signed certificate:
 
 [,console]
 ----
 $ echo '{"message":"test1"}' | openssl s_client
-    -servername logreceiver.yourdomain.com
-    -connect logreceiver.yourdomain.com:12345
+    -servername logreceiver.yourdomain.com
+    -connect logreceiver.yourdomain.com:12345
 ----
 
 If using a using mutual certificate authentication:
@@ -479,10 +480,10 @@ If using a using mutual certificate authentication:
 [,console]
 ----
 $ echo '{"message":"test1"}' | openssl s_client
-    -servername logreceiver.yourdomain.com
-    -connect logreceiver.yourdomain.com:12345
-    -cert logemitterclient.crt
-    -key logemitterclient.key
+    -servername logreceiver.yourdomain.com
+    -connect logreceiver.yourdomain.com:12345
+    -cert logemitterclient.crt
+    -key logemitterclient.key
 ----
 
 ===== *Verify your log receiver’s hostname resolves to a publicly accessible IP address*
@@ -497,18 +498,18 @@ Use `tcpdump` to verify that the log receiver is receiving TCP traffic on the co
     $ `tcpdump` port 12345
 
 
-Even if you see traffic via `tcpdump`, you still need to ensure that any host-based firewall, such as iptables, is configured to allow the incoming traffic.
+Even if you see traffic via `tcpdump`, you still need to ensure that any host-based firewall, such as `iptables`, is configured to allow the incoming traffic.
 
-===== *Dump incoming logs to a file (Logstash)***
+===== Dump incoming logs to a file (Logstash)
 
-In logstash, you can create a file output so you can quickly see if it is receiving the logs from the Log Emitter. Add the following to your logstash configuration file and restart logstash:
+In Logstash, you can create a file output so you can quickly see if it is receiving the logs from the Log Emitter. Add the following to your Logstash configuration file and restart Logstash:
 
 [,json]
 ----
 output {
-    file {
-        path => "/tmp/threatx-raw.log"
-    }
+    file {
+        path => "/tmp/threatx-raw.log"
+    }
 }
 ----
 
@@ -519,12 +520,12 @@ If you use a self-signed certificate and you receive this error message:
 
 [,console]
 ----
-the handshake failed: error 1416F086: SSL Routines: 
+the handshake failed: error 1416F086: SSL/TLS Routines: 
 tls_process_server_certificate:certificate verify 
 failed:../ssl/statem/statem...cint.c:1915:: self signed certificate
 ----
 
-The Log Emitter *Send Client SSL Credentials to Log Receiver* option might be enabled. When this option is selected, the Log Emitter uses the provided SSL credentials to authenticate itself to the log receiver; however, this authentication fails when using a self-signed certificate. Uncheck the *Send Client SSL Credentials to Log Receiver* box then click btn:[Restart Log Emitter].
+The Log Emitter *Send Client SSL/TLS Credentials to Log Receiver* option might be enabled. When this option is selected, the Log Emitter uses the provided SSL/TLS credentials to authenticate itself to the log receiver; however, this authentication fails when using a self-signed certificate. Deselect the *Send Client SSL/TLS Credentials to Log Receiver* box then click btn:[Restart Log Emitter].
 
 '''
 
@@ -555,12 +556,12 @@ ThreatX API:: `/tx_api/v1/users`
 |*Field* |*Description*
 |Email |User’s email address, which is also the username used to log in. Once assigned, the email address cannot be changed.
 |Password Reset |Available only when editing a user account. Click *Send* to send an email to the user with a link to reset the password.
-|First Name |User’s first name.
-|Last Name |User’s last name.
+|First Name |User’s given name
+|Last Name |User’s surname.
 |Active |When selected, the user is active and can log in. When not selected, the account remains valid, but the user cannot log in.
 |Read-Only |When selected, the user cannot change data. When not selected, the user has full write access.
 |Tenant Admin |When selected, the user has administration permission to manage users and sites.
-|Channel Admin |Available only to with the Channel environment architecture. When selected, the user has administrator access to the main channel and all tenants within it.  
+|Channel Admin |Available only to with the Channel environment architecture. When selected, the user has administrator access to the main channel and all tenants within it.  
 |Site Groups |Assigns the user to one or more user groups, where the user can access those sites only. If none are selected, the user can access all sites.
 |===
 
@@ -572,27 +573,27 @@ If using the {organization} API to access the {organization} platform, you need 
 
 To generate an API key:
 
-. Navigate to menu:Settings[API Keys] and click btn:[Add API Key] in the top right corner.
-. Fill in the necessary fields.
-. Click btn:[Save]. You are presented with your new API Key.
+. Navigate to menu:Settings[API Keys] and click btn:[Add API Key] in the top right corner.
+. Complete the necessary fields.
+. Click btn:[Save]. You are presented with your new API Key.
 
 To revoke an API key:
 
-. Navigate to menu:Settings[API Keys]
-. Click btn:[Edit API Key] next to the API key to revoke.
+. Navigate to menu:Settings[API Keys]
+. Click btn:[Edit API Key] next to the API key to revoke.
 . Click btn:[Revoke]
-. Click btn:[Revoke] again in the confirmation popup.
+. Click btn:[Revoke] again in the confirmation pop-up.
 
 '''
 
 === Generating and revoking sensor API keys
 
-If you deploy sensors in your environment, you are asked to provide a Sensor API key. The sensor uses the key to authenticate to the {organization} platform.  
+If you deploy sensors in your environment, you are asked to provide a Sensor API key. The sensor uses the key to authenticate to the {organization} platform.  
 
 To generate a sensor API key:
 
-. Navigate to menu:Settings[Sensors > Sensor Keys]
-. Click btn:[Add Sensor Key]. You are presented with a new Sensor API Key.
+. Navigate to menu:Settings[Sensors > Sensor Keys]
+. Click btn:[Add Sensor Key]. You are presented with a new Sensor API Key.
 . Save it to a secure location then use it when deploying a sensor.
 
 If you no longer require a key, you can delete the key.
@@ -612,8 +613,8 @@ The benefits of Edge Caching include:
 
 By default, {organization} Edge Caching follows Cache-Control headers defined by the origin servers. The {organization} platform does not cache for the following response scenarios:
 
-* Where Cache-Control is set to Private, No-Cache, or No-Store.
-* Responses that include Set-Cookie in the response header.
+* Where Cache-Control is set to Private, No-Cache, or No-Store.
+* Responses that include Set-Cookie in the response header.
 * Responses to POST requests.
 
 The {organization} platform offers two types of Edge Caching, static and dynamic.
@@ -623,7 +624,7 @@ Caching can be enabled for a configured site as described in the _Site settings_
 
 ==== Static caching
 
-Static caching is configured to cache static elements such as images, CSS & JavaScript. Static caching does not store HTML pages and as a result does not enhance performance if the origin server becomes unresponsive. 
+Static caching is configured to cache static elements such as images, CSS & JavaScript. Static caching does not store HTML pages and as a result does not enhance performance if the origin server becomes unresponsive. 
 
 
 .Static Cache Settings
@@ -631,7 +632,7 @@ Static caching is configured to cache static elements such as images, CSS & Java
 ****
 [horizontal]
 Default cache expiration:: 30 minutes.
-Supported static file extensions:: jpg, jpeg, gif, png, ico, bmp, tif, tiff, svg, svgz, swf, pict, cur, doc, docx, xlsx, ppt, pptx, pdf, woff, woff2, eot, otf, js, ejs, css
+Supported static file extensions:: `jpg`, `jpeg`, `gif`, `png`, `ico`, `bmp`, `tif`, `tiff`, `svg`, `svgz`, `swf`, `pict`, `cur`, `doc`, `docx`, `xlsx`, `ppt`, `pptx`, `pdf`, `woff`, `woff2`, `eot`, `otf`, `js`, `ejs`, `css`
 Support for non-responsive origin servers:: No.
 URI Specific Caching:: Per-URI features can be enabled, overriding the origin server values.
 Manual Cache Purging:: Can be purged by {organization} SOC upon request. Purging can be limited to a specific URI.
@@ -639,7 +640,7 @@ Manual Cache Purging:: Can be purged by {organization} SOC upon request. Purging
 
 ==== Dynamic caching
 
-Dynamic caching offers a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The {organization} platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, {organization} sensors cache dynamic pages only after they are requested at least 3 times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. The following lists the dynamic caching settings:
+Dynamic caching offers a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The {organization} platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, {organization} sensors cache dynamic pages only after they are requested at least 3 times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. The following lists the dynamic caching settings:
 
 .Dynamic Cache Settings
 [INFORMATION]
@@ -661,9 +662,16 @@ NOTE: Dynamic caching is a billable feature and requires an add-on license.
 
 === Managing rate limiting
 
-The {organization} platform rate limiting is in the form of rules in the common rule set. Rate limiting is primarily focused on count and timeframe. What causes a rule to trigger when based off count and timeframe is limited only by what the rules can match within the requests. For example, one rule is “10 404s in 10s,” where the rule assigns risk to an entity that receives more than 10 404 responses within 10 seconds.
+The {organization} platform rate limiting is in the form of rules in the common rule set. 
+Rate limiting is primarily focused on count and time frame.
+What causes a rule to trigger when based off count and time frame is limited only by what the rules can match within the requests. 
+For example, one rule is “10 404s in 10s,” where the rule assigns risk to an entity that receives more than 10 404 responses within 10 seconds.
 
-As needed, the {organization} SOC team can make custom rate limiting rules tailored for your environment. A typical use of this would be to assign risk to entities that fail logins at a login endpoint. These rate limiting rules are very customizable, including the timings (number of requests over time). These rules can be applied across the entire tenant, down to a site or group of sites, or to a single endpoint. The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Args.
+As needed, the {organization} SOC team can make custom rate limiting rules tailored for your environment. 
+A typical use of this would be to assign risk to entities that fail logins at a login endpoint. 
+These rate limiting rules are very customizable, including the timings (number of requests over time).
+These rules can be applied across the entire tenant, down to a site or group of sites, or to a single endpoint.
+The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Arguments.
 
 '''
 
@@ -671,11 +679,11 @@ As needed, the {organization} SOC team can make custom rate limiting rules tailo
 
 {organization} rules can specify firewall behavior required for your business’s individual needs, such as restricting certain resources to company IP addresses or limiting the number of failed login attempts to an application developed in-house.
 
-A {organization} _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. {organization} rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor. 
+A {organization} _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. {organization} rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor. 
 
 You can add, modify, and delete rules, and view’s rule’s activity to determine its effectiveness.
 
-To access rules in the {organization} user interface, navigate to menu:Settings[Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
+To access rules in the {organization} user interface, navigate to menu:Settings[Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
 
 IMPORTANT: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the {organization} SOC group to create rules or modify any rule in the {organization} platform to meet the specific needs and behavior of your environment.
 
@@ -697,8 +705,7 @@ Classification:: Describes the kind of attack or behavior the rule is meant to d
 |===
 |*Classification* |*Description*
 |*Undefined* |Unknown attack type.
-|*SqlInjection* |SQL injection attack. Attempt to exploit input form or unsanitized input vector to the SQL backend.
-|*XSS* |Cross Site Scripting. Attempt to execute unauthorized code in the user’s context.
+|*SqlInjection* |SQL injection attack. Attempt to exploit input form or un-sanitized input vector to the SQL backend. |*XSS* |Cross Site Scripting. Attempt to execute unauthorized code in the user’s context.
 |*RFI* |Remote File Inclusion. Attempt to have the application server evaluate or include unauthorized 3rd party content or code.
 |*SessionHijacking* |Attempted unauthorized takeover or co-opting an existing authenticated session.
 |*DirTraversal* |Directory traversal. Attempt to have the application server evaluate or include unexpected and potentially sensitive content**.**
@@ -706,7 +713,7 @@ Classification:: Describes the kind of attack or behavior the rule is meant to d
 |*TrojanActivity* |Indications of known malicious software.
 |*InfoDisclosure* |Information disclosure. Attempt to inappropriately disclose sensitive information about a server, application, or other.
 |*ExecutableCode* |Indications of an attempt to upload or execute executable code in a malicious context.
-|*PasswordGuessing* |Attempted wordlist or online brute-force to gain access to known application accounts.
+|*PasswordGuessing* |Attempted word list or online brute-force to gain access to known application accounts.
 |*PasswordSpraying* |Attempted use of known default, weak, or compromised passwords to gain unauthorized access.
 |*CredentialStuffing* |Attempted discovery or unauthorized use of compromised user credentials username and password.
 |*FormSpam* |Abuse user-generated content such as response forms, comments, and reviews for unauthorized promotional purposes.
@@ -843,8 +850,8 @@ The following criteria evaluate the attributes of an incoming request.
 |*Attributes* |*Description* |*Example*
 |Hostname |Checks if the Host header sent in a HTTP request matches the provided name. |example.com
 |URI |Checks if the “path” portion of URI sent in HTTP request matches the provided path. |/wp-login.php
-|Arguments |Checks if the “URL query” or form-encoded postdata sent in HTTP request matches the provided argument. |wp-submit=Log+In
-|Named Argument |Checks if a specific “URL query” or form-encoded postdata key + value pair sent in HTTP request matches the provided argument. Requires an argument name. |Log+In, name:wp-submit
+|Arguments |Checks if the “URL query” or form-encoded POST data sent in HTTP request matches the provided argument. |wp-submit=Log+In
+|Named Argument |Checks if a specific “URL query” or form-encoded POST data key + value pair sent in HTTP request matches the provided argument. Requires an argument name. |Log+In, name:wp-submit
 |Method |Checks if the HTTP method used in the request matches the selected method. |POST
 |Header |Checks if a specific HTTP header value matches the provided header. The *direction* must be *Request*. The *field* must contain the header name. |Mozilla/5.0 (Chrome) direction:Request header-name:User-Agent
 |===
@@ -891,32 +898,32 @@ For detailed information about the other data in the table, see the xref:analyst
 
 === Configuring Single Sign On (SSO)
 
-You can manage SSO configuration directly using the {organization} API. Once SSO has been configured for a {organization} tenant or channel, your users can sign in using your SSO identity provider, such as Okta or Azure Active Directory B2C, rather than logging in to the {organization} web application with a username and password. 
+You can manage SSO configuration directly using the {organization} API. Once SSO has been configured for a {organization} tenant or channel, your users can sign in using your SSO identity provider, such as Okta or Azure Active Directory B2C, rather than logging in to the {organization} web application with a username and password. 
 
 ==== *Prerequisites*
 
 To configure SSO access to the {organization} user interface for your users, you need the following:
 
-* SAML2 IDP metadata reference URL from your SSO provider where the most up-to-date metadata file can be found. Most SAML2 implementations provide a quick and easy way to access these files. Consult your IDP documentation. Examples of an IDP metadata reference URL:
+* SAML2 IDP metadata reference URL from your SSO provider where the most up-to-date metadata file can be found. Most SAML2 implementations provide a quick and easy way to access these files. Consult your IDP documentation. Examples of an IDP metadata reference URL:
 ** *Okta URL*: https://threat-x.oktapreview.com/app/exk8lh09bhSIfhupl0h7/sso/saml/metadata
 ** *Azure AD B2C*: https://login.microsoftonline.com/daad3805-fde6-4334-817f-82c723533123/federationmetadata/2007-06/federationmetadata.xml +
-*NOTE*: If you do not have access to your IDP metadata URL, you can alternatively provide a complete IDP metadata file. Contact {organization} support if you wish to provide an IDP metadata file instead of an IDP metadata URL.
+*NOTE*: If you do not have access to your IDP metadata URL, you can alternatively provide a complete IDP metadata file. Contact {organization} support if you want to provide an IDP metadata file instead of an IDP metadata URL.
 * Users must have accounts in both the IDP and {organization} platform.
 * User’s email address in the IDP must match the email address used for the {organization} username.
 * API key with tenant or channel administrator permissions. See link:#generating-and-revoking-api-keys[Generating and revoking API keys] for details about generating a key.
 * Name and UUID of your tenant or channel.
-** Use the **Customers:list **command to retrieve the name and UUID of the tenant.
-** Use the **Channels:list **command to retrieve the name and UUID of the channel.
+** Use the **Customers:list **command to retrieve the name and UUID of the tenant.
+** Use the **Channels:list **command to retrieve the name and UUID of the channel.
 
 ==== Additional prerequisites for Channel SSO
 
 If you are configuring your SP Metadata URL:
 
-* Audience restriction setting (also called “Entity ID”) in the IDP must be set to the https://x.threatx.io/sign-in path.
-* IDP metadata must provide the NameID in the format: urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
-* We use the email address of the user to locate users within our database. 
-* When configuring the IDP, the Assertion Consumer Service URL (ACS) of our Service Provider (SP) is *https://x.threatx.io/auth/v2/customers/\{your_threatx_tenant_uuid}/acs*
-* For IDPs that support Service Provider metadata, the metadata URL of our SP is *https://x.threatx.io/auth/v2/customers/\{your_threatx_tenant_uuid}/metadata*
+* Audience restriction setting (also called “Entity ID”) in the IDP must be set to the https://x.threatx.io/sign-in path.
+* IDP metadata must provide the NameID in the format: urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress
+* We use the email address of the user to locate users within our database. 
+* When configuring the IDP, the Assertion Consumer Service URL (ACS) of our Service Provider (SP) is *https://x.threatx.io/auth/v2/customers/\{your_threatx_tenant_uuid}/acs*
+* For IDPs that support Service Provider metadata, the metadata URL of our SP is *https://x.threatx.io/auth/v2/customers/\{your_threatx_tenant_uuid}/metadata*
 
 If you are configuring your ACS URL:
 
@@ -927,17 +934,17 @@ If you are configuring your ACS URL:
 
 Use the following steps to configure SSO access for your {organization} tenant and channel partners:
 
-. Log into the API. Authenticate to the API using the Login command.
-. Gather the tenant or channel data you need.  +
-Use the Customers:list or Channels:list command to find your Customer or Channel Representation information. You need to copy the Customer or Channel Representation information response exactly and paste it into the body of the Customers:update or Channels:update command with the UUID field omitted.
+. Log into the API. Authenticate to the API using the Login command.
+. Gather the tenant or channel data you need.  +
+Use the Customers:list or Channels:list command to find your Customer or Channel Representation information. You need to copy the Customer or Channel Representation information response exactly and paste it into the body of the Customers:update or Channels:update command with the UUID field omitted.
 . Assemble your tenant update API request.
 * Supply your Customer or Channel Representation information to the Customers:update or Channels:update command described in step 2. An example of this Customer Representation information can be found below. An example of this Channel Representation information can also be found below.
 * Set the value of “sso” to an object, and within it, set the values for the “enabled” (true), “required” (false), and “saml_metadata_url” parameters.
-* Submit the tenant or channel update API request. If it is successful, you should see Customer Update Response or Channel Update Response.
+* Submit the tenant or channel update API request. If it is successful, you should see Customer Update Response or Channel Update Response.
 
-Test the new configuration. Navigate to *https://x.threatx.io/auth/v2/customers/<name>/saml* or *https://x.threatx.io/auth/v2/channels/<name>/saml* from a web browser. 
+Test the new configuration. Navigate to *https://x.threatx.io/auth/v2/customers/<name>/saml* or *https://x.threatx.io/auth/v2/channels/<name>/saml* from a web browser. 
 
-You should be redirected to your SSO Identity Provider to confirm you wish to authorize {organization} Dashboard to act on your behalf. Follow the prompts in your SSO Identity Provider. You should be then redirected to the {organization} Dashboard and authorized to access the system on behalf of your configured user account.
+You should be redirected to your SSO Identity Provider to confirm you want to authorize {organization} Dashboard to act on your behalf. Follow the prompts in your SSO Identity Provider. You should be then redirected to the {organization} Dashboard and authorized to access the system on behalf of your configured user account.
 
 Single-Sign On access is now configured for your tenant.
 
@@ -949,7 +956,7 @@ TIP: _(optional)_ You can now update your tenant configuration again using “re
 
 The `login` command uses an API key to return an API access token to be used for further endpoint commands.
 
-The *api_key*, created within the {organization} user interface ( menu:Settings[API Keys] ), is used within the request for the `api_token` parameter. The response then provides a unique and temporary `access_token` string to be used in further endpoint commands.
+The *api_key*, created within the {organization} user interface ( menu:Settings[API Keys] ), is used within the request for the `api_token` parameter. The response then provides a unique and temporary `access_token` string to be used in further endpoint commands.
 
 .Command Object
 [cols=",",]
@@ -967,7 +974,7 @@ The *api_key*, created within the {organization} user interface ( menu:Settings
 .Request
 [,console]
 ----
-curl https://api.threatx.io/tx_api/v1/login -H 'Content-Type: 
+curl https://api.threatx.io/tx_api/v1/login -H 'Content-Type: 
 application/json' -d '{ "command":"login", "api_token":"_<api_key>_" }'
 ----
 
@@ -977,8 +984,8 @@ application/json' -d '{ "command":"login", "api_token":"_<api_key>_" }'
 ----
 {
 "Ok": {
-    "status": true,
-    "token": "_<access_token>_"
+    "status": true,
+    "token": "_<access_token>_"
 }
 }
 ----
@@ -988,7 +995,7 @@ application/json' -d '{ "command":"login", "api_token":"_<api_key>_" }'
 
 ===== *Customers:* list
 
-The `list` command returns the details of all tenants authorized for the current API access token.
+The `list` command returns the details of all tenants authorized for the current API access token.
 
 .Command Object
 [cols=",",]
@@ -1014,7 +1021,7 @@ include::example$txapi-customers-list.sh[]
 
 ===== *Customers:* update
 
-The `update ` command updates a specified tenant. The SSO object is used to configure the SSO parameters. All other parameters to the customer object should not be modified when configuring SSO.
+The `update ` command updates a specified tenant. The SSO object is used to configure the SSO parameters. All other parameters to the customer object should not be modified when configuring SSO.
 
 .Command Object
 [cols=",",]
@@ -1045,9 +1052,9 @@ The `update ` command updates a specified tenant. The SSO object is used to con
 [cols=",,",]
 |===
 |*Parameters* |*Type* |*Description*
-|“enabled”: true / false |Boolean |When true, users belonging to the tenant are allowed to sign in to the {organization} user interface using SSO.
-|“required”: true / false |Boolean |When true, users are required to use SSO to sign in to the {organization} user interface.
-|“saml_metadata_url”: “_<saml_url>_” |String |IDP metadata URL or file. See the Prerequisites. 
+|“enabled”: true / false |Boolean |When true, users belonging to the tenant are allowed to sign in to the {organization} user interface using SSO.
+|“required”: true / false |Boolean |When true, users are required to use SSO to sign in to the {organization} user interface.
+|“saml_metadata_url”: “_<saml_url>_” |String |IDP metadata URL or file. See the Prerequisites. 
 |===
 
 [INFORMATION]
@@ -1071,7 +1078,7 @@ include::example$txapi-customers-update.sh[]
 
 ===== *Channels:* list
 
-The `list ` command returns the details of all channels authorized for the current API access token.
+The `list ` command returns the details of all channels authorized for the current API access token.
 
 .Command Object
 [cols=",",]
@@ -1094,17 +1101,17 @@ include::example$txapi-channels-list.sh[]
 [,json]
 ----
 {
-  "Ok": [
-    ...
-    {
-      "name": "test_channel",
-"require_totp_setup": null,
-      "uuid": "81815E73-ABB9-4533-977B-93964B8AAB73",
-"sso": null
+  "Ok": [
+    ...
+    {
+      "name": "test_channel",
+"require_totp_setup": null,
+      "uuid": "81815E73-ABB9-4533-977B-93964B8AAB73",
+"sso": null
 
 },
-    ...
-  ]
+    ...
+  ]
 }
 ----
 
@@ -1112,39 +1119,65 @@ include::example$txapi-channels-list.sh[]
 
 ===== *Channels:* update
 
-The `update` command updates a specified channel. The SSO object is used to configure the SSO parameters. All other parameters to the channel object should not be modified when configuring SSO.
+The `update` command updates a specified channel. 
+The SSO object is used to configure the SSO parameters. 
+All other parameters to the channel object should not be modified when configuring SSO.
 
-.Command Object
-[cols=",",]
-|===
-|*Parameters* |*Type*
-|“command”: “update”   |String
-|“token”: “_<access_token>_”   |String
-|“channel”: {} |Channel Object
+.Command Object Attributes
+[cols="2"]
 |===
 
+|Parameters |Type
 
-.Channel Object
-[cols=",",]
-|===
-|*Parameters* |*Type*
-|“name”: “<channel_name>” |String
-|“sso”: {} |SSO Object
-|===
+|`command`: “update”   
+|String
 
+| `token`
+|String
 
-.SSO Object
-[cols=",,",]
-|===
-|*Parameters* |*Type* |*Description*
-|“enabled”: true / false |Boolean |When true, users belonging to the channel are allowed to sign in to the {organization} user interface using SSO.
-|“required”: true / false |Boolean |When true, users in the channel are required to use SSO to sign in to the {organization} user interface.
-|“saml_metadata_url”: “_<saml_url>_” |String |IDP metadata URL or file. See the Prerequisites. 
+|`channel`
+|<<channel-object-attributes,Channel Object>>
+
 |===
 
-[INFORMATION]
-.Update Command Usage
-====
+
+[[channel-object-attributes]]
+.Channel Object Attribute
+[cols="2",]
+|===
+| Name | Type
+
+|`name` 
+|String
+
+|`sso` 
+|<<sso-object-attributes,SSO Object>>
+
+|===
+
+
+[[sso-object-attributes]]
+.SSO Object Attributes
+[cols="1,1,8"]
+|===
+| Name | Type | Description
+
+| `enabled`
+| Boolean 
+| When true, users belonging to the channel are allowed to sign in to the {organization} user interface using SSO.
+
+| `required`
+| Boolean 
+| When true, users in the channel are required to use SSO to sign in to the {organization} user interface.
+
+| `saml_metadata_url`
+| String 
+| IDP metadata URL or file. See the Prerequisites. 
+|===
+
+
+
+==== Update Command Usage
 
 .Request
 [,console]
@@ -1157,13 +1190,13 @@ include::example$txapi-channels-update.sh[]
 ----
 {"Ok": "Channel: test_channel updated."}
 ----
-====
+
 
 '''
 
-=== Configuring Mutual TLS (mTLS) configuration
+=== Configuring mutual TLS (mTLS) configuration
 
-This section details the configuration and setup of Mutual TLS (mTLS) for secure communication between various components within our system. mTLS establishes a mutual authentication process between clients and servers, ensuring a robust and authenticated connection. You can enable mTLS in both downstream and upstream configurations.
+This section details the configuration and setup of mutual TLS (mTLS) for secure communication between various components within our system. mTLS establishes a mutual authentication process between clients and servers, ensuring a robust and authenticated connection. You can enable mTLS in both downstream and upstream configurations.
 
 In Transport Layer Security (TLS), the traditional setup involves the server authenticating itself to the client. However, mTLS enhances security by enabling both the client and server to authenticate each other during the communication process.
 
@@ -1173,14 +1206,14 @@ Downstream mTLS involves the WAF sensor serving as the server, authenticating in
 
 Make sure your environment meets the following requirements for downstream mTLS:
 
-* Site must be configured for TLS (HTTPS) via the SSL Enabled option on the Site Details page.
+* Site must be configured for TLS (HTTPS) via the SSL/TLS Enabled option on the Site Details page.
 * Availability of the CA certificate used to sign client certificates, which utilizes as Downstream mTLS Credentials in the site configuration. This certificate must be in PEM format.
 * Clients must be configured to send their certificates during the TLS handshake.
 
 Configuration steps:
 
 . Access the Site Details page through menu::Settings[Sites > Edit Site (for the relevant site)]
-. In the SSL Configuration section, enable Downstream mTLS by checking the designated checkbox.
+. In the SSL/TLS Configuration section, enable Downstream mTLS by checking the designated checkbox.
 . Populate the Downstream mTLS Credentials field with the CA certificates used for validating client certificates.
 
 image::common/mTLS1.png[mTLS,width=948,height=571]
@@ -1192,15 +1225,15 @@ Upstream mTLS involves the WAF sensor acting as the client, authenticating itsel
 
 Make sure your environment meets the following requirements for upstream mTLS:
 
-* Site must be TLS-enabled via the SSL Enabled option in the Site Details page.
-* Ensure that the TLS connection termination does not occur at the WAF sensor; the *SSL Terminate Only* checkbox should remain unchecked. The origin server should be configured for HTTPS.
+* Site must be TLS-enabled via the SSL/TLS Enabled option in the Site Details page.
+* Ensure that the TLS connection termination does not occur at the WAF sensor; the *SSL/TLS Terminate Only* checkbox should remain unchecked. The origin server should be configured for HTTPS.
 * Availability of both the client certificate and private key in PEM format, used as the Upstream mTLS Credentials in the site configuration.
 * The origin server should be configured to request client certificates during the TLS handshake.
 
 Configuration Steps:
 
 . Access the Site Details page through menu:Settings[Site], selecting btn:[Edit Site] for the relevant site.
-. Within the SSL Configuration section, enable Upstream mTLS by checking the designated checkbox.
+. Within the SSL/TLS Configuration section, enable Upstream mTLS by checking the designated checkbox.
 . Populate the Upstream mTLS Credentials field with both the client certificate and private key.
 
 image::common/mTLS2.png[mTLS,width=948,height=571]
@@ -1208,11 +1241,11 @@ image::common/mTLS2.png[mTLS,width=948,height=571]
 ==== *Notes*
 
 * The simultaneous configuration of both Downstream and Upstream mTLS is possible and can be individually managed within the Site Details page.
-* To expose the mTLS settings within the Site Details page, a tenant needs to enable the feature *flag site-config-mtls*.
+* To expose the mTLS settings within the Site Details page, a tenant needs to enable the feature *flag site-config-mtls*.
 
 ==== *Conclusion*
 
-By configuring Mutual TLS in both downstream and upstream modes, you establish a secure and authenticated communication channel between clients, the WAF, and the origin server, ensuring robust protection and trust across the implementation.
+By configuring mutual TLS in both downstream and upstream modes, you establish a secure and authenticated communication channel between clients, the WAF, and the origin server, ensuring robust protection and trust across the implementation.
 
 '''
 
@@ -1220,38 +1253,38 @@ By configuring Mutual TLS in both downstream and upstream modes, you establish a
 
 The {organization} four-stage blocking strategy is designed to reduce false positives while preventing malicious behavior from reaching your sites. When Request-Based blocking is enabled, the sensor blocks any standalone malicious request. When Risk-Based blocking is enabled, the sensor issues a series of timed block periods to any entity that exhibits persistent suspicious or malicious behavior, leading to a permanent blacklisting if the behavior continues. During a 30-minute Block period or while an entity is blacklisted, all requests from that entity are blocked from reaching the site.
 
-When testing for vulnerabilities against your internal applications, the IP addresses of your penetration testers should be added to the whitelist prior to testing, and removed after testing is complete. 
+When testing for vulnerabilities against your internal applications, the IP addresses of your penetration testers should be added to the whitelist before testing, and removed after testing is complete. 
 
-When testing for vulnerabilities in the sensor, the IP addresses of your penetration testers should not be added to the whitelist. 
+When testing for vulnerabilities in the sensor, the IP addresses of your penetration testers should not be added to the whitelist. 
 
 To add an IP address to the whitelist:
 
-. Naviate to menu::Settings[IWAF].
-. In the IWAF Settings page, click the *Whitelisted IPs* tab.
+. Navigate to menu::Settings[IWAF].
+. In the IWAF Settings page, click the *Whitelisted IP addresses* tab.
 . Click the btn:[Add Entry] button.
 . In the Add Whitelist Entry screen, enter the IP address.
 . Enter the reason for adding the IP address.
 . Set the *Expiration*. Typically, you choose *Never* but you do need to remove the address from the list when done testing.
 . Click *Submit*.
 
-When done testing, remove the address by opening the *Whitelisted IPs* tab and click the *Remove* button in the entity’s row.
+When done testing, remove the address by opening the *Whitelisted IP addresses* tab and click the *Remove* button in the entity’s row.
 
 *Recommended Tools and Methodologies*
 
 * *Scanners* +
-Scanners, such as https://www.zaproxy.org/[ZAP] and https://portswigger.net/burp/[Burp], can be a useful tool for testing the {organization} Request and Risk-based blocking capabilities. However, they are likely to be blocked quickly and sent to the blacklist.
-* *Leverage multiple IP addresses* +
-When attacking the {organization} sensor with a single IP address, that IP address accumulates risk and is delivered a series of Risk and Request-Based blocks before being placed on the blacklist. The entity associated with that IP address can be removed from the blacklist, but the associated Risk Level from that entity does not reset to “0” upon removal. An entity’s Risk Level can be reduced over time by demonstrating a reduction in suspicious behavior or malicious attack attempts. Try leveraging several IP addresses or ranges when pen testing the {organization} sensor.
+Scanners, such as https://www.zaproxy.org/[ZAP] and https://portswigger.net/burp/[Burp], can be a useful tool for testing the {organization} Request and Risk-based blocking capabilities. However, they are likely to be blocked quickly and sent to the blacklist.
+* *Leverage multiple IP addresses* +
+When attacking the {organization} sensor with a single IP address, that IP address accumulates risk and is delivered a series of Risk and Request-Based blocks before being placed on the blacklist. The entity associated with that IP address can be removed from the blacklist, but the associated Risk Level from that entity does not reset to “0” upon removal. An entity’s Risk Level can be reduced over time by demonstrating a reduction in suspicious behavior or malicious attack attempts. Try leveraging several IP addresses or ranges when pen testing the {organization} sensor.
 
-You can see when the IP address is blocked from the {organization} user interface. In the following screenshot, the Gray requests were blocked from reaching the application. The White request was allowed through as it did not contain a standalone, viable attack or high-risk behavior.
+You can see when the IP address is blocked from the {organization} user interface. In the following screenshot, the Gray requests were blocked from reaching the application. The White request was allowed through as it did not contain a standalone, viable attack or high-risk behavior.
 
-image::common/Pen-test-screenshot.png[Pentest,width=1024,height=836]
+image::common/Pen-test-screenshot.png[Penetration Test,width=1024,height=836]
 
 '''
 
 === Troubleshooting sensor issues
 
-When you have an issue with sensors, contact the {organization} SOC at support@threatx.com with a description of your issue.
+When you have an issue with sensors, contact the {organization} SOC at support@threatx.com with a description of your issue.
 
 Depending on the nature of the issue, the {organization} SOC might request one of the following files.
 
@@ -1265,44 +1298,44 @@ How you generate a HAR file depends on the web browser you use.
 ===== Generating a HAR file in Chrome:
 
 . Open Google Chrome and navigate to the page where the issue is occurring.
-. Look for the Vertical ellipsis button and select *More Tools > Developer Tools.*
-. From the panel, select the **Network **tab.
+. Look for the Vertical ellipsis button and select *More Tools > Developer Tools.*
+. From the panel, select the **Network **tab.
 . Look for a Record button in the upper left corner of the tab and make sure it is red. If it is grey, click it once to start recording.
 . Check the *Preserve log* box**.**
 . Click the Clear button to clear out any existing logs from the Network tab.
 . Reproduce the issue you are experiencing.
-. Once you have reproduced the issue, right-click anywhere on the grid of network requests and select *Save as HAR with Content.*
+. Once you have reproduced the issue, right-click anywhere on the grid of network requests and select *Save as HAR with Content.*
 . Upload the HAR file as an attachment to your {organization} support ticket for further.
 
 ===== Generating a HAR file in Mozilla Firefox:
 
-. Open Mozilla Firefox and navigate to the page where the issue is occurring.
-. Select the Mozilla Firefox menu (three horizontal parallel lines) at the top-right of your browser window, then select *Web Developer* > *Network*.
-. From the panel, click the *Network* tab.
+. Open Mozilla Firefox and navigate to the page where the issue is occurring.
+. Select the Mozilla Firefox menu (three horizontal parallel lines) at the top right of your browser window, then select *Web Developer* > *Network*.
+. From the panel, click the *Network* tab.
 . The recording automatically starts when you begin performing actions in the browser.
-. Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), right-click anywhere under the *File* column, and click on *Save all as Har*.
+. Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), right-click anywhere under the *File* column, and click on *Save all as Har*.
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 ===== Generating a HAR file in Internet Explorer:
 
-. Open Internet Explorer and go to the page where the issue is occurring.
-. Press *F12* on your keyboard (or click the gear icon > F12 Developer Tools).
-. Click the *Network* tab.
+. Open Internet Explorer and go to the page where the issue is occurring.
+. Press *F12* on your keyboard (or click the gear icon > F12 Developer Tools).
+. Click the *Network* tab.
 . Reproduce the issue that you were experiencing while the network requests are being recorded.
-. Once done, click *Save* and save it as a .*har file.*
+. Once done, click btn:[Save]  and give the file a `.har` extension.
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
 Generating a HAR file in Safari:
 
-. Before generating the HAR file, make sure you can see the *Develop* menu in Safari. If it is not there, follow the instructions in https://support.apple.com/en-ie/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac[Use the developer tools in the Develop menu in Safari on Mac].
-. Open the *Develop* menu and select *Show Web Inspector*.
-. Click the *Network* tab and complete the activity that is causing issues.
-. Click the *Export* icon on the far right of the network tab and save the HAR file.
+. Before generating the HAR file, make sure you can see the *Develop* menu in Safari. If it is not there, follow the instructions in https://support.apple.com/en-ie/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac[Use the developer tools in the Develop menu in Safari on Mac].
+. Open the *Develop* menu and select *Show Web Inspector*.
+. Click the *Network* tab and complete the activity that is causing issues.
+. Click the *Export* icon on the far right of the network tab and save the HAR file.
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
-Edge natively produces HAR files. For more instructions, see the instructions from the https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/network[Microsoft website]. To generate a HAR file in Edge:
+Edge natively produces HAR files. For more instructions, see the instructions from the https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/network[Microsoft website]. To generate a HAR file in Edge:
 
-. Open the *Network* tool in F12 developer tools.
+. Open the *Network* tool in F12 developer tools.
 . Reproduce the issue.
 . Export captured traffic as a HAR (CTRL + S).
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
@@ -1313,7 +1346,7 @@ The PCAP file is relevant only if you host your own sensors.
 
 To generate a PCAP file that the {organization} SOC can analyze for troubleshooting connectivity or other issues with the WAF sensor, follow these instructions:
 
-. Use ssh to connect into the docker host system.
+. Use SSH to connect into the docker host system.
 . Use the following command to display the name of the desired container: +
 *docker ps*
 . Use the following command to obtain a shell within the WAF container, with the newly obtained container name: +
