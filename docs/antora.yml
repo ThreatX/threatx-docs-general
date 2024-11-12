@@ -4,24 +4,13 @@ title: TX Dashboard
 version: 4.74
 asciidoc:
   attributes:
-    txprotect-current-version: 3.20
-    txprevent-current-version: 1.1
-    txdashboard-current-version: 4.74
     product-name: TX Dashboard
-    product-version: 4.74.0
-    :product-display-version: 4.74
+    version-dashboard: 4.74.0
     experimental: true
     toclevels: 4
     sectlinks: true
     sectanchors: true
     sectids: true
     icons: font
-    source-highlighter: highlight.js
-    tip-caption: 💡 TIP
-    caution-caption: 🚦 CAUTION
-    note-caption: 📝 NOTE
-    warning-caption: ⚠️ WARNING
-    error-caption: ❌ ERROR
-    important-caption: ❕ IMPORTANT
 nav:
 - modules/ROOT/nav.adoc

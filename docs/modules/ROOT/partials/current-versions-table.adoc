@@ -1,21 +1,21 @@
 
 .Current Versions
-[cols='1.0,1.0,8.0', options='header',id="current-versions-table", caption=""]
+[cols='2,2m,6', options='header',id="current-versions-table", caption=""]
 |===
 | Product Name | Current Version | Description
 
 | xref:txprevent:ROOT:index.adoc[*Prevent*]
-| xref:{txprevent-current-version}@txprevent:ROOT:index.adoc[*{txprevent-current-version}*]    
+| {txprevent-current-version}
 | eBPF-based runtime sensor
 
 
 | xref:txprotect:ROOT:index.adoc[*Protect*]
-| xref:{txprotect-current-version}@txprotect:ROOT:index.adoc[*{txprotect-current-version}*] 
+| {txprotect-current-version}
 | Next-gen WAF and reverse-proxy sensor
 
 | xref:txgeneral:ROOT:index.adoc[*Dashboard*]
-| xref:{txdashboard-current-version}@txgeneral:ROOT:index.adoc[*{txdashboard-current-version}*]
-| link:https://x.threatx.io[x.threatx.com] SaaS Platform
+| {txdashboard-current-version}
+| SaaS Platform _(link:https://x.threatx.io[x.threatx.com])_
 
 
 |===
