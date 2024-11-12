@@ -14,7 +14,7 @@
 
 
 == Introduction
-image:deployment-guides.svg[] The _Analyst Guide_ focuses on those areas of the {{product-name}} platform that provide analytical data. Security analysts can use the data to perform various tasks, including:
+image:deployment-guides.svg[] The _Analyst Guide_ focuses on those areas of the {product-name} platform that provide analytical data. Security analysts can use the data to perform various tasks, including:
 
 * Monitor changes.
 * Review details about a specific attack.
@@ -444,20 +444,27 @@ The {organization} platform has an audit feature that logs a number of events, s
 [width="100%",cols="34%,33%,33%",options="header",]
 |===
 |Category |Actions |Description
-|Lists |new_entry +
-remove_entry |Lists are the whitelists and blocked lists. The *Description* column in the audit log identifies the list. The audit log monitors when IP addresses, called entries, are added to or removed from a list.
-|Rules |new_rule +
-remove_rule +
-update_rule |The audit log monitors whenever a rule is added, removed, or updated in the {organization} platform.
-|Sites |new_site +
-remove_site +
-unset_field +
-update_site |The audit log monitors whenever a site is added, removed, or updated in the {organization} platform. +
-The unset_field action occurs when a user nullifies a field within the site resource.
-|Users |new_user +
-remove_user +
-update_user |The audit log monitors whenever a user is added, removed, or updated in the {organization} platform.
-|User Actions |blacklist_entity block_entity watch_entity whitelist_entity |The audit log monitors whenever a user blocks an IP address, adds an IP address to the blocked list or whitelist, or chooses to watch an IP address. Whenever a user adds an IP address to a list, the Lists category shows a new_entry action.
+
+|Lists 
+|new_entry, remove_entry 
+|Lists are the whitelists and blocked lists. The *Description* column in the audit log identifies the list. The audit log monitors when IP addresses, called entries, are added to or removed from a list.
+
+|Rules 
+|new_rule, remove_rule,update_rule 
+|The audit log monitors whenever a rule is added, removed, or updated in the {organization} platform.
+
+|Sites 
+|new_site, remove_site, unset_field, update_site 
+|The audit log monitors whenever a site is added, removed, or updated in the {organization} platform. The unset_field action occurs when a user nullifies a field within the site resource.
+
+|Users 
+|new_user, remove_user, update_user 
+|The audit log monitors whenever a user is added, removed, or updated in the {organization} platform.
+
+|User Actions 
+|blacklist_entity, block_entity, watch_entity, whitelist_entity 
+|The audit log monitors whenever a user blocks an IP address, adds an IP address to the blocked list or whitelist, or chooses to watch an IP address. Whenever a user adds an IP address to a list, the Lists category shows a new_entry action.
+
 |===
 
 Each column in the audit log has a search icon which you can use to search for a string in that column. The search feature is case sensitive and requires an exact match. The table lists all the action strings you can use to search for a specific action.
@@ -486,7 +493,7 @@ Click the *View Entity* button to be taken to that entity’s <<entity-details
 
 '''
 
-=== *Rule Activity*
+=== Rule Activity
 
 The Rule Activity page, shown as Rule Details, provides data about the threats that matched the rule. This page is accessible from other pages by clicking a rule name in the *Rules* column.
 
@@ -614,20 +621,7 @@ The response to the command is as follows:
 
 `+{ "Ok": "Blacklist entry for ip 1.2.3.4 added" }+`
 
-== Glossary
+[[glossary]]
+[appendix]
 
-The {organization} platform provides information about sites, endpoints, traffic, and threats and uses various terms to describe them. For clarity, the terms used in the {organization} platform are defined as follows.
-
-API profile:: Type of API such as JSON, XML, and URL-encoded.
-API traffic:: Traffic that includes HTTP messages containing programmatic content sent between the site and client applications.
-Endpoint:: URL pattern representing a group of resources within a site. A site can have multiple endpoints.
-Entity:: A specific IP address or IP group. A suspicious entity is a _threat_.   
-iWAF:: Intelligent web application firewall. The next generation of the Web Application Firewall. See _WAF_. 
-Non-API site:: Site not served by an API server. Typically, a non-API site has web assets which are used for human interaction.
-Rule:: Set of Boolean conditions that, when True, implement the rule’s defined action and risk level. A True state is also known as a match. 
-Sensor:: See _WAF sensor_. 
-Site:: Web property serving API responses intended for consumption by an application. Also called an API site.
-Tenant:: Container for an organizational unit such as a department or company. The {organization} platform supports multiple tenants.
-Threat:: Representation of individual API clients or network of clients that have engaged in an activity that matches one or more rules and is therefore identified as suspicious or questionable. An identified threat is not necessarily malicious.
-WAF:: Web Application Firewall. Type of application firewall that applies specifically to web applications. It is deployed in front of web applications and analyzes bi-directional web-based (HTTP) traffic and detects and blocks anything malicious.
-WAF Sensor:: A reverse proxy-based web application firewall. Sensors monitor all the HTTP(S) traffic flows for malicious and legitimate activity. The sensor is decoupled from the analytics platform, so it can be run anywhere in the world and is used by customers with high bandwidth requirements. 
+include::partial$glossary.adoc[]

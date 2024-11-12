@@ -1,0 +1,17 @@
+== Glossary
+
+The {organization} platform provides information about sites, endpoints, traffic, and threats and uses various terms to describe them. For clarity, the terms used in the {organization} platform are defined as follows.
+
+API profile:: Type of API such as JSON, XML, and URL-encoded.
+API traffic:: Traffic that includes HTTP messages containing programmatic content sent between the site and client applications.
+Endpoint:: URL pattern representing a group of resources within a site. A site can have multiple endpoints.
+Entity:: A specific IP address or IP group. A suspicious entity is a _threat_.   
+iWAF:: Intelligent web application firewall. The next generation of the Web Application Firewall. See _WAF_. 
+Non-API site:: Site not served by an API server. Typically, a non-API site has web assets which are used for human interaction.
+Rule:: Set of Boolean conditions that, when True, implement the rule’s defined action and risk level. A True state is also known as a match. 
+Sensor:: See _WAF sensor_. 
+Site:: Web property serving API responses intended for consumption by an application. Also called an API site.
+Tenant:: Container for an organizational unit such as a department or company. The {organization} platform supports multiple tenants.
+Threat:: Representation of individual API clients or network of clients that have engaged in an activity that matches one or more rules and is therefore identified as suspicious or questionable. An identified threat is not necessarily malicious.
+WAF:: Web Application Firewall. Type of application firewall that applies specifically to web applications. It is deployed in front of web applications and analyzes bi-directional web-based (HTTP) traffic and detects and blocks anything malicious.
+WAF Sensor:: A reverse proxy-based web application firewall. Sensors monitor all the HTTP(S) traffic flows for malicious and legitimate activity. The sensor is decoupled from the analytics platform, so it can be run anywhere in the world and is used by customers with high bandwidth requirements. 
