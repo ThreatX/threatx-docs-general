@@ -155,7 +155,7 @@ Blocklist:: Prevents an entities from interacting with any of your sites for 30 
 Whitelist:: Entities on the whitelist are always allowed to interact with your sites.
 ****
 
-You can add an entity as an IP address or CIDR to any of the lists manually, as described in _Managing threats_ in the <<managing-analytical-data,Managing Analytical Data>> section. You should exercise caution when manually adding a threat to the Blacklist or Whitelist to prevent a problem with legitimate traffic or always allowing malicious traffic.
+You can add an entity as an IP address or CIDR to any of the lists manually, as described in _Managing threats_ in the <<analytical-data,Managing Analytical Data>> section. You should exercise caution when manually adding a threat to the Blacklist or Whitelist to prevent a problem with legitimate traffic or always allowing malicious traffic.
 
 If the {organization} Risk-Based Blocking feature is enabled, the {organization} platform can add a threat automatically to the Blacklist or Blocklist based on the threat’s behavior. The {organization} behavioral analytics engine, hackerMind™, blocks persistently malicious threats when the threats’ behavior surpasses the Risk-Based Blocking threshold. The analytics engine automatically places a threat on the permanent Blacklist after it is blocked three times.
 
@@ -204,7 +204,7 @@ You can hover over a point on any graph to display the metrics at that time.
 
 The Threat Entities table offers the visibility security teams need to quickly evaluate threats prioritized by the Risk Score and Intensity, which represents the number of times rules were matched over the selected time range.
 
-You can drill into the threat to view specific metadata of that threat, as described in <<entity-details,Entity Details>>. You can also drill into each rule that was matched to see its specific activity, as described in *link:#rule_activity[Rule Activity]*.
+You can drill into the threat to view specific metadata of that threat, as described in <<entity-details,Entity Details>>.
 
 If you are unfamiliar with the Status icons, you can hover over the icon to see its definition.
 
@@ -230,7 +230,8 @@ Threat Map offers visibility into the location of each unique threat and its ass
 
 '''
 
-=== *Entity Details***
+[[entity-details]]
+=== Entity Details
 
 The {organization} platform analyzes HTTP traffic then extracts identifying metadata, including IP address, user agent, TLS fingerprint, and other characteristics to create a profile and identifier for each attacker, which is displayed in the Entity Details page. The data is presented with special emphasis on key attributes to further help identify trends and patterns.
 
@@ -248,7 +249,7 @@ At a glance, you can see the following data:
 Risk Score::
 Threat name::
 Intensity:: Represents the number of times rules were matched over the selected time range.
-Current Status:: The current action taken on the threat. You can change the action as needed. See the _Managing threats_ section in the <<managing-analytical-data,Managing Analytical Data>> for details.
+Current Status:: The current action taken on the threat. You can change the action as needed. See the _Managing threats_ section in the <<analytical-data,Analytical Data>> for details.
 IP Address:: If available, you can click the address to see any data about it in the ViewdnsInfo web site.
 IP Reputation:: Represents the legitimacy of the IP address with a score of 0 to 100. The higher the score, the more likely that the IP address is legitimate. A low score can indicate an attacker. A score of 0 could mean that the IP reputation is unknown. The scoring system is the opposite of Risk Score.
 Location:: Country of origin.
@@ -261,7 +262,7 @@ The Entity Details page includes tables with  the following sections. Each table
 
 ==== Activity
 
-The Activity table offers the following data in addition to the site and threat data described in *link:#analytical-data[**]<<analytical-data,Analytical Data>>*.
+The Activity table offers the following data in addition to the site and threat data described in <<analytical-data,Analytical Data>>.
 
 .Activity Table Column Descriptions
 ****
@@ -437,7 +438,7 @@ If you see traffic that should be monitored, click *Request a Rule* to request t
 
 '''
 
-=== *Audit Log***
+=== Audit Log
 
 The {organization} platform has an audit feature that logs a number of events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. The following table lists the actions in each category.
 
@@ -542,6 +543,7 @@ If you are unfamiliar with the Status icons, you can hover over the icon in the 
 
 For detailed information about the other data in the table, see <<analytical-data,Analytical Data>>.
 
+[[analytcal-data]]
 == Managing analytical data
 
 The following sections describe the tasks you can perform to manage analytical data.

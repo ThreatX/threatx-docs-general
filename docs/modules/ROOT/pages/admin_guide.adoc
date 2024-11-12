@@ -82,7 +82,7 @@ NOTE: To configure the following settings, the *{organization} Risk-Based Blocki
 In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/customers` endpoint.
 
 .Risk-Based Blocking Settings
-[cols=",",options="header",]
+[cols="30m,70",options="header",]
 |===
 |Setting | Description
 |Risk-Based Blocking Timeout 
@@ -1094,7 +1094,7 @@ Beta:: If selected, the platform *does not process matches* to rhe rule.
 '''
 
 .Rule Risk Assignments
-[cols="30m,70",options="header",id="rules-risk"]
+[cols="30m,70",options="header",id="rule-risks"]
 |===
 |Range |Description
 |[0-10] *(Low)*
@@ -1178,7 +1178,7 @@ There are three types of criteria:
 * <<response-criteria,Response>>
 
 .Entity Criteria
-[cols="30m,70",options="header",id="entity-criteria"]
+[cols="30m,10,60",options="header",id="entity-criteria"]
 |===
 |Attributes |Description |Example
 
@@ -1193,7 +1193,7 @@ There are three types of criteria:
 |===
 
 .(Incoming) Request Criteria
-[cols="30m,70",options="header",id="request-criteria"]
+[cols="30m,10,60",options="header",id="request-criteria"]
 |===
 |Attributes |Description |Example
 
@@ -1224,7 +1224,7 @@ There are three types of criteria:
 |===
 
 .Response Criteria
-[cols="30m,70",options="header", id="response-criteria"]
+[cols="30m,10,60",options="header", id="response-criteria"]
 |===
 |Attributes |Description |Example
 
@@ -1867,7 +1867,7 @@ $ tcpdump -i eth0 \
 $ docker cp \
   pass:quotes[*<_container_id_>*]:/tmp/upload_to_threatx.pcap \
   upload_to_threatx.pcap
----
+----
 
 Upload the PCAP file to a {organization} support ticket for further analysis.
 
