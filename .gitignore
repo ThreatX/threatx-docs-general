@@ -136,3 +136,4 @@ dist
 .pnp.*
 
 .idea/
+/threatx-docs-general.iml
