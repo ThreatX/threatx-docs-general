@@ -30,7 +30,7 @@ The {organization} user interface presents the data the platform collects into v
 
 image:common/Attack-Dashboard.jpg[Attack Dashboard,width=1024,height=666]
 
-The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
+The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in <<generating-and-revoking-api-keys,Generating and revoking API keys>>. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
 
 ==== Firewall settings
@@ -165,7 +165,7 @@ To add a site, click the btn:[Add Site]. To edit a site, click btn:[Edit Site] b
 | Setting | Description
 
 |Risk-Based Blocking
-|If set, any entity with accumulated risk above the risk-based blocking threshold is blocked. The threshold settings are described in link:#managing-risk-based-blocking[Managing Risk-Based Blocking].
+|If set, any entity with accumulated risk above the risk-based blocking threshold is blocked. The threshold settings are described in <<managing-risk-based-blocking,Managing Risk-Based Blocking>>.
 
 |Request Blocking
 |If set, individual requests that are obvious hostile attacks, as determined by the {organization} rules, aure blocked.
@@ -181,7 +181,7 @@ To add a site, click the btn:[Add Site]. To edit a site, click btn:[Edit Site] b
 | Setting | Description
 
 |Static Caching Enabled
-|Enables static caching. See link:#managing-caching[Managing caching] for details.
+|Enables static caching. See <<managing-caching,Managing Caching>> for details.
 
 |Dynamic Caching Enabled
 |Enables dynamic caching. See link:#managing-caching[Managing caching] for details.
@@ -269,7 +269,7 @@ IMPORTANT: If you answer *yes* to any of the preceding questions, *contact {orga
 
 . Use the {organization} user interface or API to add the site and enter the configuration settings, as described in the _Site settings_ section.
 . If you are not using the Let’s Encrypt option for client-facing certificates, provide the SSL/TLS Certificat `.pem` file in the *SSL/TLS Enabled* site setting.
-. Once the site is available in the {organization} user interface, cut-over DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAME records are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview]. This can be done at your own pace.
+. Once the site is available in the {organization} user interface, cut-over DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAME records are provided in the IWAF settings, as described in the _Firewall settings_ section under <<administrator-overview,Administrator Overview>>. This can be done at your own pace.
 
 If you are adding multiple sites, you can add the additional sites first then cut-over DNS after.
 
@@ -335,12 +335,12 @@ You can view the on-premises deployed sensors and their status from the {organiz
 The btn:[Sensor Keys] tab lists the keys used with the sensors.
 You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
 
-The sensor IP addresses are available in the {organization} user interface, as described in the _Firewall settings_ section under link:#administrator-overview[Administrator Overview].
+The sensor IP addresses are available in the {organization} user interface, as described in the _Firewall settings_ section under <<administrator-overview,Administrator Overview>>.
 These addresses must be added to the whitelist in your environment to ensure traffic can reach your application.
 
 If the {organization} SOC hosts your sensors, you might notice the number of sensors fluctuate, or that an individual sensor’s uptime has changed.
 This is because sensors are designed to be added, removed, upgraded, and replaced as needed to ensure optimal site availability and protection.
-For the latest information, see our https://support.threatx.com/hc/en-us/sections/360008495931-Release-Notes[release notes].
+For the latest information, see our link:https://support.threatx.com/hc/en-us/sections/360008495931-Release-Notes[release notes].
 
 If you are contemplating deploying new sites, new tech stacks, or new architecture, contact the {organization} SOC.
 
@@ -355,7 +355,7 @@ There are two types of notifications:
 * Analytical events
 * Maintenance and system status events
 
-TIP: For information about receiving logs, see link:#receiving-event-logs[Receiving event logs].
+TIP: For information about receiving logs, see <<receiving-event-logs,Receiving event logs>>.
 
 ==== Analytical events
 
