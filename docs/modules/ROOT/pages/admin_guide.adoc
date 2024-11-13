@@ -4,10 +4,13 @@
 :page-product-name:  {product-name}
 :page-origin-type: git
 :icons: font
-:source-highlighter: highlightjs
+:source-highlighter: highlight.js
 :imagesdir: ../images
 :outline: true
 :outlinelevels: 3
+:sectanchors:
+:sectids:
+:sectlinks:
 :page-pdf-filename: user-guides.pdf
 
 
@@ -16,7 +19,7 @@ image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Man
 This guide focuses on the administrator tasks.
 
 
-[[administator-overview]]
+[[administator-overview,Administrator Overview]]
 == Administrator overview
 
 The {organization} platform has configuration, user, firewall, and other settings that can be managed by the {organization} SOC, your local administrator, or a combination of both. Your {organization} account must have write access to perform these tasks.
@@ -30,7 +33,7 @@ The {organization} user interface presents the data the platform collects into v
 
 image:common/Attack-Dashboard.jpg[Attack Dashboard,width=1024,height=666]
 
-The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in <<generating-and-revoking-api-keys,Generating and revoking API keys>>. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
+The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
 
 
 ==== Firewall settings
@@ -269,7 +272,7 @@ IMPORTANT: If you answer *yes* to any of the preceding questions, *contact {orga
 
 . Use the {organization} user interface or API to add the site and enter the configuration settings, as described in the _Site settings_ section.
 . If you are not using the Let’s Encrypt option for client-facing certificates, provide the SSL/TLS Certificat `.pem` file in the *SSL/TLS Enabled* site setting.
-. Once the site is available in the {organization} user interface, cut-over DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAME records are provided in the IWAF settings, as described in the _Firewall settings_ section under <<administrator-overview,Administrator Overview>>. This can be done at your own pace.
+. Once the site is available in the {organization} user interface, cut-over DNS to direct traffic to the CNAME provided for your tenant through your DNS provider. The CNAME records are provided in the IWAF settings, as described in the _Firewall settings_ section under link:#administator-overview[Administrator Overview]. This can be done at your own pace.
 
 If you are adding multiple sites, you can add the additional sites first then cut-over DNS after.
 
@@ -335,7 +338,7 @@ You can view the on-premises deployed sensors and their status from the {organiz
 The btn:[Sensor Keys] tab lists the keys used with the sensors.
 You add a key only when deploying a sensor and delete a key when the associated sensor is no longer in use.
 
-The sensor IP addresses are available in the {organization} user interface, as described in the _Firewall settings_ section under <<administrator-overview,Administrator Overview>>.
+The sensor IP addresses are available in the {organization} user interface, as described in the _Firewall settings_ section under link:#administator-overview[Administrator Overview].
 These addresses must be added to the whitelist in your environment to ensure traffic can reach your application.
 
 If the {organization} SOC hosts your sensors, you might notice the number of sensors fluctuate, or that an individual sensor’s uptime has changed.
@@ -794,6 +797,7 @@ API Endpoint:: `/tx_api/v1/users`
 
 '''
 
+[[generating-and-revoking-api-keys]]
 === Generating and revoking API keys
 
 TIP: If using the {organization} API to access the {organization} platform, you need first need to use an *API key* with the `login` command to receive a *session token*, after which you will be allowed to execute other commands.
