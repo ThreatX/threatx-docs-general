@@ -16,7 +16,7 @@
     {
       "label": "Check AsciiDoc Style",
       "type": "shell",
-      "command": "./node_modules/@vvago/vale/bin/vale docs",
+      "command": "./node_modules/@vvago/vale/bin/vale --minAlertLevel=${input:alertLevel} docs",
       "group": "test",
       "presentation": {
         "reveal": "always",
@@ -43,7 +43,7 @@
     {
       "id": "alertLevel",
       "type": "pickString",
-      "default": "warning",
+      "default": "suggestion",
       "description": "Select the alert level",
       "options": [
           {

@@ -1,11 +1,10 @@
 # Descriptor of the Antora site.
 name: txgeneral
-title: TX Dashboard
-version: 4.74
+title: ThreatX Platform
+version: ~
 asciidoc:
   attributes:
-    product-name: TX Dashboard
-    version-dashboard: 4.74.0
+    product-name: Platform
     experimental: true
     toclevels: 4
     sectlinks: true

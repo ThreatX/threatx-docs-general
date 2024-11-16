@@ -1,4 +1,0 @@
-
-November 6, 2024:: *xref:1.1@txprevent:ROOT:index.adoc[TX Prevent Docs v1.1]* is now available!
-October 24, 2024:: *link:https://docs.threatx.com[docs.threatx.com]* is officially live!
-

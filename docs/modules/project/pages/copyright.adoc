@@ -1,0 +1,28 @@
+= Copyright Notice
+:revdate:  November 15, 2024
+:revremark: Initial Release
+
+Copyright © 2024 ThreatX, Inc.
+
+All Rights Reserved.
+
+This documentation and the associated text, images, and assets contained herein (collectively, the "Materials") are the property of ThreatX, Inc. ("Company") and are protected by copyright and other intellectual property laws.
+
+== LICENSE
+The Materials provided by the Company are for informational purposes only and may be used solely for your personal or internal business purposes in conjunction with your authorized use of the Company’s products or services. Any other use, including the reproduction, modification, distribution, transmission, republication, display, or performance, of the Materials is strictly prohibited without the prior written consent of the Company.
+
+See: xref:license.adoc[ThreatX Proprietary Documentation License]
+
+== TRADEMARKS
+TX Protect™ and TX Prevent™ are trademarks of ThreatX, Inc.
+
+All trademarks, service marks, and trade names (collectively, the "Marks") are the property of ThreatX, Inc. or other respective owners that have granted the Company the right and license to use such Marks.
+
+
+== DISCLAIMER
+The Materials are provided "as is," without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+== CONTACT INFORMATION
+For inquiries regarding this documentation or the Company's copyright policies, please contact: support@threatx.com
+
+

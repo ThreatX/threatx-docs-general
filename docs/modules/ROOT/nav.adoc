@@ -2,6 +2,6 @@
 ** xref:intro.adoc[Introduction to ThreatX]
 ** xref:overview_guide.adoc[Platform Overview]
 * User Guides
-** xref:getting_started.adoc[Getting Started]
+** xref:getting_started.adoc[New User Guide]
 ** xref:analyst_guide.adoc[Analyst Guide]
 ** xref:admin_guide.adoc[Administrator Guide]

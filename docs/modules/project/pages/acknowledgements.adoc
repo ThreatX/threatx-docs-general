@@ -1,0 +1,38 @@
+= Acknowledgements
+:revdate: November 15, 2024
+:revremark: Initial release
+
+
+We would like to acknowledge the following open-source projects and resources that were instrumental in the development of this documentation site:
+
+== https://antora.org/[Antora]
+
+This documentation site is built using *Antora*, an open-source documentation site generator designed for managing documentation as code using https://asciidoctor.org/[Asciidoctor]. Antora is licensed under the https://opensource.org/licenses/MIT[MIT License].
+
+== https://asciidoctor.org/[Asciidoctor]
+
+Content for the documentation is authored using *Asciidoctor*, a fast, open-source text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook, and many other formats. Asciidoctor is licensed under the https://opensource.org/licenses/MIT[MIT License].
+
+== https://stylepedia.net/supplementary-style-guide/[Red Hat Supplementary Style Guide]
+
+We utilize the *Red Hat Supplementary Style Guide* to provide consistency and clarity in our documentation language. This supplementary guide is part of Red Hat's comprehensive approach to maintaining clear and consistent communication across their products.
+
+== https://www.docbook.org/[Docs-as-Code]
+
+We follow the *Docs-as-Code* approach, treating documentation with the same tools and processes as software development, allowing for more consistent updates, reviews, and integration with our development workflows.
+
+== https://diataxis.fr/[Diátaxis Framework]
+Our documentation strategy is informed by the Diátaxis Framework, a systematic approach to organizing technical documentation into four distinct categories: Tutorials, How-To Guides, Technical References, and Explanations.
+Vale
+
+== Additional Libraries and Tools
+
+* *link:https://vale.sh/[Vale]* : Vale is an extensible, syntax-aware linter for natural languages, to enforce consistent style and grammar checks across our documentation. Vale helps maintain high standards of quality and consistency in our content.
+
+== Special Thanks
+
+We extend our gratitude to the open-source community and contributors for their continuous support and contributions.
+
+
+
+

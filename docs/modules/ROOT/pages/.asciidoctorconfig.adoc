@@ -1,3 +1,7 @@
+:sectanchors:
+:sectlinks:
+:sectids:
+:icons: font
 :stylesdir: https://docs.threatx.com/_/css
 :stylesheet: site.css
 :linkcss:
