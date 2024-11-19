@@ -1,0 +1,33 @@
+
+// This file can be used to replicate attributes from the side-wide
+// antora playbook for better previews when using the
+// IntelliJ IDEA plugin.
+// Playbook: https://github.com/ThreatX/docs.threatx.com/antora-playbook.yml
+
+// AsciiDoc Attributes
+:myprojectbasedir: {asciidoctorconfigdir}/../
+:stylesdir: https://docs.threatx.com/_/css
+:stylesheet: site.css
+:linkcss:
+:experimental:
+:hide-uri-scheme: '@'
+:idprefix: ''
+:idseparator: '-'
+:page-pagination: ''
+:table-frame: 'none@'
+:table-grid: 'rows@'
+:sectlinks:
+:sectids:
+:sectanchors:
+// Custom attributes for the project
+:organization: ThreatX
+:copyright: '© Copyright 2024 ThreatX, Inc.'
+:txprevent-current-version: '1.1'
+:txprotect-current-version: '3.20'
+:txdashboard-current-version: '4.74'
+:tip-caption: 💡 TIP
+:caution-caption: 🔥 CAUTION
+:note-caption: ℹ NOTE
+:warning-caption: ⚠️ WARNING
+:error-caption: ❌ ERROR
+:important-caption: ❕ IMPORTANT

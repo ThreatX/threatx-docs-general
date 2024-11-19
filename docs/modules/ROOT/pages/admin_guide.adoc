@@ -1,16 +1,13 @@
 = Administrator Guide
+:description: Comprehensive documentation or administrators of ThreatX products
+:keywords: documentation, security, api, application, vulnerability, prevention, protection, ThreatX
 :page-category: user-guides
-:product-name: {organization} managed API and Application Protectio
+:product-name: ThreatX Dashboard
 :page-product-name:  {product-name}
 :page-origin-type: git
 :icons: font
 :source-highlighter: highlight.js
 :imagesdir: ../images
-:outline: true
-:outlinelevels: 3
-:sectanchors:
-:sectids:
-:sectlinks:
 :page-pdf-filename: user-guides.pdf
 
 
@@ -88,16 +85,16 @@ In the {organization} user interface, navigate to menu:Settings[IWAF] and sele
 [cols="30m,70",options="header",]
 |===
 |Setting | Description
-|Risk-Based Blocking Timeout 
+|Risk-Based Blocking Timeout
 |Length of time a threat is blocked. Applies only to those threats that are blocked automatically. Default is 30 minutes.
 
-|Risk-Based Blocking Threshold 
+|Risk-Based Blocking Threshold
 |Risk Level score. Any threat that meets or exceeds the score is blocked automatically. Default is 70.
 
-|Block Embargoed Countries 
+|Block Embargoed Countries
 |When checked, any traffic from a country that is on the USA embargo list is blocked automatically. Countries include Iran, North Korea, Syria, Sudan, Cuba, and Venezuela. Contact {organization} SOC if you need rules to block countries not on the list.
 
-|Block TOR Exit nodes 
+|Block TOR Exit nodes
 |When checked, all incoming traffic from a TOR Exit node is not allowed. Tor Exit Nodes are the gateways where encrypted Tor traffic hits the Internet.
 |===
 
@@ -113,7 +110,7 @@ You can add, edit, or remove sites with the {organization} user interface or {or
 [[site-settings]]
 ==== Site settings
 
-The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IP addresses – wherever traffic can be properly routed to reach your origin servers. 
+The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IP addresses – wherever traffic can be properly routed to reach your origin servers.
 
 TIP: If using the {organization} user interface, navigate to menu:Settings[Site]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/sites` endpoint.
 
@@ -276,16 +273,16 @@ IMPORTANT: If you answer *yes* to any of the preceding questions, *contact {orga
 
 If you are adding multiple sites, you can add the additional sites first then cut-over DNS after.
 
-If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact {organization} SOC to provide the sensor ingress IP addresses to use as A records.  
+If your DNS provider does not allow you to point to a root domain directly to a CNAME, contact {organization} SOC to provide the sensor ingress IP addresses to use as A records.
 
-Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard. If you do not see any traffic, contact the {organization} SOC. 
+Once your site is configured and traffic is flowing through your sensor, you should see traffic populated in the dashboard. If you do not see any traffic, contact the {organization} SOC.
 
 
 ==== Site certificates
 
 You have two options. You can use Let’s Encrypt or upload your own certificate.
 
-The {organization} platform can manage the SSL/TLS/TLS certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC. 
+The {organization} platform can manage the SSL/TLS/TLS certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors. For more information, contact the {organization} SOC.
 
 ===== Use a Custom Certificate
 
@@ -300,12 +297,12 @@ To upload your own certificate using the {organization} user interface, perform 
 
 If adding a site, enter your certificate using steps 3 through 6.
 
-To ensure the correct certificate is being presented, the {organization} platform validates the following: 
+To ensure the correct certificate is being presented, the {organization} platform validates the following:
 
 * Correct site or wildcard domain is listed as the Common Name or in the SAN attribute within the certificate.
 * Current date is within the `notBefore` and `notAfter` fields.
 * Private key provided is the same key that was used to sign the certificate.
-* Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist. 
+* Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist.
 
 ====== Troubleshooting
 
@@ -320,7 +317,7 @@ To ensure the correct certificate is being presented, the {organization} platfor
 Web UI:: menu::Settings[Site Groups]
 ThreatX API:: `/tx_api/v1/sitegroups`
 
-You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data. 
+You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data.
 
 When creating a group, give it a name, list of sites to include in the group, and list of users that can access the sites in the group.
 
@@ -396,7 +393,7 @@ Notification Targets: Method::
 * Email
 * Webhooks
 
-NOTE: You will need to configure the app to receive the notifications. For example, you can send notifications to Slack as described in their link:https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack[Incoming Webhooks] article.
+NOTE: You will need to configure the app to receive the notifications.For example, you can send notifications to Slack as described in their link:https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack[Incoming Webhooks] article.
 ****
 
 ==== {organization} maintenance and system status
@@ -405,19 +402,20 @@ You can view and subscribe to notifications for scheduled maintenance windows an
 
 '''
 
+[#receiving-event-logs]
 === Receiving event logs
 
-The {organization} Log Emitter exports event logs from the {organization} platform to your log receiver and SIEM. You can use the logs in your investigations and to trigger events in your chosen log management solution.
+The {organization} Log Emitter exports event logs from the {organization} platform to your log receiver and SIEM.You can use the logs in your investigations and to trigger events in your chosen log management solution.
 
 ==== Features
 
 The Log Emitter forwards full details for all block, match, and audit events.
 
-The logs are pushed are in JSON lines format over a TCP connection that is encrypted, and optionally authenticated, over TLS. If the Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically attempts to re-establish a connection. 
+The logs are pushed are in JSON lines format over a TCP connection that is encrypted, and optionally authenticated, over TLS.If the Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically attempts to re-establish a connection.
 
 In case a Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically (every half hour) attempts to re-establish a connection.
 
-Once the Log Emitter re-establishes a connection for a previously suspended subscription, all queued log events are sent to the configured receiver. If the Log Emitter subscription cannot be resumed after several retries, this might indicate a configuration error or log receiver error.  
+Once the Log Emitter re-establishes a connection for a previously suspended subscription, all queued log events are sent to the configured receiver. If the Log Emitter subscription cannot be resumed after several retries, this might indicate a configuration error or log receiver error.
 
 
 ==== Configuring a Log Emitter
@@ -571,7 +569,7 @@ include::example$block-event-log-type-message-example.json[]
 
 ===== MatchEvent Log Type
 
-The *MatchEvent* log type provides full details on requests that matched custom or common rule definitions when examined by the sensor. 
+The *MatchEvent* log type provides full details on requests that matched custom or common rule definitions when examined by the sensor.
 
 
 .MatchEvent Message Example
@@ -621,7 +619,7 @@ a|Values following this field provide specific information about why the rule th
 |Target path of the request.
 
 |args
-|Arguments (if any) provided in the request in www-url-encoded form.
+|Arguments (if any) provided in the request in `www-url-encoded` form.
 
 |status_code
 |Status code that the request received from the upstream server.
@@ -715,7 +713,6 @@ In Logstash, you can create a file output so you can quickly see if it is receiv
 Add the following fragment to your Logstash configuration file and restart Logstash.
 
 .logstash-fragment.json
-[,json]
 ----
 output {
     file {
@@ -731,8 +728,8 @@ If you use a *self-signed certificate* and you receive this error message:
 
 [,console]
 ----
-the handshake failed: error 1416F086: SSL/TLS Routines: 
-tls_process_server_certificate:certificate verify 
+the handshake failed: error 1416F086: SSL/TLS Routines:
+tls_process_server_certificate:certificate verify
 failed:../ssl/statem/statem...cint.c:1915:: self signed certificate
 ----
 
@@ -756,7 +753,7 @@ TIP: The Log Emitter also exports the audit logs.
 '''
 
 === Managing user accounts
- 
+
 [horizontal]
 Dashboard:: menu:Settings[Users]
 API Endpoint:: `/tx_api/v1/users`
@@ -907,13 +904,13 @@ NOTE: Dynamic caching is a billable feature and requires an add-on license.
 
 === Managing rate limiting
 
-The {organization} platform rate limiting is in the form of rules in the common rule set. 
+The {organization} platform rate limiting is in the form of rules in the common rule set.
 Rate limiting is primarily focused on count and time frame.
-What causes a rule to trigger when based off count and time frame is limited only by what the rules can match within the requests. 
+What causes a rule to trigger when based off count and time frame is limited only by what the rules can match within the requests.
 For example, one rule is *10 404s in 10s*, where the rule assigns risk to an entity that receives more than 10 404 responses within 10 seconds.
 
-As needed, the {organization} SOC team can make custom rate limiting rules tailored for your environment. 
-A typical use of this would be to assign risk to entities that fail logins at a login endpoint. 
+As needed, the {organization} SOC team can make custom rate limiting rules tailored for your environment.
+A typical use of this would be to assign risk to entities that fail logins at a login endpoint.
 These rate limiting rules are very customizable, including the timings (number of requests over time).
 These rules can be applied across the entire tenant, down to a site or group of sites, or to a single endpoint.
 The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Arguments.
@@ -924,7 +921,7 @@ The match criteria also have a very wide range of options such as Response Code,
 
 {organization} rules can specify firewall behavior required for your business’s individual needs, such as restricting certain resources to company IP addresses or limiting the number of failed login attempts to an application developed in-house.
 
-A {organization} _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. {organization} rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor. 
+A {organization} _rule_ is a set of Boolean conditions that, when true, implement the rule’s defined action and risk level. {organization} rules can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. The action is implemented by the sensor.
 
 You can add, modify, and delete rules, and view’s rule’s activity to determine its effectiveness.
 
@@ -935,7 +932,7 @@ IMPORTANT: Rules can be complex. Creating or modifying a rule could have uninten
 
 ==== Rule details
 
-To view a rule’s details, navigate to menu:Settings[Rules] then click btn:[Edit Rule Details] for a specific rule. 
+To view a rule’s details, navigate to menu:Settings[Rules] then click btn:[Edit Rule Details] for a specific rule.
 
 Description:: Text that describes the intended behavior or logic a rule match is intended to indicate. This information is displayed in the {organization} user interface when your custom rule is matched.
 Tag Name:: Text that identifies a rule when a description is long
@@ -1248,7 +1245,7 @@ For a rule to be matched, the condition set by the operator of the group must be
 For example, some of the criteria are matched while others are not.
 If the group operator is set to *or*, the rule is matched since at least one criterion is matched.
 If the operator is *and*, the rule would not be matched.
- 
+
 ==== Rule activity
 
 The {organization} user interface displays how often a rule is matched and its action implemented.
@@ -1334,7 +1331,7 @@ Use the following steps to configure SSO access for your {organization} tenant a
 . Set the value of “sso” to an object  and define these attributes:
 * “enabled” (`true`),
 * “required” (`false`)
-* “saml_metadata_url”
+* `saml_metadata_url`
 . *Submit the tenant or channel update API request.* If it succeeds, you should see Customer Update Response or Channel Update Response.
 . Test the new configuration by using a web browser to navigate to:
 .. link:https://x.threatx.io/auth/v2/customers/<name>/saml[]
@@ -1374,8 +1371,13 @@ The *api_key*, created within the {organization} user interface ( menu:Settings[
 [,console,subs=+macros]
 ----
 $ curl https://api.threatx.io/tx_api/v1/login \
-  -H 'Content-Type: application/json' \
-  -d '{  "command": "login", "api_token": "<pass:quotes[*_api_key_*]>" }'
+  --header 'Content-Type: application/json' \
+  --data @- <<EOF
+{
+    "command": "login",
+    "api_token": "<pass:quotes[*_api_key_*]>"
+}
+EOF
 ----
 
 
@@ -1419,8 +1421,13 @@ The *`list`* command returns the details of all tenants authorized for the curre
 [source,console,subs=+macros]
 ----
 $ curl https://api.threatx.io/tx_api/v1/customers \
-  -H 'Content-Type: application/json' \
-  -d '{ "command": "list", "token": "pass:quotes[*<_access_token_>*]" }'
+  --header 'Content-Type: application/json' \
+   --data @- <<EOF
+{
+  "command": "list",
+  "token": "pass:quotes[*<_access_token_>*]"
+}
+EOF
 ----
 
 Replace `_<access_token>_` with your access token from the last command.
@@ -1513,15 +1520,15 @@ The SSO object is used to configure the SSO parameters. All other parameters to 
 |===
 |Parameters |Type |Description
 
-|“enabled”: true / false
+|enabled
 |Boolean
 |When true, users belonging to the tenant are allowed to sign in to the {organization} user interface using SSO.
 
-|“required”: true / false
+|required
 |Boolean
 |When true, users are required to use SSO to sign in to the {organization} user interface.
 
-|“saml_metadata_url”: “_<saml_url>_”
+|saml_metadata_url: “_<saml_url>_”
 |String
 |IDP metadata URL or file. See the Prerequisites.
 
@@ -1533,8 +1540,9 @@ The SSO object is used to configure the SSO parameters. All other parameters to 
 [,console,subs=+macros]
 ----
 $ curl https://api.threatx.io/tx_api/v1/customers \
-  -H 'Content-Type:  application/json' \
-  -d '{
+  --header 'Content-Type:  application/json' \
+   --data @- <<EOF
+{
      "command": "update",
      "token": "<pass:quotes[*_login_token_*]>",
      "name": "testco",
@@ -1557,7 +1565,8 @@ $ curl https://api.threatx.io/tx_api/v1/customers \
              "saml_metadata_url": "https://login.microsoftonline.com/daad3805-fde6-4334-817f-82c723533123/federationmetadata/2007-06/federationmetadata.xml"
           }
     }
-}'
+}
+EOF
 ----
 
 .Response
@@ -1594,7 +1603,12 @@ The *`list`* command of the *`channels`*  endpoint returns the details of all ch
 ----
 $ curl https://api.threatx.io/tx_api/v1/channels \
   -H 'Content-Type: application/json' \
-  -d '{  "command": "list",  "token":" "<pass:quotes[*_access_token_*]>" }'
+  --data @- <<EOF
+{
+    "command": "list",
+    "token":" "<pass:quotes[*_access_token_*]>"
+}
+EOF
 ----
 
 .Response
@@ -1617,9 +1631,7 @@ $ curl https://api.threatx.io/tx_api/v1/channels \
 
 ===== Update Channels
 
-****
-The *`update`* command updates a specified channel.
-****
+The `update` command updates a specified channel.
 
 .Command Object
 [cols="70m,30",options="headers",width="50%"]
@@ -1627,13 +1639,13 @@ The *`update`* command updates a specified channel.
 
 |Parameters |Type
 
-|`command`: “update”   
+|command
 |String
 
-| `token`
+| token
 |String
 
-|`channel`
+|channel
 |<<channel-object-attributes,Channel Object>>
 
 |===
@@ -1645,10 +1657,10 @@ The *`update`* command updates a specified channel.
 |===
 | Parameter | Type
 
-|`name` 
+|name
 |String
 
-|`sso` 
+|sso
 |<<sso-object-attributes,SSO Object>>
 
 |===
@@ -1661,16 +1673,16 @@ The *`update`* command updates a specified channel.
 | Name | Type | Description
 
 | enabled
-| Boolean 
+| Boolean
 | When true, users belonging to the channel are allowed to sign in to the {organization} user interface using SSO.
 
 | required
-| Boolean 
+| Boolean
 | When true, users in the channel are required to use SSO to sign in to the {organization} user interface.
 
 | saml_metadata_url
-| String 
-| IDP metadata URL or file. See the Prerequisites. 
+| String
+| IDP metadata URL or file. See the Prerequisites.
 |===
 
 
@@ -1680,8 +1692,9 @@ The *`update`* command updates a specified channel.
 [,console,subs=+macros]
 ----
 $ curl https://api.threatx.io/tx_api/v1/channels \
-  -H 'Content-Type: application/json' \
-  -d '{
+  --header 'Content-Type: application/json' \
+  --data @- <<EOF
+{
     "command": "update",
      "token": "<pass:quotes[*_login_token_*]>",
      "channel": {
@@ -1692,7 +1705,8 @@ $ curl https://api.threatx.io/tx_api/v1/channels \
         "saml_metadata_url": "https://login.microsoftonline.com/daad3805-fde6-4334-817f-82c723533123/federationmetadata/2007-06/federationmetadata.xml"
        }
      }
-   }'
+}
+EOF
 ----
 
 .Response
@@ -1763,9 +1777,9 @@ By configuring mutual TLS in both downstream and upstream modes, you establish a
 
 The {organization} four-stage blocking strategy is designed to reduce false positives while preventing malicious behavior from reaching your sites. When Request-Based blocking is enabled, the sensor blocks any standalone malicious request. When Risk-Based blocking is enabled, the sensor issues a series of timed block periods to any entity that exhibits persistent suspicious or malicious behavior, leading to a permanent blacklisting if the behavior continues. During a 30-minute Block period or while an entity is blacklisted, all requests from that entity are blocked from reaching the site.
 
-When testing for vulnerabilities against your internal applications, the IP addresses of your penetration testers should be added to the whitelist before testing, and removed after testing is complete. 
+When testing for vulnerabilities against your internal applications, the IP addresses of your penetration testers should be added to the whitelist before testing, and removed after testing is complete.
 
-When testing for vulnerabilities in the sensor, the IP addresses of your penetration testers should not be added to the whitelist. 
+When testing for vulnerabilities in the sensor, the IP addresses of your penetration testers should not be added to the whitelist.
 
 To add an IP address to the whitelist:
 
@@ -1818,7 +1832,7 @@ How you generate a HAR file depends on the web browser you use.
 ===== Generating a HAR file in Mozilla Firefox
 
 . Open Mozilla Firefox and navigate to the page where the issue is occurring.
-. Select menu:Firefox Menu[Web Developer > Network]
+. Select menu:Mozilla Firefox Menu[Web Developer > Network]
 . The recording automatically starts when you begin performing actions in the browser.
 . Once you have reproduced the issue and you see that all the actions have been generated in the Developer Network Panel (should just take a few seconds), menu:Right Click[File > Save all as Har]
 . Upload the HAR file as an attachment to your {organization} support ticket for further analysis.

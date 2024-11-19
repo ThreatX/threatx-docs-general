@@ -1,7 +1,7 @@
 = Product Documentation Home
 Brought to you by the ThreatX Documentation Team
 :keywords: ThreatX, documentation, security, WAF, eBPF, Kubernetes, API, ThreatX Protect, ThreatX Prevent, guide
-:description: This site is designed to provide you with the information you need to get started with ThreatX products, as well as to help you troubleshoot and understand the features and functionality of our products.
+:description: Home of ThreatX's user documentation library
 :!toc:
 :page-role: home
 :page-build-date: {build-date}

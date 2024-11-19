@@ -1,28 +1,30 @@
 = Get started with ThreatX
-:organization: ThreatX
+:description: A guide for users that are brand new to ThreatX
+:keywords: documentation, ThreatX, on-boarding, welcome, guide, dashboard
 :url-repo: https://github.com/ThreatX/threatx-docs-general
 :edit-url: {url-repo}/blob/main/docs/modules/ROOT/pages/getting_started.adoc
+:icons: font
+:source-highlighter: highlightjs
+:imagesdir: ../images
 :page-category: introduction
 :page-product-name:  {product-name}
 :page-origin-type: git
 :page-pdf-filename: {page-category}.pdf
 :page-edit-url: {edit-url}
-:icons: font
-:source-highlighter: highlightjs
-:imagesdir: ../images
+
 
 image:getting-started.svg[] After connecting hostnames to {organization}, real-time attack information will be displayed via the Attack Dashboard and API Defender in the {organization} platform. Use the latest available sensor version to see all information populated on the {organization} platform.
 
 == ThreatX Attack Dashboard
 
 === Introduction
-ThreatX's Attack Dashboard offers comprehensive visibility into how the platform secures APIs and web applications from security threats. 
+ThreatX's Attack Dashboard offers comprehensive visibility into how the platform secures APIs and web applications from security threats.
 Within the dashboard, security teams and application owners can view vital data collected about each protected API endpoint, web application, or website.
 ThreatX analytics automatically correlates vast amounts of data related to the suspicious and malicious traffic the platform has identified, tracked, and blocked, providing teams with real-time situational awareness essential for safeguarding their Internet-facing assets.
 
 === How It Works
 
-The Attack Dashboard offers a unique perspective on an organization's attack surface through three views: <<threat-entities,Threat Entities>>, <<top-targets,Top Targets>>, and <<threat-map,Threat Map>>. 
+The Attack Dashboard offers a unique perspective on an organization's attack surface through three views: <<threat-entities,Threat Entities>>, <<top-targets,Top Targets>>, and <<threat-map,Threat Map>>.
 
 The data in the dashboard is live and reflects active site traffic.
 By default, it updates every few seconds with real-time dynamic data.
@@ -51,7 +53,7 @@ image::Attack-Dashboard-Threat-Entities-Entity-Details-1024x529.png[width=1024,h
 === Top Targets
 
 The Top Targets view features API and web hostnames that have been targeted during the time selected.
-Administrators can easily see the assets that are most frequently or aggressively targeted, [line-through]## gaining insight and understanding of their risk profile, and the protection they are receiving from {organization}. 
+Administrators can easily see the assets that are most frequently or aggressively targeted, [line-through]## gaining insight and understanding of their risk profile, and the protection they are receiving from {organization}.
 The Top Targets view makes it easy for the user to drill into each hostname to view the details for each path.
 
 .Attack Dashboard, Top Targets
