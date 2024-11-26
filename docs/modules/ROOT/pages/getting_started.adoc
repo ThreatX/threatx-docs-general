@@ -1,16 +1,13 @@
 = Get started with ThreatX
 :description: A guide for users that are brand new to ThreatX
 :keywords: documentation, ThreatX, on-boarding, welcome, guide, dashboard
-:url-repo: https://github.com/ThreatX/threatx-docs-general
-:edit-url: {url-repo}/blob/main/docs/modules/ROOT/pages/getting_started.adoc
 :icons: font
-:source-highlighter: highlightjs
+:source-highlighter: highlight.js
 :imagesdir: ../images
-:page-category: introduction
-:page-product-name:  {product-name}
-:page-origin-type: git
-:page-pdf-filename: {page-category}.pdf
-:page-edit-url: {edit-url}
+:page-category: explanation
+:page-pdf-filename: introduction.pdf
+:page-build-date: {build-date}
+
 
 
 image:getting-started.svg[] After connecting hostnames to {organization}, real-time attack information will be displayed via the Attack Dashboard and API Defender in the {organization} platform. Use the latest available sensor version to see all information populated on the {organization} platform.

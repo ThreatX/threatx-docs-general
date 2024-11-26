@@ -1,20 +1,12 @@
 = Introduction to ThreatX
-:organization: ThreatX
-:page-category: introduction
-:page-edition: Enterprise
-:product-name: {organization} Managed API and Application Protection 
-:page-product-name:  {product-name}
-:page-origin-type: git
-:page-pdf-filename: {page-category}.pdf
-:sectlinks:
-:sectanchors:
-:sectids:
-:copyright: 2024 {organization}, Inc.
+:description:  High-level discussion of ThreatX capabilities
+:page-category: explanation
+:page-pdf-filename: introduction.pdf
 :icons: font
-:source-highlighter: highlightjs
+:source-highlighter: highlight.js
 :imagesdir: ../images
 
-
+== Introduction
 
 image:getting-started.svg[] {organization} is the future of API and web application security. The {organization} Web Application and API Protection platform provides unmatched protection capabilities while simplifying the work of operational security. With {organization}, you’ll enjoy unparalleled visibility into attacks and external risk to your enterprise.
 
@@ -27,8 +19,8 @@ The {organization} platform is designed to protect applications from the full br
 * Traditional OWASP attacks
 * Bots
 * Malicious automation
-* DDoS 
-* API-specific attacks 
+* DDoS
+* API-specific attacks
 
 Our specialty, however, is *advanced*, *multi-step attacks* where correlation and analysis are required for events often initiated across thousands of IPs.  
 

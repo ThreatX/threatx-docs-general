@@ -1,19 +1,10 @@
 = ThreatX Overview
 :description: A high-level view of ThreatX and its key differentiators
 :keywords: security, vulnerability, protection, ThreatX, documentation, WAF, application, API, rBP, runtime, edge, protection
-:organization: ThreatX
-:product-name: {organization} Managed API and Application Protection
-:page-category: introduction
-:page-edition: Enterprise
-:page-product-name:  {product-name}
-:page-origin-type: git
-:page-pdf-filename: {page-category}.pdf
-:sectlinks:
-:sectanchors:
-:sectids:
-:copyright: 2024 ThreatX, Inc.
+:page-category: explanation
+:page-pdf-filename: introduction.pdf
 :icons: font
-:source-highlighter: highlightjs
+:source-highlighter: highlight.js
 :imagesdir: ../images
 
 

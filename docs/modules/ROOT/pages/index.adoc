@@ -1,41 +1,23 @@
-= Product Documentation Home
-Brought to you by the ThreatX Documentation Team
+= ThreatX Product Documentation
 :keywords: ThreatX, documentation, security, WAF, eBPF, Kubernetes, API, ThreatX Protect, ThreatX Prevent, guide
 :description: Home of ThreatX's user documentation library
 :!toc:
 :page-role: home
 :page-build-date: {build-date}
-:!sectlinks:
-:!sectanchors:
-
-== Introduction
-
-Welcome to ThreatX's public knowledge base and product documentation site.
-
-{description}
+:url-txprevent: https://threatx.com/products/api-application-vulnerability-prevention
+:url-txprotect: https://threatx.com/products/web-applica-api-protection
 
 
-.🗓️ Latest Documented Releases
-****
-[cols='2,2m,6', options='header',id="current-versions-table", caption=""]
-|===
-| Product | Version | Description
+👋 Welcome to ThreatX's Product Documentation Library!
 
-| xref:txprevent:ROOT:index.adoc[*Prevent*]
-| {txprevent-current-version}
-| link:https://www.threatx.com/products/api-application-vulnerability-prevention/[API & Application Vulnerability Prevention]
 
-| xref:txprotect:ROOT:index.adoc[*Protect*]
-| {txprotect-current-version}
-| link:https://www.threatx.com/products/web-application-api-protection/[Web Application & API Protection]
-
-|===
-****
-
-== News
+== 🗞️ News
 
 November 6, 2024:: Published xref:1.1@txprevent:ROOT:index.adoc[Prevent Docs v1.1]
 October 24, 2024:: Released *link:https://docs.threatx.com[docs.threatx.com]*
+
+
+'''
 
 
 

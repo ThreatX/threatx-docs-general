@@ -1,7 +1,11 @@
+// PDFs are automatically built for all pages under a section and named after that section.
+// In order for the 'Download PDF' button to work correctly, each page must define
 * Introduction
+// page-pdf-filename: installation.pdf
 ** xref:intro.adoc[Introduction to ThreatX]
 ** xref:overview_guide.adoc[Platform Overview]
 * User Guides
+// page-pdf-filename: user-guides.pdf
 ** xref:getting_started.adoc[New User Guide]
 ** xref:analyst_guide.adoc[Analyst Guide]
 ** xref:admin_guide.adoc[Administrator Guide]

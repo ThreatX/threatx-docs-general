@@ -1,0 +1,42 @@
+////
+
+.asciidoctorconfig.adoc
+
+This purpose of this file is to:
+* Provide missing attributes normally defined in in Antora playbook
+  to the IntelliJ AsciiDoc plugin for an improved preview experience.
+* Project-level configuration in the familiar AsciiDoc syntax.
+
+See: https://intellij-asciidoc-plugin.ahus1.de/docs/users-guide/features/advanced/asciidoctorconfig-file
+
+////
+
+:myprojectbasedir: {asciidoctorconfigdir}
+
+// Built-in attributes
+:stylesdir: https://docs.threatx.com/_/css
+:stylesheet: site.css
+:linkcss:
+:experimental:
+:hide-uri-scheme: '@'
+:idprefix: ''
+:idseparator: '-'
+:page-pagination: ''
+:table-frame: 'none@'
+:table-grid: 'rows@'
+:sectlinks:
+:sectids:
+:sectanchors:
+:copyright: '© Copyright 2024 ThreatX, Inc.'
+:tip-caption: 💡 TIP
+:caution-caption: 🔥 CAUTION
+:note-caption: ℹ NOTE
+:warning-caption: ⚠️ WARNING
+:error-caption: ❌ ERROR
+:important-caption: ❕ IMPORTANT
+
+// Custom attributes
+:organization: ThreatX
+:txprevent-current-version: '1.1'
+:txprotect-current-version: '3.20'
+:url-txapi: https://api.threatx.com/tx_api/v2

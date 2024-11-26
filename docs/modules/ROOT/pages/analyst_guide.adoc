@@ -1,17 +1,11 @@
 = Analyst Guide
 :description: A guide for security analysts and every day users of the ThreatX platform
 :keywords: ThreatX, security, firewall, WAF, guide, documentation
-:page-category: user_guides
-:product-name: {organization} Managed API and Application Protection 
-:page-product-name:  {product-name}
-:page-origin-type: git
-:source-highlighter: highlight.js
 :imagesdir: ../images
+:page-category: explanation
+:page-product-name:  {product-name}
+:source-highlighter: highlight.js
 :page-pdf-filename: user-guides.pdf
-:version-txapi: v2
-:url-subpath-txapi: tx_api
-:url-base-txapi: api.threatx.io
-:url-txapi: https://{url-base-txapi}/{url-subpath-txapi}/{version-txapi}
 
 
 == Introduction
@@ -507,31 +501,31 @@ The {organization} platform has an audit feature that logs a number of events, s
 |===
 |Category |Actions |Description
 
-|Lists 
+|Lists
 | * new_entry
 * remove_entry
 |Lists are the whitelists and blocked lists. The *Description* column in the audit log identifies the list. The audit log monitors when IP addresses, called entries, are added to or removed from a list.
 
-|Rules 
+|Rules
 |* new_rule,
 * remove_rule
 * update_rule
 |The audit log monitors whenever a rule is added, removed, or updated in the {organization} platform.
 
-|Sites 
+|Sites
 | * new_site
 * remove_site
 * unset_field
 * update_site
 |The audit log monitors whenever a site is added, removed, or updated in the {organization} platform. The unset_field action occurs when a user nullifies a field within the site resource.
 
-|Users 
+|Users
 | * new_user
 * remove_user
 * update_user
 |The audit log monitors whenever a user is added, removed, or updated in the {organization} platform.
 
-|User Actions 
+|User Actions
 |* blacklist_entity
 * block_entity
 * watch_entity
@@ -651,7 +645,7 @@ image:common/IWAF-blacklisted-ips-no-nav.png[width=1024,height=432]
 
 .ℹ️ Manage Lists with the `List` ThreatX API Endpoint
 ****
-URL:: `/{url-subpath-txapi}/{version-txapi}/list`
+URL:: `{url-txapi}/list`
 
 List the IP addresses currently within the list::
 * `list_blacklist`

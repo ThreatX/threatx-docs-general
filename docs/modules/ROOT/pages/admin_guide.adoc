@@ -1,7 +1,7 @@
 = Administrator Guide
 :description: Comprehensive documentation or administrators of ThreatX products
 :keywords: documentation, security, api, application, vulnerability, prevention, protection, ThreatX
-:page-category: user-guides
+:page-category: explanation
 :product-name: ThreatX Dashboard
 :page-product-name:  {product-name}
 :page-origin-type: git
@@ -9,6 +9,7 @@
 :source-highlighter: highlight.js
 :imagesdir: ../images
 :page-pdf-filename: user-guides.pdf
+
 
 
 image:deployment-guides.svg[title="Deployment Guides"] The {organization}™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
@@ -30,19 +31,29 @@ The {organization} user interface presents the data the platform collects into v
 
 image:common/Attack-Dashboard.jpg[Attack Dashboard,width=1024,height=666]
 
-The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets. Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates. To access the {organization} API, you need an API key to help you authenticate and create a session token, as described in link:#generating-and-revoking-api-keys[Generating and revoking API keys]. To use the {organization} API, you need to know the API token and the tenant name. For details about the API endpoints and commands, see the https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
+The {organization} platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation tool sets.
+Common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates.
 
+NOTE: To access the {organization} API,  you must know your *tenant name*  and you must have an *API key* to authenticate and create a session token. See link:#generating-and-revoking-api-keys[Generating and revoking API keys]
+
+
+TIP: For details about the API endpoints and commands, see the link:https://support.threatx.com/hc/en-us/articles/360000661851-API-Reference-Guide-1-34-0[API Reference Guide] (requires a {organization} account to access).
+
+'''
 
 ==== Firewall settings
 
-When adding sites or testing DNS cut-overs, you might need to reference the following {organization} sensor IP addresses and the CNAME for your tenant. These were set when the sensors were deployed.
+****
+[horizontal]
+Dasboard:: menu:Settings[IWAF > Firewall]
+API Endpoint:: `{url-txapi}/services`
+API Command(s):: `list`
+****
+Service IP addresses:: IP addresses that represent the {organization} sensors. These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
+Sensor DNS Targets:: CNAME records you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
-{organization} Service IP addresses:: IP addresses that represent the {organization} sensors. These IP addresses must be whitelisted in your environment to ensure traffic can reach your application.
-Sensor DNS Targets:: CNAME records you can use to ensure HTTP and HTTPS traffic reaches your sensors. The CNAME provided for your tenant is all you need for all your sites. The {organization} sensor is Server Name Indication (SNI) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
-In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/services` endpoint, *list* command.
-
-NOTE: The {organization} /tx_api/v1/services endpoint *list* command returns the service IP addresses, but not the CNAME records.
+NOTE: The {organization} `{url-txapi}/services` endpoint *list* command returns the service IP addresses, but not the CNAME records.
 
 
 ==== Tenants and channels
@@ -67,41 +78,51 @@ TIP: For more information about these features, see the xref:overview_guide.adoc
 
 === Managing listed IP addresses
 
-The IP lists are used to block, deny, and allow IP addresses. An IP address in the block list is there temporarily. An IP address in the blacklist or whitelist is there permanently until it is manually removed. As an administrator, you might need to manually add or remove an IP address or CIDR range from the list.
 
-In the {organization} user interface, navigate to menu:Settings[IWAF]. The IWAF Settings page has tabs for *Blocked IP addresses*, *Blacklisted IP addresses*,and *Whitelisted IP addresses*. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/lists` endpoint to manage the lists.
+.🧭 _Navigation_
+****
+[horizontal]
+Dashboard:: menu:Settings[IWAF > Firewall]
+API:: `{url-txapi}/lists`
+Summary:: Lists are used to *block*, *deny*, or *allow* IP addresses.
+****
 
-The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the xref:analyst_guide.adoc[{organization} Managed API and Application Protection Platform Analyst Guide]. **
+
+****
+[horizontal]
+Block list:: Temporary
+Black list:: Permanent _(requires manual removal)_
+White list:: Permanent  _(requires manual removeal)_
+****
+
+
+The lists are often managed by your analysts and, therefore, the procedures to manage the lists are provided in the xref:analyst_guide.adoc[{organization} Managed API and Application Protection Platform Analyst Guide].
 
 
 [[managing-risk-based-blocking]]
 === Managing Risk-Based Blocking
 
-NOTE: To configure the following settings, the *{organization} Risk-Based Blocking* feature must be enabled.
-
-In the {organization} user interface, navigate to menu:Settings[IWAF] and select btn:[Firewall]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/customers` endpoint.
+****
+[horizontal]
+Dashboard:: Navigate menu:[Settings]
+API::  `{url-txapi}/customer`
+****
 
 .Risk-Based Blocking Settings
-[cols="30m,70",options="header",]
-|===
-|Setting | Description
-|Risk-Based Blocking Timeout
-|Length of time a threat is blocked. Applies only to those threats that are blocked automatically. Default is 30 minutes.
+****
+Risk-Based Blocking Timeout:: Length of time a threat is blocked. Applies only to those threats that are blocked automatically. Default is 30 minutes.
+Risk-Based Blocking Threshold::
+Rsk Level score:: Any threat that meets or exceeds the score is blocked automatically.
+lock Embargoed Countries
+Block TOR Exit nodes:: When enabled, all incoming traffic from a TOR Exit node is not allowed. Tor Exit Nodes are the gateways where encrypted Tor traffic hits the Internet.
 
-|Risk-Based Blocking Threshold
-|Risk Level score. Any threat that meets or exceeds the score is blocked automatically. Default is 70.
-
-|Block Embargoed Countries
-|When checked, any traffic from a country that is on the USA embargo list is blocked automatically. Countries include Iran, North Korea, Syria, Sudan, Cuba, and Venezuela. Contact {organization} SOC if you need rules to block countries not on the list.
-
-|Block TOR Exit nodes
-|When checked, all incoming traffic from a TOR Exit node is not allowed. Tor Exit Nodes are the gateways where encrypted Tor traffic hits the Internet.
-|===
+****
 
 '''
 
 [[managing-sites-and-groups,Managing Sites and Groups]]
-=== Managing sites and site groups
+
+=== Managing sites and site group
 
 A site is a web property serving API responses intended for consumption by an application. Your environment might have many sites, where some sites might not be under {organization} protection.
 
@@ -110,14 +131,14 @@ You can add, edit, or remove sites with the {organization} user interface or {or
 [[site-settings]]
 ==== Site settings
 
-The {organization} sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP(s) request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IP addresses – wherever traffic can be properly routed to reach your origin servers.
+[horizontal]
+Dashboard::  menu:Settigs
+API:: `{url-txapi}/sites`
 
-TIP: If using the {organization} user interface, navigate to menu:Settings[Site]. If you have access to the {organization} API, you can use the {organization} `/tx_api/v1/sites` endpoint.
+
+The backend you define for each site can be a single CNAME or a list of IP addresses – wherever traffic can be properly routed to reach your origin servers.
 
 Some of the settings are on the *Sites* page as column headers.
-
-To add a site, click the btn:[Add Site]. To edit a site, click btn:[Edit Site] button for the specific site. In either case, the configuration settings open in the *Site Details* page.
-
 
 .Listener Configuration
 [width="100%",cols="30,70",options="header",]
@@ -257,7 +278,7 @@ Complete the checklist below to add  a site for protection within the {organizat
 
 |
 |Is there ANY additional infrastructure that exists outside of this flow: *Client → {organization} sensor → Application*
-|Examples include a load balancer or proxy in use between the client and {organization} sensor.
+|Examples include a load balancer or proxy in use between the client and {organization} senso
 
 |
 |Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your {organization} service IP addresses?
@@ -288,18 +309,17 @@ The {organization} platform can manage the SSL/TLS/TLS certificates presented to
 
 To upload your own certificate using the {organization} user interface, perform the following:
 
-. Navigate to menu:Settings[Sites].
+. Navigate to menu:Settings[Sites].📦
 . If updating a certificate for an existing site, locate the site. You can use the search icon in the *Hostname* column to locate a site. Then click  btn:[Edit Site].
 . In the configuration page, enable *SSL/TLS Enabled*.
 . Click menu:Settings[Edit SSL/TLS credentials]
-. Paste your** Site Certificate**, *Intermediate Certificate*, and your *Private Key*, in *PEM* format and in that order.
+. Paste your** Site Certificate* *Intermediate Certificate*, and your *Private Key*, in *PEM* format and in that order.
 . Click btn:[Save] at the bottom of the page.
 
 If adding a site, enter your certificate using steps 3 through 6.
 
 To ensure the correct certificate is being presented, the {organization} platform validates the following:
-
-* Correct site or wildcard domain is listed as the Common Name or in the SAN attribute within the certificate.
+fsssssfvcard domain is listed as the Common Name or in the SAN attribute within the certificate.
 * Current date is within the `notBefore` and `notAfter` fields.
 * Private key provided is the same key that was used to sign the certificate.
 * Formatting of the uploaded certificate chain is in the proper PEM format, without any headers present or any other characters that should not exist.
@@ -314,8 +334,8 @@ To ensure the correct certificate is being presented, the {organization} platfor
 ==== Site groups
 
 [horizontal]
-Web UI:: menu::Settings[Site Groups]
-ThreatX API:: `/tx_api/v1/sitegroups`
+Dashboard:: menu:Settings[Site Groups]
+API:: `{url-txapi}/sitegroups`
 
 You can create a site group then assign sites to a single group, which allows you to limit which users can access the site configuration and its associated data.
 
@@ -326,8 +346,8 @@ When creating a group, give it a name, list of sites to include in the group, an
 === Managing sensors
 
 [horizontal]
-Web UI:: menu::Settings[Sensors]
-API:: `/tx_api/v1/sensor`
+Dashboard:: menu:Settings[Sensors]
+API:: `{url-txapi}/sensor`
 
 Sensors are managed by your local administrator or the {organization} SOC depending on if you self-host or are hosted within the {organization} cloud, respectively.
 
@@ -360,8 +380,8 @@ TIP: For information about receiving logs, see <<receiving-event-logs,Receiving 
 ==== Analytical events
 
 [horizontal]
-Web UI:: menu:Settings[Notifications]
-API:: `/tx_api/v1/subscriptions`
+Dashboard:: menu:Settings[Notifications]
+API:: `{url-txapi}/subscriptions`
 
 You can configure users to receive notifications on various events relating to threats, rule matches, changes to the IP allow, deny, and block lists. Notifications are typically sent by email, but you can configure a webhook notification to another app, such as Slack.
 
@@ -369,6 +389,7 @@ You create notifications in the {organization} user interface by navigating to m
 
 .Notification Settings
 ****
+
 Name:: A unique name to identify this notification. It may only contain the following characters:
 * Lowercase letters
 * Hyphens
@@ -475,8 +496,8 @@ You can further secure the TCP encrypted connection between the {organization} L
 
 --
 [horizontal]
-Web UI:: menu:Settings[Log Emitter] then click btn:[Add Log Emitter]
-ThreatX API:: `/tx_api/v1/subscriptions`
+Dasboard:: menu:Settings[Log Emitter] then click btn:[Add Log Emitter]
+API:: `{url-txapi}/subscriptions`
 --
 
 Configure the settings as described in the following table. Click *Save* when done.
@@ -744,7 +765,7 @@ Resolve the issue by deselecting the *Send Client SSL/TLS Credentials to Log Rec
 
 [horizontal]
 Dashboard:: menu:Settings[Audit Log]
-API Endpoint:: `/tx_api/v1/logs` (command: `audit_events` )
+API:: `{url-txapi}/logs` (command: `audit_events` )
 
 The {organization} audit feature logs events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. As opposed to the Log Emitter, the audit log focuses mostly on user actions.
 
@@ -756,7 +777,7 @@ TIP: The Log Emitter also exports the audit logs.
 
 [horizontal]
 Dashboard:: menu:Settings[Users]
-API Endpoint:: `/tx_api/v1/users`
+API:: `{url-txapi}/users`
 
 
 .User Account Settings
@@ -925,7 +946,7 @@ A {organization} _rule_ is a set of Boolean conditions that, when true, implemen
 
 You can add, modify, and delete rules, and view’s rule’s activity to determine its effectiveness.
 
-To access rules in the {organization} user interface, navigate to menu:Settings[Rules*. You can also manage custom rules using the {organization} API /tx_api/v1/rules endpoint__.__
+To access rules in the {organization} user interface, navigate to menu:Settings[Rules*. You can also manage custom rules using the {organization} API {url-txapi}/rules endpoint__.__
 
 IMPORTANT: Rules can be complex. Creating or modifying a rule could have unintended consequences. You can request the {organization} SOC group to create rules or modify any rule in the {organization} platform to meet the specific needs and behavior of your environment.
 
@@ -1316,8 +1337,8 @@ NOTE: We use the email address of the user to locate users within our database
 
 If you are configuring your *ACS URL*:
 
-* When configuring the IDP, *the Assertion Consumer Service URL (ACS)* of our *Service Provider (SP)* is: `https://x.threatx.io/auth/v2/channels/\{your_threatx_channel_uuid/acs`
-* For IDPs that support Service Provider metadata, the metadata URL of our SP is: `https://x.threatx.io/auth/v2/channels/\{your_threatx_channel_uuid/metadata`
+* When configuring the IDP, *the Assertion Consumer Service URL (ACS)* of our *Service Provider (SP)* is: `https://x.threatx.io/auth/v2/channels/\<your_threatx_channel_uuid>/acs`
+* For IDPs that support Service Provider metadata, the metadata URL of our SP is: `https://x.threatx.io/auth/v2/channels/\<your_threatx_channel_uuid>/metadata`
 
 ==== Configuring SSO access
 
@@ -1370,7 +1391,7 @@ The *api_key*, created within the {organization} user interface ( menu:Settings[
 .Request
 [,console,subs=+macros]
 ----
-$ curl https://api.threatx.io/tx_api/v1/login \
+$ curl {url-txapi}/login \
   --header 'Content-Type: application/json' \
   --data @- <<EOF
 {
@@ -1420,7 +1441,7 @@ The *`list`* command returns the details of all tenants authorized for the curre
 .Request
 [source,console,subs=+macros]
 ----
-$ curl https://api.threatx.io/tx_api/v1/customers \
+$ curl {url-txapi}/customers \
   --header 'Content-Type: application/json' \
    --data @- <<EOF
 {
@@ -1539,7 +1560,7 @@ The SSO object is used to configure the SSO parameters. All other parameters to 
 .Request
 [,console,subs=+macros]
 ----
-$ curl https://api.threatx.io/tx_api/v1/customers \
+$ curl {url-txapi}/customers \
   --header 'Content-Type:  application/json' \
    --data @- <<EOF
 {
@@ -1601,7 +1622,7 @@ The *`list`* command of the *`channels`*  endpoint returns the details of all ch
 .Request
 [,console,subs=+macros]
 ----
-$ curl https://api.threatx.io/tx_api/v1/channels \
+$ curl {url-txapi}/channels \
   -H 'Content-Type: application/json' \
   --data @- <<EOF
 {
@@ -1691,7 +1712,7 @@ The `update` command updates a specified channel.
 .Request
 [,console,subs=+macros]
 ----
-$ curl https://api.threatx.io/tx_api/v1/channels \
+$ curl {url-txapi}/channels \
   --header 'Content-Type: application/json' \
   --data @- <<EOF
 {
@@ -1736,7 +1757,7 @@ Make sure your environment meets the following requirements for downstream mTLS:
 
 Configuration steps:
 
-. Access the Site Details page through menu::Settings[Sites > Edit Site (for the relevant site)]
+. Access the Site Details page through menu:Settings[Sites > Edit Site (for the relevant site)]
 . In the SSL/TLS Configuration section, enable Downstream mTLS by checking the designated checkbox.
 . Populate the Downstream mTLS Credentials field with the CA certificates used for validating client certificates.
 
@@ -1855,33 +1876,26 @@ Edge natively produces HAR files. For more instructions, see the instructions fr
 
 . Open the *Network* tool in F12 developer tools.
 . Reproduce the issue.
-. Export captured traffic as a HAR (CTRL + S).
-. Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
+ Upload the HAR file as an attachment to your {organization} support ticket for further analysis.
 
-==== How to generate a PCAP file
 
 The PCAP file is relevant only if you host your own sensors.
 
 To generate a PCAP file that the {organization} SOC can analyze for troubleshooting connectivity or other issues with the WAF sensor, follow these instructions:
 
 . Use SSH to connect into the docker host system.
-. Use the following command to display the name of the desired container: +
+. Use the following command to display the name of the desired container:
 
-[,console,subs=+macros]
+[,console,subs="+macros,+attributes"]
 ----
-# Enter the WAF
-$ docker ps
-$ docker exec -it pass:quotes[*<_container_id_>*] /bin/bash
+$ docker exec -if txwaf \
+  && apt get update \
+  && apt-get install -y tabby
 
-# Install tcpdump
-$ apt-get update && apt-get install -y tcpdump
-
-# Capture traffic
 $ tcpdump -i eth0 \
-    -s 0 port not 22 \
+$ tcpdump -i eth0 \
     -w /tmp/upload_to_threatx.pcap
 
-# Leave the container and retrieve the file
 $ docker cp \
   pass:quotes[*<_container_id_>*]:/tmp/upload_to_threatx.pcap \
   upload_to_threatx.pcap

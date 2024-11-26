@@ -4,12 +4,5 @@ title: ThreatX Platform
 version: ~
 asciidoc:
   attributes:
-    product-name: Platform
-    experimental: true
-    toclevels: 4
-    sectlinks: true
-    sectanchors: true
-    sectids: true
-    icons: font
 nav:
 - modules/ROOT/nav.adoc
