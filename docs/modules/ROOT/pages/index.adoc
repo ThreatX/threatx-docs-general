@@ -10,10 +10,23 @@
 
 This site hosts user documentation for ThreatX's platform and products.
 
+.Current Releases
+****
+[cols="1,1,1",role=center]
+|===
+|xref:txprevent:ROOT:index.adoc[TX Prevent v{txprevent-current-version}] |xref:txprotect:ROOT:index.adoc[TX Protect v{txprotect-current-version}] | xref:txgeneral:ROOT:index.adoc[ThreatX Platform]
+
+|===
+****
+
 == image:icons/Icon-TX_Red.svg[] Visionary API & Application Security
 
 .Learn more about link:https://www.threatx.com/products/api-application-vulnerability-prevention/[*TX Prevent*] and link:https://www.threatx.com/products/web-application-api-protection/[*TX Protect*]
 image::tx.png[Products,width=90%,align=center,caption=""]
+
+
+
+
 
 
 == 🗞️ News
