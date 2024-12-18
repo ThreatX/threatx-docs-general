@@ -1,8 +1,8 @@
-= Analyst Guide
 :description: A guide for security analysts and every day users of the ThreatX platform
 :keywords: ThreatX, security, firewall, WAF, guide, documentation
 :imagesdir: ../images
 :page-category: explanation
+:product-name: ThreatX
 :page-product-name:  {product-name}
 :source-highlighter: highlight.js
 :page-pdf-filename: user-guides.pdf

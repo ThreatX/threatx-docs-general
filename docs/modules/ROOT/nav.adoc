@@ -6,6 +6,6 @@
 ** xref:overview_guide.adoc[Platform Overview]
 * User Guides
 // page-pdf-filename: user-guides.pdf
-** xref:getting_started.adoc[New User Guide]
-** xref:analyst_guide.adoc[Analyst Guide]
-** xref:admin_guide.adoc[Administrator Guide]
+** xref:getting_started.adoc[New User's Guide]
+** xref:analyst_guide.adoc[Analyst's Guide]
+** xref:admin_guide.adoc[Administrator's Guide]

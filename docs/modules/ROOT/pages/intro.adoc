@@ -14,7 +14,7 @@ image:getting-started.svg[] {organization} is the future of API and web applicat
 
 == {organization} Architecture
 
-The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, including ...
+The {organization} platform is designed to protect applications from the full breadth of Layer 7 security threats, such as:
 
 * Traditional OWASP attacks
 * Bots
@@ -22,7 +22,9 @@ The {organization} platform is designed to protect applications from the full br
 * DDoS
 * API-specific attacks
 
-Our specialty, however, is *advanced*, *multi-step attacks* where correlation and analysis are required for events often initiated across thousands of IPs.  
+****
+ThreatX specializes in *advanced*, *multi-step attacks* where correlation and analysis are required for events often initiated across thousands of IP addresses.
+****
 
 
 .Sensors can also be deployed into public or private cloud and private data centers environments to support specific architectural or compliance requirements.
@@ -31,97 +33,97 @@ image::treatx-architecture_1v2-1024x542.png[treatx-architecture_1v2-1024x542,wid
 
 == *What Makes {organization} Different?*
 
-{organization} is challenging the current standards of API and application protection that have left many organizations frustrated, exposed, and at significant risk. {organization} takes a unique approach that combines multiple, best-of-breed security techniques into a single platform. The result is a solution that provides unmatched protection capabilities and does so in a way that simplifies the effort for our customers. 
+{organization} is challenging the current standards of API and application protection that have left many organizations frustrated, exposed, and at significant risk. {organization} takes a unique approach that combines multiple, best-of-breed security techniques into a single platform. The result is a solution that provides unmatched protection capabilities and does so in a way that simplifies the effort for our customers.
 
 [IMPORTANT]
-.Key Differentiators
+.🗝 K️ey Differentiators
 ****
-* Attacker-centric behavioral analysis 
+* Attacker-centric behavioral analysis
 * A combined platform for application, API, DDoS, and bot protection
-* API discovery and real-time protection 
-* Effortless deployment and management 
-* 24/7 managed services support 
+* API discovery and real-time protection
+* Effortless deployment and management
+* 24/7 managed services support
 ****
 
 {organization}’s behavior-based API and application protection platform secures APIs and web applications from cyberthreats across cloud and on-prem environments. We deliver complete protection and deep threat visibility by combining attacker behavior profiling, collective threat intelligence, and advanced analytics. Our managed service combines threat hunting with 24X7 access to the security experts in the {organization} SOC, significantlyreducing the operational overhead and maintenance burdens for enterprises that choose {organization}.
 
 === *Attacker-Centric Behavioral Analysis*
 
-{organization} uses Attacker-Centric Behavioral Analytics (ACBA). This is an approach that identifies critical elements of an attack, responds to them before any damage is done, and maintains protection even if attackers change or obfuscate their attack pattern to avoid detection. The {organization} platform delivers a range of responsive actions, including blocking, IP interrogation and challenges, and targeted rate limiting or tarpitting. 
+{organization} uses Attacker-Centric Behavioral Analytics (ACBA). This is an approach that identifies critical elements of an attack, responds to them before any damage is done, and maintains protection even if attackers change or obfuscate their attack pattern to avoid detection. The {organization} platform delivers a range of responsive actions, including blocking, IP interrogation and challenges, and targeted rate limiting or tarpitting.
 
-Attacker-Centric Behavioral Analytics continuously monitors all users as they interact with an application or API looking for key indicators of suspicious behavior and tracking risk over time and across multiple applications. Combining these indicators helps the system track malicious or suspicious users across many IP addresses as they use various evasion techniques and modify attack parameters. Individual requests may be blocked based on severity, but the approach is designed to limit false positives and identify truly malicious users to be blocked. 
+Attacker-Centric Behavioral Analytics continuously monitors all users as they interact with an application or API looking for key indicators of suspicious behavior and tracking risk over time and across multiple applications. Combining these indicators helps the system track malicious or suspicious users across many IP addresses as they use various evasion techniques and modify attack parameters. Individual requests may be blocked based on severity, but the approach is designed to limit false positives and identify truly malicious users to be blocked.
 
-=== *Complete Platform Providing Full-Spectrum Protection* 
+=== *Complete Platform Providing Full-Spectrum Protection*
 
-{organization} brings together a complementary set of technologies that work together in ways that siloed tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks using multiple IPs in order to evade detection.  By bringing multiple perspectives together in a single context, the {organization} Platform gives security teams a highly accurate, reliable, and complete view of threat activities. 
+{organization} brings together a complementary set of technologies that work together in ways that siloed tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks using multiple IPs in order to evade detection. By bringing multiple perspectives together in a single context, the {organization} Platform gives security teams a highly accurate, reliable, and complete view of threat activities.
 
-Specifically, {organization} provides protection often distributed across multiple tools: 
+Specifically, {organization} provides protection often distributed across multiple tools:
 
-* Web application firewall (WAF) 
-* API discovery & compliance  
-* API protection 
-* Bot management 
-* Distributed denial of service (DDoS) protection 
-* SaaS and managed security services 
+* Web application firewall (WAF)
+* API discovery & compliance
+* API protection
+* Bot management
+* Distributed denial of service (DDoS) protection
+* SaaS and managed security services
 
 === *Agentless Deployment*
 
 {organization} provides a new approach to agentless deployment that supports both AppSec and DevOps teams without locking either into architectural decisions or sacrificing their autonomy and flexibility. Our agentless architecture ensures that there is no need to disrupt either your applications or your operations.
 
-== How Can I Install {organization}? 
+== How Can I Install {organization}?
 
-Purpose-built for the modern application landscape, {organization}’s web stack agnostic, cloud-native, container-based options deploy in minutes and block in hours, combining WAF, DDoS, bot, and API protection capabilities into one solution for all your applications and API endpoints.  
+Purpose-built for the modern application landscape, {organization}’s web stack agnostic, cloud-native, container-based options deploy in minutes and block in hours, combining WAF, DDoS, bot, and API protection capabilities into one solution for all your applications and API endpoints.
 
-Unlike other sensors such as plugins or source code scanners that need to be installed and upgraded frequently, the {organization} sensor operates a reverse proxy. This means it decrypts traffic between web clients (such as browsers) on your network with APIs/origin servers before re-encrypting them for you – all without any complicated maintenance. The {organization} sensor containers are decoupled from the {organization} Cloud Analytics platform and can be deployed virtually anywhere, delivering global flexibility and enterprise-grade scalability across complex, geographically dispersed application environments.  
+Unlike other sensors such as plugins or source code scanners that need to be installed and upgraded frequently, the {organization} sensor operates a reverse proxy. This means it decrypts traffic between web clients (such as browsers) on your network with APIs/origin servers before re-encrypting them for you – all without any complicated maintenance. The {organization} sensor containers are decoupled from the {organization} Cloud Analytics platform and can be deployed virtually anywhere, delivering global flexibility and enterprise-grade scalability across complex, geographically dispersed application environments.
 
-The {organization} platform is flexible, adaptive to customer preference, and compliant with a range of customer network and computing infrastructures. Our agentless architecture lets us deploy our sensors into {organization}’s globally hosted cloud environment, a public cloud infrastructure, and servers hosted by our customers in their data centers. We can honestly say “We’ve never met an application or API we can’t protect!” 
+The {organization} platform is flexible, adaptive to customer preference, and compliant with a range of customer network and computing infrastructures. Our agentless architecture lets us deploy our sensors into {organization}’s globally hosted cloud environment, a public cloud infrastructure, and servers hosted by our customers in their data centers. We can honestly say “We’ve never met an application or API we can’t protect!”
 
-=== *Sensor Deployment Options:* 
+=== *Sensor Deployment Options:*
 
-{organization} offers four simple methods of deployment. 
+{organization} offers four simple methods of deployment.
 
-{organization} Cloud:: {organization} hosts and manages sensor deployment. 
-Self-Hosted w/ VM Images:: {organization} provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.  
-Self-Hosted w/ Docker Images:: {organization} provides the customer with a Docker-based {organization} sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.  
-{organization} Hybrid Deployment:: Mix of the {organization} cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. {organization} will work with the customer to map out the optimal configurations and support models. 
+{organization} Cloud:: {organization} hosts and manages sensor deployment.
+Self-Hosted w/ VM Images:: {organization} provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.
+Self-Hosted w/ Docker Images:: {organization} provides the customer with a Docker-based {organization} sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.
+{organization} Hybrid Deployment:: Mix of the {organization} cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. {organization} will work with the customer to map out the optimal configurations and support models.
 
 For more information on sensor deployment see: Deployment Guides
 
-== *How Does Blocking Work?* 
+== *How Does Blocking Work?*
 
-{organization}’s blocking modes are designed to block malicious requests and deter suspicious entities from attacking your sites while allowing benign traffic and real users through.  
+{organization}’s blocking modes are designed to block malicious requests and deter suspicious entities from attacking your sites while allowing benign traffic and real users through.
 
-=== Risk-Based, Request-Based, and Manual Blocking 
+=== Risk-Based, Request-Based, and Manual Blocking
 
-There are three different blocking modes available for each site after on-boarding: 
+There are three different blocking modes available for each site after on-boarding:
 
 .Blocking Modes
 image::ThreatX-Blocking-Modes-1024x310.png[width=1024,height=310]
 
 
-==== *Request Blocking* 
+==== *Request Blocking*
 
-When enabled for your sites, request blocking will block malicious traffic at the request level when an attack such as SQL injection, XSS, or another malicious request is detected.   
+When enabled for your sites, request blocking will block malicious traffic at the request level when an attack such as SQL injection, XSS, or another malicious request is detected.
 
-==== *Risk-Based Blocking* 
+==== *Risk-Based Blocking*
 
-When enabled, risk-based blocking will allow {organization}’s behavioral analytics engine, hackerMind™, to evaluate each unique entity and block persistently malicious entities based on their behavior over time.  
+When enabled, risk-based blocking will allow {organization}’s behavioral analytics engine, hackerMind™, to evaluate each unique entity and block persistently malicious entities based on their behavior over time.
 
-==== *Manual Action Blocking* 
+==== *Manual Action Blocking*
 
-When enabled, this option permits manual blocking of specific IP addresses. Enabling also permits a {organization} console user (security admin) to add entity IP addresses to the deny list for permanent blocking. 
+When enabled, this option permits manual blocking of specific IP addresses. Enabling also permits a {organization} console user (security admin) to add entity IP addresses to the deny list for permanent blocking.
 
-We recommend leveraging all three blocking modes, but provide users the flexibility to gradually expand blocking levels when on-boarding a new application to help prevent potential false positives or unwanted impacts to your sites.  
+We recommend leveraging all three blocking modes, but provide users the flexibility to gradually expand blocking levels when on-boarding a new application to help prevent potential false positives or unwanted impacts to your sites.
 
-== *Free Proof of Concept* 
+== *Free Proof of Concept*
 
-{organization} offers a free POC where you can work closely with our SOC staff to configure a solution for your API and web application protection needs.   
+{organization} offers a free POC where you can work closely with our SOC staff to configure a solution for your API and web application protection needs.
 
 Get started today: *https://www.threatx.com/request-a-demo/[Request a Personalized Demo]*
 
-== *What Will I See?* 
+== *What Will I See?*
 
-=== Best-in-Class Visibility  
+=== Best-in-Class Visibility
 
 {organization} evaluates each request to identify the nature of the request and determine if it is malicious. It is then classified, scored, and passed along to the behavioral analysis engine to process and adjust the entity risk score. The {organization} platform provides visibility into all this historic and live threat activity for your web applications and API endpoints through two dashboards: the Attack Dashboard and API Defender.
 
@@ -165,7 +167,7 @@ image::API-Defender-Endpoint-Table-with-schema-1024x575.png[width=1024,height=57
 
 ==== API Discovery
 
-{organization}’s API discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate the endpoints as well as the traffic they serve. While monitoring API interactions in real-time, {organization} can accurately detect real API endpoints and determine identifying attributes of their tech stacks or markup encodings. 
+{organization}’s API discovery capabilities analyze and profile legitimate, suspicious, and malicious API use to discover and enumerate the endpoints as well as the traffic they serve. While monitoring API interactions in real-time, {organization} can accurately detect real API endpoints and determine identifying attributes of their tech stacks or markup encodings.
 
 ==== Schema Compliance
 
