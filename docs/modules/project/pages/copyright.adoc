@@ -1,8 +1,11 @@
 = Copyright Notice
+:description: Notice of copyright for this site
+:keywords: ThreatX, copyright, legal
 :revdate:  November 15, 2024
 :revremark: Initial Release
+:sectnums:
 
-Copyright © 2024 ThreatX, Inc.
+*Copyright © 2024 ThreatX, Inc.*
 
 All Rights Reserved.
 
@@ -17,7 +20,6 @@ See: xref:license.adoc[ThreatX Proprietary Documentation License]
 TX Protect™ and TX Prevent™ are trademarks of ThreatX, Inc.
 
 All trademarks, service marks, and trade names (collectively, the "Marks") are the property of ThreatX, Inc. or other respective owners that have granted the Company the right and license to use such Marks.
-
 
 == DISCLAIMER
 The Materials are provided "as is," without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.

@@ -1,4 +1,4 @@
-= ThreatX Product Documentation
+= Products
 :description: Guides, references, and tutorials for the end-users of ThreatX products
 :keywords: ThreatX, documentation, security, WAF, eBPF, Kubernetes, API, ThreatX Protect, ThreatX Prevent, guide
 :!toc:
@@ -10,29 +10,29 @@
 
 This site hosts user documentation for ThreatX's platform and products.
 
-.Current Releases
-****
-[cols="1,1,1",role=center]
-|===
-|xref:txprevent:ROOT:index.adoc[TX Prevent v{txprevent-current-version}] |xref:txprotect:ROOT:index.adoc[TX Protect v{txprotect-current-version}] | xref:txgeneral:ROOT:index.adoc[ThreatX Platform]
+[sidebar]
+.📌 Current Versions
+--
+* xref:txprevent:ROOT:index.adoc[*TX Prevent v{txprevent-current-version}*]
+* xref:txprotect:ROOT:index.adoc[*TX Protect v{txprotect-current-version}*]
+--
 
-|===
-****
+== image:icons/Icon-TX_Red.svg[] API & Application Security
 
-== image:icons/Icon-TX_Red.svg[] Visionary API & Application Security
-
-.Learn more about link:https://www.threatx.com/products/api-application-vulnerability-prevention/[*TX Prevent*] and link:https://www.threatx.com/products/web-application-api-protection/[*TX Protect*]
-image::tx.png[Products,width=90%,align=center,caption=""]
+The ThreatX™ Managed API and Application Protection platform is a Protection as a Service offering that protects your APIs and applications from the full breadth of Layer 7 security threats, including traditional OWASP attacks, bots, malicious automation, DDoS, and API-specific attacks.
 
 
-
-
+.Learn more about link:{url-txprevent}[*TX Prevent*] and link:{url-txprotect}[*TX Protect*]
+image::tx.png[Products,width=100%,align=center,caption=""]
 
 
 == 🗞️ News
 
-November 6, 2024:: Published *xref:1.1@txprevent:ROOT:index.adoc[Prevent Docs v1.1]*
-October 24, 2024:: Released *link:https://docs.threatx.com[docs.threatx.com]*
+Last updated on {page-build-date}.
+
+🗓️ December 20, 2024:: Published *xref:1.2@txprevent:ROOT:index.adoc[Prevent Docs v1.2]*
+🗓️ November 6, 2024:: Published *xref:1.1@txprevent:ROOT:index.adoc[Prevent Docs v1.1]*
+🗓️ October 24, 2024:: Released *link:https://docs.threatx.com[docs.threatx.com]*
 
 
 

@@ -12,40 +12,75 @@ image:how-it-works.svg[] The ThreatX™ Managed API and Application Protection p
 
 This guide provides a detailed description of the ThreatX platform, its features, and how it interacts with your environment.
 
-== Overview
+== Introduction
 
 The ThreatX platform delivers complete protection and threat visibility by combining attacker behavior profiling, collective threat intelligence, and advanced analytics. The ThreatX managed service combines threat hunting with 24×7 access to the security experts in the ThreatX Security Operations Center (SOC), significantly reducing the operational overhead and maintenance burdens for enterprises.
 
 Instead of relying solely on application baselines and matching known attack signatures, the ThreatX platform focuses on the attacker and suspicious behaviors. By tracking attacker movement through the cyber kill-chain, and combining and corroborating many indicators of suspicious activity, the ThreatX platform builds a progressive risk profile of an attack and threat intent. The result is deep visibility into varying attack types and techniques, confirmation that it legitimately needs to be blocked, and rapid identification of known and unknown vulnerabilities in the application environment.
 
+== Profiling Techniques
 
-
-.Profiling Techniques
-****
 The ThreatX platform uses the following active and passive techniques to evaluate suspicious behaviors and deliver broad spectrum attack support.
 
-Dynamic Application Profiling:: The platform creates real-time profiles, or baselines, of acceptable application inputs, responses, usage, query times and more. As the application is modified and as more client engagements occur, the profile is dynamically enhanced to improve anomaly detection and reduce false positives.
-TLS fingerprinting:: Multiple interactive techniques test the IP/user to determine human vs machine and fingerprint key user meta-data to identify attacks coming from multiple IPs.
-Cookie challenge:: Challenge an offending entity with a cookie and attempt to fingerprint the user-agent.
-DDoS protection:: Advanced L7 DOS behavior detection and risk-based response include automated tarpit or rate limiting and active blocking.
-Bot management:: Combination of inputs and interrogation actions to identify automated users and malicious intent.
-SQLI/XSS Analyzer:: Deep analysis of input parameters to identify and test potentially malicious SQL injection or cross-site scripting attempts.
-Entity profiling:: Automated behavior recognition and dynamic rule generation to provide visibility on attack profiles and targeted application weaknesses.
+[discrete]
+=== Dynamic Application Profiling
+
+The platform creates real-time profiles, or baselines, of acceptable application inputs, responses, usage, query times and more. As the application is modified and as more client engagements occur, the profile is dynamically enhanced to improve anomaly detection and reduce false positives.
+
+=== TLS fingerprinting
+
+Multiple interactive techniques test the IP/user to determine human vs machine and fingerprint key user meta-data to identify attacks coming from multiple IPs.
+
+=== Cookie challenge
+
+Challenge an offending entity with a cookie and attempt to fingerprint the user-agent.
+
+=== DDoS protection
+
+Advanced L7 DOS behavior detection and risk-based response include automated tarpit or rate limiting and active blocking.
+
+=== Bot management
+
+Combination of inputs and interrogation actions to identify automated users and malicious intent.
+
+=== SQLI/XSS Analyzer
+
+Deep analysis of input parameters to identify and test potentially malicious SQL injection or cross-site scripting attempts.
+
+=== Entity profiling
+
+Automated behavior recognition and dynamic rule generation to provide visibility on attack profiles and targeted application weaknesses.
 Several dimensions are considered, including intensity, TOR exit nodes, IP reputation, open proxy IP, error count over time, URI disbursement, geographic location, U.S. embargo status, and kill-chain state, which are combined with inputs from multiple context signatures.
-Attack profiling and threat intelligence:: A continuously expanding Data Warehouse of identified attack patterns, classifications and correlations from suspicious entities collected across all ThreatX protected web applications and customers. The analytics engine correlates the latest intelligence and behavior over time to create a highly accurate decision and response engine to reduce workloads for security teams.
-Dynamic behavior rules:: Determines attacker intent (based on application and entity profiling data) and generates behavior rules (not signatures) that can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. You can work with the ThreatX SOC to create custom behavior rules to meet the needs of your environment.
-Caching and resource optimization:: Static and dynamic caching along with advanced page optimization.
-SSL/TLS inspection:: Full decryption and re-encryption of requests for deep inspection.
+
+=== Attack profiling and threat intelligence
+
+A continuously expanding Data Warehouse of identified attack patterns, classifications and correlations from suspicious entities collected across all ThreatX protected web applications and customers. The analytics engine correlates the latest intelligence and behavior over time to create a highly accurate decision and response engine to reduce workloads for security teams.
+
+=== Dynamic behavior rules
+
+Determines attacker intent (based on application and entity profiling data) and generates behavior rules (not signatures) that can watch, temporarily block, permanently block, interrogate, or tarpit suspicious traffic. You can work with the ThreatX SOC to create custom behavior rules to meet the needs of your environment.
+
+=== Caching and resource optimization
+
+Static and dynamic caching along with advanced page optimization.
+
+=== SSL/TLS inspection
+
+Full decryption and re-encryption of requests for deep inspection.
+
+
+****
+_You can use the data the platform gathers to better understand your sites, traffic usage, and behavior, and uncover potential issues such as exposure of sensitive data and vulnerabilities._
 ****
 
-You can use the data the platform gathers to better understand your sites, traffic usage, and behavior, and uncover potential issues such as exposure of sensitive data and vulnerabilities.
+'''
 
-[[h-key-differentiators]]
-=== Key Differentiators
+[[key-differentiators]]
+== Key Differentiators
 
-The ThreatX platform is a set of complementary technologies that work together in ways that various tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks by using multiple IP addresses to evade detection. By bringing many perspectives together in a single context, the ThreatX platform gives security teams an accurate, reliable, and complete view of threat activities.
+The ThreatX platform is a set of complementary technologies that work together in ways that various tools and techniques cannot achieve on their own. Many attackers launch multi-step attacks by using multiple IP addresses to evade detection. By bringing many perspectives together in a single context, the ThreatX platform gives security teams an accurate, reliable, and complete view of threat activities.
 
-The key differentiators of the ThreatX platform include: 
+The key differentiators of the ThreatX platform include:
 
 * Attacker-centric behavioral analysis.
 * Combined platform for application, API, DDoS, and bot protection.
@@ -57,24 +92,24 @@ The ThreatX API discovery capabilities analyze and profile legitimate, suspiciou
 
 A _site_ is a web property serving API responses intended for consumption by an application. It is also called an API site. An _endpoint_ is a URL pattern representing a group of resources within a site. A site can have multiple endpoints. The _API profile_ is a type of API such as JSON, XML, and URL-encoded.
 
-[[h-protection-as-a-service]]
-=== Protection as a Service
+[[protection-as-a-service]]
+== Protection as a Service
 
 The ThreatX platform is managed API and application protection that secures APIs and applications without the complexity of installing, configuring, and managing a massive security system. The ThreatX platform is hosted and managed by the ThreatX Security Operations Center (SOC).
 
 The ThreatX SOC is responsible for the initial setup and maintenance of the ThreatX platform. More importantly, the SOC monitors your API traffic to proactively prevent malicious attacks and adjust the ThreatX platform accordingly. The SOC also watches industry wide traffic to understand potential threats and update the ThreatX rules before you and other clients are attacked.
 
-=== Architecture
+== Architecture
 
 The following figure illustrates how the ThreatX platform is organized and how it relates to your environment.
 
 image::Architecture-high-level.png[Architecture-high-level,width=2289,height=1214]
 
-==== ThreatX Security Container
+=== ThreatX Security Container
 
 The ThreatX Security Container monitors your ingress API traffic and performs the initial risk analysis and response. _API traffic_ is traffic that includes HTTP and HTTPS messages containing programmatic content sent between the site and client applications.
 
-===== Context Sensor
+==== Context Sensor
 
 The ThreatX Security Container includes one or more sensors. Sensors are decoupled from the ThreatX platform so they can be hosted in the ThreatX environment or deployed to your local environment.
 
@@ -88,7 +123,7 @@ The sensors have local rules which they use to determine whether to pass, block 
 
 The sensor is based on the NGINX project, with modifications written in C++ and Rust. ThreatX backend services are written in Rust to allow secure sub-millisecond transactional performance, even under load. The ThreatX web application is written in typescript (React, Angular).
 
-===== Decision Engine
+==== Decision Engine
 
 The Decision Engine analyses suspicious entities and techniques against known entities and techniques. An _entity_ is a specific IP address or IP group. A suspicious entity is a threat.** **A _technique_ is suspicious behavior tracked over time and across multiple applications. The platform uses these indicators to track malicious or suspicious users across many IP addresses as they use various evasion techniques and modify attack parameters.
 
@@ -100,7 +135,7 @@ Risk Level:: Associated with all activities of a threat. The level is calculated
 Classification:: Describes the type of attack which a rule assigns to a threat.
 ****
 
-===== Advanced Firewall
+==== Advanced Firewall
 
 The Advanced Firewall uses behavioral rules with advanced analyzers, IP interrogation techniques, and a combination of other detection capabilities working in parallel to determine the response. A ThreatX _rule_ is a set of Boolean conditions that, when True, implement the rule’s defined action and risk level. A True state is known as a match. The conditions are based on threat, request, or response attributes.
 
@@ -128,7 +163,7 @@ Additionally, you can configure the platform to not allow traffic from embargoed
 
 As needed, you can request the ThreatX SOC group to create new rules or modify any rule in the ThreatX platform to meet the specific needs and behavior of your environment.
 
-==== ThreatX Cloud Analytics
+=== ThreatX Cloud Analytics
 
 The ThreatX Cloud Analytics performs an in-depth risk analysis and response, which is provided to the Security Container. The events are tracked in real-time and available to your SOC in the ThreatX User Interface.
 
@@ -147,17 +182,7 @@ ACBA continuously monitors all users as they interact with an application or API
 [TIP]
 You can import your own threat intelligence. The ThreatX platform can use deny lists from threat intelligence solutions by integrating with SOAR solutions or by scripting using the ThreatX API.
 
-==== ThreatX User Interface
-
-The ThreatX platform provides metrics and analytical data of API traffic and actions taken to the dashboards and reporting pages. The ThreatX User Interface is off-site and hosted by the ThreatX SOC.
-
-.UI Components
-****
-Threat Response Platform:: Sends metrics and analytical data and sends notifications using email or webhooks. You can respond manually using the allow, deny, and block lists.
-Dashboard and Reporting:: The ThreatX platform provides data in various forms including scorecards. You can drill down from a threat view to the individual endpoint. See the <<analysis,Analysisa>> section for more information.
-****
-
-==== Log Emitter
+=== Log Emitter
 
 The ThreatX Log Emitter allows efficient and secure, real-time export of event logs from the ThreatX platform to your log receiver and SIEM. The details contained in these event logs can be leveraged in your investigations and used to trigger events in your chosen log management solution. Logs are pushed in JSON lines format over a TCP connection that is encrypted (and optionally authenticated) via TLS.
 
@@ -169,21 +194,21 @@ Log Emitter forwards full details for all:
 
 In the event a Log Emitter subscription becomes suspended, the Log Emitter service queues your logs for delivery upon successful re-connection, and periodically attempts to re-establish a connection.
 
-==== Tenants and Channels
+=== Tenants and Channels
 
 Your ThreatX platform configuration is organized by at least one tenant, where a tenant is an organizational unit containing your users and sites. Your users can view protected sites, attack heuristics, real-time data, and other configuration information in the ThreatX dashboard within the tenant.
 
 Alternatively, you can have your ThreatX platform organized by channels, where a channel can contain multiple tenants.
 
-=== Administration
+== Administration
 
 The ThreatX platform has a number of configuration, user, sensor, and other settings that can be managed by the ThreatX SOC, by your local administrator, or a combination of both.
 
 The administrative settings can be accessed from the ThreatX user interface or from the API. Your ThreatX account must have write access to perform these tasks.
 
-See the link:admin_guide.html[ThreatX Managed API and Application Protection Administrator Guide] for details about managing the platform.
+See the link:txprotect:ui:admin_guide[ThreatX Managed API and Application Protection Administrator Guide] for details about managing the platform.
 
-==== Allow, Deny, and Block lists
+=== Allow, Deny, and Block lists
 
 An entity in the following lists is denied temporarily blocked, or always allowed to interact with any of your sites.
 
@@ -196,7 +221,7 @@ Whitelist:: An entity in the list cannot be blocked or denied.
 
 Once added to the Blacklist or Whitelist, the entity remains there permanently until it is manually removed. An administrator or ThreatX SOC can add an IP address or CIDR range, or manually remove an entity from the list.
 
-==== Firewall Settings
+=== Firewall Settings
 
 You can view the CNAME provided for your tenant. The ThreatX WAF is SNI (Server Name Indication) aware and refers to the hostname provided in each request when visualizing and routing traffic. Request traffic for each of your sites is routed to the backend you defined for that site on the site’s details page.
 
@@ -208,7 +233,7 @@ Block Embargoed Countries:: When checked, any traffic from a country that is on 
 Block Tor Exit Nodes:: These are the gateways where encrypted Tor traffic hits the Internet. When configured, all incoming traffic from a TOR Exit node is not allowed.
 ****
 
-==== Site Settings
+=== Site Settings
 
 The ThreatX sensor operates as a reverse proxy and is designed to monitor and act on incoming HTTP and HTTPS request traffic to prevent attacks and unwanted activity from reaching your web application and API servers. The backend you define for each site can be a single CNAME or a list of IPs, wherever traffic can be properly routed to reach your origin servers.
 
@@ -225,20 +250,20 @@ Proxy configuration:: Configure the proxy settings, such as maximum request body
 Site group:: You can assign a site group to limit which users can access the site configuration and its associated data.
 ****
 
-==== Sensors
+=== Sensors
 
 Sensors can be managed by your local administrator or the ThreatX SOC. If managed locally, you need to provide a Sensor API Key, which is required to authenticate to the ThreatX cloud infrastructure.
 
 The sensor IP addresses are available in the ThreatX user interface. These addresses must be added to the whitelist in your environment to ensure traffic can reach your application.
 
 
-==== Notifications
+=== Notifications
 
 You can configure users to receive notifications on various events relating to threats, rule matches, changes to the allow, deny, and block lists, and more. Notifications are typically sent by email, but you can configure a webhook notification to another app, such as Slack.
 
 You can subscribe to the https://status.threatx.com/[Threat X Maintenance and System Status Notifications] website for messages regarding scheduled maintenance windows and any issues that might impact your ThreatX services.
 
-==== User Accounts
+=== User Accounts
 
 To access the ThreatX platform, you need to add user accounts. You can configure analyst accounts to be read-only where the users can access all analytical data. For administrators, you can grant write permission where the users can configure various settings as needed.
 
@@ -246,24 +271,24 @@ As needed, you can restrict users to access a specific site only.
 
 You can add, edit, or remove user accounts from the ThreatX Dashboard or the API.
 
-==== *Audit Log***
+=== Audit Log
 
 The ThreatX audit feature logs events, such as updating users, updating sites, and adding IP addresses to whitelists and blocked lists. The audit log lists all events by category and actions. As opposed to the Log Emitter, the audit log focuses mostly on user actions.
 
 The audit log is available from the user interface or by using API.
 
-==== API Access
+=== API Access
 
 The ThreatX platform uses a RESTful API and supports a full set of application capabilities that can be used ad-hoc, in scripts, and in automation toolsets, such as SOAR. Advanced administrators can use the API to prevent, allow, or block an IP address or CIDR range with an API command. Other common uses include creating and managing user accounts, provisioning new sites to be protected, and managing certificates.
 
-=== Analysis
+== Analysis
 
 The ThreatX platform analyzes HTTP traffic then extracts identifying metadata, including IP address, user agent, TLS fingerprint, and other characteristics to create a profile and identifier for each attacker.
 
 The data is presented within the Dashboard using various pages and tables with a special emphasis on key attributes to further help identify trends and patterns. The tables provide different perspectives of how the data relates to each other, which can help in your analysis.
 
 
-.Metrics
+.📈 Metrics
 ****
 Sites:: The ThreatX platform displays all the sites under the ThreatX protection, the API profile for each site, and every endpoint for each site.
 Threats:: The tables in the ThreatX dashboard provide analytical data about the threat, including status, IP address, last seen, location, and attack class. For location, the Threat Map provides an interactive map that identifies how many unique attackers are acting from each geographical location.
@@ -281,23 +306,23 @@ You can use the data for various analytical tasks, including:
 * Upload schemas for your endpoints and determine if there are any discrepancies between the schema and observed behavior.
 * Verify that all expected sites are included.
 
-The link:analyst_guide.html[ThreatX Managed API and Application Protection Analyst guide] focuses on those areas of the ThreatX platform that provide analytical data.
+The link:txprotect:ui:analyst_guide[ThreatX Managed API and Application Protection Analyst guide] focuses on those areas of the ThreatX platform that provide analytical data.
 
-=== Additional Features
+== Additional Features
 
 You can customize the ThreatX platform to meet the needs of your environment. The following sections describe the features that you can add or modify.
 
-==== Risk-Based Blocking feature
+=== Risk-Based Blocking feature
 
 With the ThreatX Risk-Based Blocking feature, the ThreatX platform can add a threat automatically to the Blacklist or Blocklist based on the threat’s behavior. The ThreatX behavioral analytics engine blocks persistently malicious threats when the threats’ behavior surpasses the Risk-Based Blocking threshold. The analytics engine automatically places a threat on the permanent Blacklist after it is blocked three times.
 
-==== Sensitive Data
+=== Sensitive Data
 
 The ThreatX Sensitive Data feature monitors API responses to detect various sensitive data. Sensitive data includes authentication credentials, credit card (PCI-DSS), and Personally Identifiable Information (PII).
 
 The ThreatX platform reports only sensitive data that is in plain text. It does not report partial or obfuscated data, such as ***-**-1234. The ThreatX platform does not correlate sensitive data with rules or threats or store sensitive data due to security and compliance reasons.
 
-==== Edge Caching
+=== Edge Caching
 
 Edge Caching is available to ThreatX customers who wish to take advantage of the performance and speed improvements commonly associated with caching, but who do not have a caching solution in place. The benefits of Edge Caching include:
 
@@ -314,7 +339,7 @@ NOTE: By default, ThreatX Edge Caching follows Cache-Control headers defined by 
 *Dynamic Caching*:: Provides a higher level of performance, allowing caching and optimization of dynamic content. In some cases, cached content can be delivered even if the origin servers are unresponsive. The ThreatX platform caches all responses to requests made with HTTP GET, and HEAD methods. To avoid caching dynamic pages that are rarely accessed, ThreatX sensors cache dynamic pages only after they are requested at least three times. Subsequent requests are served from the cache until the cache expiration defined in the Cache-Control occurs, or for 30 minutes for responses where the expiration is not defined. Dynamic caching requires an add-on license.
 ****
 
-==== Rate Limiting
+=== Rate Limiting
 
 By default, the ThreatX platform offers rate limiting capability by the rules in the common rule set. For example, one rule, 10 404s in 10s, assigns risk to an entity that receives more than ten 404 responses within 10 seconds.
 
@@ -322,11 +347,11 @@ AWS Shield Standard is also deployed by default on all AWS hosted infrastructure
 
 Additionally, the ThreatX SOC can create custom rate limiting rules tailored for your environment. A typical use of this would be to assign risk to entities that fail logins at a login endpoint. These rate limiting rules are very customizable, including the timings (# of requests/time). These rules can be applied across the entire tenant, a specific site or group of sites, or a single endpoint. The match criteria also have a very wide range of options such as Response Code, Request Method, Source Country/ASN, and Args.
 
-==== Site Certificate Management
+=== Site Certificate Management
 
 The ThreatX platform can manage the SLL certificates presented to your site’s visitors with Let’s Encrypt. The Let’s Encrypt integration allows you to offload the overhead and management commonly associated with managing SSL/TLS/TLS certificates while ensuring that an expired certificate is never presented to your site’s visitors.
 
-=== Privacy
+== Privacy
 
 ThreatX is committed to privacy and security of our customers’ data. The ThreatX platform collects and stores as little corporate data as possible while maintaining the highest level of security and efficacy for the sites we protect. ThreatX has an AICPA certified auditor-issued SOC 2 Type 2 Report covering Security and Availability trust services criteria, including the following:
 
@@ -341,7 +366,7 @@ Furthermore, the ThreatX Web Application Firewall can be used to satisfy PCI-DSS
 
 You can find more information about our physical and logical security posture, our controls, and our SOC 2 Type 2 standing on our https://www.threatx.com/security/[website]. The current report and bridge letter are available to customers who require it for compliance purposes.
 
-==== Data Gathered
+=== Data Gathered
 
 The ThreatX platform gathers the following backend data (summarized):
 
@@ -359,7 +384,7 @@ Sensitive data is retained only if necessary for business purposes. This include
 
 The ThreatX SOC retains the data for 90 days.
 
-==== Data Redactions
+=== Data Redactions
 
 Specific portions of the request are automatically redacted and never sent to the backend, including tokens, credentials, and known patterns such as credit card and social security numbers. This redaction is applied to fields and URL encoded forms.
 
@@ -369,44 +394,4 @@ Usernames are not automatically redacted, as this data is often critical to secu
 
 The ThreatX Soc can help with custom redactions on a case-by-case basis. To scrub specific data, you can contact the Threat SOC.
 
-=== Deployment
 
-The ThreatX platform is an agentless deployment that supports both AppSec and DevOps teams without locking either into architectural decisions or sacrificing their autonomy and flexibility. Our agentless architecture ensures that there is no need to disrupt either your applications or your operations.
-
-The ThreatX platform is built for hybrid-cloud and on-premise environments and is application agnostic. If deploying the sensors in your environment, it deploys in minutes via Docker containers and blocks in hours, combining WAF, DDoS, bot, and API protection capabilities into one solution for all your applications and API endpoints.
-
-.Deployment Options
-****
-ThreatX Cloud:: ThreatX SOC hosts and manages sensor deployment. You simply configure your DNS CNAME pointers to allow the ThreatX sensors to intercept traffic from web clients.
-ThreatX Machine Images for AWS, Azure, and GCP:: ThreatX SOC provides the customer with a machine image compatible with the customer’s cloud provider and the customer manages the image deployment, cloud hosting parameters, and cloud-specific support.
-ThreatX Docker Container Deployment:: ThreatX SOC provides the customer with a Docker-based ThreatX sensor container deployed in the customer’s data center, and the customer manages the container deployment, container and node parameters, and container-specific support.
-Hybrid Deployment:: Mix of the ThreatX cloud, public cloud, and Docker deployments deployed when a single deployment model is not feasible. ThreatX will work with the customer to map out the optimal configurations and support models.
-****
-
-We regularly update the sensors to provide you with the latest protection against the latest emerging attack patterns, new features, and better insights to the risk profile of your web applications and APIs For the latest information, see our https://support.threatx.com/hc/en-us/sections/360008495931-Release-Notes[release notes].
-
-If the ThreatX SOC hosts your sensors, you might notice the number of sensors fluctuate, or that an individual sensor’s uptime has changed. This is because sensors are designed to be added, removed, upgraded, and replaced as needed to ensure optimal site availability and protection.
-
-IMPORTANT:  The ThreatX sensors were not designed to monitor site uptime. The ThreatX sensors only see and act on ingress HTTP(s) traffic. Due to the WAFs position in front of your inbound traffic, it is not afforded the same level of insight that a purpose-built monitoring solution would be able to provide. 
-
-.✔ ︎ Onboarding Checklist
-****
-Before onboarding the ThreatX platform, review the following site onboarding checklist. If the answer to ANY of the questions is yes, make sure to notify ThreatX Support at support@threatx.com with details so we can assist. 
-
-[cols=",,",options="header",]
-|===
-|Question | Description | Yes/No
-|Does the application process requests with well-formed SQL queries?
-|This is common in Help Desk and Bug-Tracking software.
-|
-|Does the application process requests with well-formed HTML?
-|This is common for Content Management Systems.
-|
-
-|Does the application require Two-Way SSL/TLS for client authentication? | |
-|Does the application utilize WebSockets?| |
-|Does the application require a specific TLS version or cipher suite restriction? |Default is TLS 1.2 and 1.3. |
-|Are any custom WAF rules required to enforce a unique security or business requirement? |For example, you want to block traffic from foreign countries. |
-|Is there any upstream architecture, such as a firewall or CDN, where you need to whitelist your ThreatX service IPs?| |
-|===
-****

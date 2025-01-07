@@ -1,2 +1,6 @@
 = Project Governance
 
+
+* xref:copyright.adoc[]
+* xref:license.adoc[]
+* xref:acknowledgements.adoc[]

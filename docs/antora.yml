@@ -1,6 +1,6 @@
 # Descriptor of the Antora site.
 name: txgeneral
-title: ThreatX Platform
+title: Documentation Home
 version: ~
 asciidoc:
   attributes:

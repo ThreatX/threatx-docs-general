@@ -1,32 +1,55 @@
 = ThreatX Proprietary Documentation License
+:description: License for ThreatX documentation
+:keywords: ThreatX, license, legal
+:sectnums:
 :revdate: November 15, 2024
 :revremark: Initial Release
 
 This Proprietary Documentation License Agreement ("Agreement") is entered into by and between ThreatX, Inc., with its principal place of business at ThreatX ("Licensor"), and you ("Licensee"). By accessing or using this documentation, you agree to be bound by the terms of this Agreement.
 
-1. Grant of License
+== Grant of License
+
 Licensor grants Licensee a non-exclusive, non-transferable, limited license to access and use the accompanying documentation ("Documentation") strictly for the purpose of using Licensor's software in accordance with any applicable software license agreements.
-2. Restrictions on Use
+
+== Restrictions on Use
+
 Licensee shall not:
-•	Copy, reproduce, distribute, or publish the Documentation, in whole or in part, without Licensor's prior written consent.
-•	Modify, adapt, translate, or create derivative works based on the Documentation.
-•	Sell, rent, lease, or sublicense the Documentation to any third party.
-•	Remove, obscure, or alter any proprietary notices or labels contained within the Documentation.
-3. Ownership and Intellectual Property
+
+*	Copy, reproduce, distribute, or publish the Documentation, in whole or in part, without Licensor's prior written consent.
+*	Modify, adapt, translate, or create derivative works based on the Documentation.
+*	Sell, rent, lease, or sublicense the Documentation to any third party.
+*	Remove, obscure, or alter any proprietary notices or labels contained within the Documentation.
+
+== Ownership and Intellectual Property
+
 All rights, title, and interest in the Documentation, including all intellectual property rights, are and shall remain the exclusive property of Licensor. Licensee acknowledges that it does not acquire any rights, express or implied, in the Documentation other than those specified in this Agreement.
-4. Confidentiality
+
+== Confidentiality
+
 Licensee agrees to maintain the confidentiality of the Documentation and to take all reasonable steps to prevent unauthorized disclosure or use of the Documentation.
-5. Termination
+
+== Termination
+
 This Agreement is effective until terminated. Licensor may terminate this Agreement immediately upon written notice to Licensee if Licensee breaches any provision of this Agreement. Upon termination, Licensee must immediately cease all use of the Documentation and destroy all copies in its possession or control.
-6. Disclaimer of Warranties
+
+== Disclaimer of Warranties
+
 The Documentation is provided on an "AS IS" basis, without warranty of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
-7. Limitation of Liability
+
+== Limitation of Liability
+
 In no event shall Licensor be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, arising out of or in connection with the use or inability to use the Documentation, even if Licensor has been advised of the possibility of such damages.
-8. Governing Law
+
+==  Governing Law
+
 This Agreement shall be governed by and construed in accordance with the laws of Colorado and the United States, without regard to its conflict of laws principles.
-9. Entire Agreement
+
+== Entire Agreement
+
 This Agreement constitutes the entire understanding between the parties regarding the Documentation and supersedes all prior or contemporaneous oral or written agreements concerning its subject matter.
-10. Amendments
+
+== Amendments
+
 Licensor reserves the right to modify this Agreement at any time, effective upon posting of an updated version on Licensor's website or by providing other written notice to Licensee.
 By using the Documentation, you acknowledge that you have read, understood, and agree to be bound by the terms of this Agreement.
 
