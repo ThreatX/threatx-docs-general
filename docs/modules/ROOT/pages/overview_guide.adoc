@@ -2,7 +2,7 @@
 :description: A high-level view of ThreatX and its key differentiators
 :keywords: security, vulnerability, protection, ThreatX, documentation, WAF, application, API, rBP, runtime, edge, protection
 :page-category: explanation
-:page-pdf-filename: introduction.pdf
+:page-pdf-filename: threatx-overview.pdf
 :icons: font
 :source-highlighter: highlight.js
 :imagesdir: ../images
