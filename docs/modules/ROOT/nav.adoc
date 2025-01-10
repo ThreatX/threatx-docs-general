@@ -1,4 +1,6 @@
 // PDFs are automatically built for all pages under a section and named after that section.
 // In order for the 'Download PDF' button to work correctly, each page must define
-* xref:overview_guide.adoc[Platform Overview]
 
+
+* xref:txprevent::index.adoc[]
+* xref:txprotect::index.adoc[]

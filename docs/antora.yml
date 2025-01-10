@@ -1,6 +1,6 @@
 # Descriptor of the Antora site.
 name: txgeneral
-title: Documentation Home
+title: Home
 version: ~
 asciidoc:
   attributes:

@@ -1,4 +1,4 @@
-= Products
+= Home
 :description: Guides, references, and tutorials for the end-users of ThreatX products
 :keywords: ThreatX, documentation, security, WAF, eBPF, Kubernetes, API, ThreatX Protect, ThreatX Prevent, guide
 :!toc:
@@ -10,25 +10,12 @@
 
 This site hosts user documentation for ThreatX's platform and products.
 
-.📌 Pinned
+.📌 Current Versions
 ****
 ➤ *xref:txprevent:ROOT:index.adoc[Prevent v{txprevent-current-version}]*
 
 ➤ xref:txprotect:ROOT:index.adoc[*Protect v{txprotect-current-version}*]
 ****
-
-
-== 🗞️ News
-
-
-
-
-[horizontal]
-🎉 December 20, 2024:: _Published Prevent Docs v1.2_
-🎉 November 6, 2024:: _Published Prevent Docs v1.1_
-🎉 October 24, 2024:: _Published link:https://docs.threatx.com[]_
-
-_**⚙️ Last build:** {build-date}_
 
 
 == image:icons/Icon-TX_Red.svg[] About ThreatX
@@ -40,11 +27,4 @@ The ThreatX™ Managed API and Application Protection platform is a Protection a
 image::tx.png[Products,width=100%,align=center,caption=""]
 
 
-== 🗞️ Recent Activity
 
-[horizontal]
-🗓️ December 20, 2024:: _Published Prevent Docs v1.2_
-🗓️ November 6, 2024:: _Published Prevent Docs v1.1_
-🗓️ October 24, 2024:: _Published link:https://docs.threatx.com[]_
-
-'''
